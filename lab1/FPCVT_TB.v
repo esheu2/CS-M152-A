@@ -26,8 +26,8 @@ module FPCVT_TB;
 
 	// Inputs
 	reg [11:0] D;
-	reg [2:0] E;
-	reg [3:0] F;
+	wire [2:0] E;
+	wire [3:0] F;
 
 	// Outputs
 	wire S;
@@ -42,19 +42,30 @@ module FPCVT_TB;
 
 	initial begin
 		// Initialize Inputs
-		assign D = 12'b0000_0000_0000;
-		assign E = 3'b000;
-		assign F = 0;
-
+        D = 12'b0000_1010_1010;
 		// Wait 100 ns for global reset to finish
-		#100;
         
-        #20;
-        assign D = 12'b0000_1010_1010;
-        
-        #40;
-        assign D = 12'b1010_0100_0100;
+        #100;
+        D = 12'b1010_0100_0100;
 		// Add stimulus here
+        
+        #100;
+        D = 12'b1111_1111_1111;
+        
+        #100;
+        D = 12'b1000_0000_0000;
+        
+        #100;
+        D = 12'b0000_0010_1100;
+        
+        #100;
+        D = 12'b0000_0010_1101;
+        
+        #100;
+        D = 12'b0000_0010_1110;
+        
+        #100;
+        D = 12'b0000_0010_1111;
 
 	end
       

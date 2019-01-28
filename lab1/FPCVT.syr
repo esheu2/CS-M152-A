@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: FPCVT.prj
 
@@ -105,38 +105,91 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "E:\lab1\FPCVT.v" into library work
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab1\FPCVT.v" into library work
 Parsing module <FPCVT>.
+Parsing module <twotosig>.
+Parsing module <priEncode>.
+Parsing module <round>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
 
 Elaborating module <FPCVT>.
-WARNING:HDLCompiler:413 - "E:\lab1\FPCVT.v" Line 46: Result of 32-bit expression is truncated to fit in 12-bit target.
-WARNING:HDLCompiler:91 - "E:\lab1\FPCVT.v" Line 109: Signal <F_temp> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "E:\lab1\FPCVT.v" Line 112: Signal <E_temp> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "E:\lab1\FPCVT.v" Line 112: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:91 - "E:\lab1\FPCVT.v" Line 115: Signal <F_temp> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "E:\lab1\FPCVT.v" Line 115: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:1127 - "E:\lab1\FPCVT.v" Line 37: Assignment to S_temp ignored, since the identifier is never used
-WARNING:HDLCompiler:1499 - "E:\lab1\FPCVT.v" Line 21: Empty module <FPCVT> remains a black box.
+
+Elaborating module <twotosig>.
+
+Elaborating module <priEncode>.
+
+Elaborating module <round>.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab1\FPCVT.v" Line 245: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab1\FPCVT.v" Line 249: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab1\FPCVT.v" Line 254: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab1\FPCVT.v" Line 260: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:189 - "C:\Users\152\CS-M152-A\lab1\FPCVT.v" Line 152: Size mismatch in connection of port <F>. Formal port size is 3-bit while actual signal size is 4-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <FPCVT>.
-    Related source file is "E:\lab1\FPCVT.v".
-WARNING:Xst:647 - Input <D> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "C:\Users\152\CS-M152-A\lab1\FPCVT.v".
     Summary:
 	no macro.
 Unit <FPCVT> synthesized.
 
+Synthesizing Unit <twotosig>.
+    Related source file is "C:\Users\152\CS-M152-A\lab1\FPCVT.v".
+    Found 12-bit adder for signal <D[11]_GND_2_o_add_3_OUT> created at line 171.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
+Unit <twotosig> synthesized.
+
+Synthesizing Unit <priEncode>.
+    Related source file is "C:\Users\152\CS-M152-A\lab1\FPCVT.v".
+WARNING:Xst:647 - Input <sig<11:11>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred  13 Multiplexer(s).
+Unit <priEncode> synthesized.
+
+Synthesizing Unit <round>.
+    Related source file is "C:\Users\152\CS-M152-A\lab1\FPCVT.v".
+    Found 4-bit subtractor for signal <GND_4_o_GND_4_o_sub_2_OUT> created at line 241.
+    Found 3-bit adder for signal <E_temp[2]_GND_4_o_add_5_OUT> created at line 246.
+    Found 4-bit adder for signal <n0029> created at line 249.
+    Found 1-bit 12-to-1 multiplexer for signal <GND_4_o_GND_4_o_equal_4_o> created at line 241.
+WARNING:Xst:737 - Found 1-bit latch for signal <E<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <E<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <E<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 3-bit comparator greater for signal <GND_4_o_E_temp[2]_LessThan_1_o> created at line 239
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred   3 Latch(s).
+	inferred   1 Comparator(s).
+	inferred  10 Multiplexer(s).
+Unit <round> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 12-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Comparators                                          : 1
+ 3-bit comparator greater                              : 1
+# Multiplexers                                         : 25
+ 1-bit 12-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 6
+ 12-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 9
+ 4-bit 2-to-1 multiplexer                              : 7
+
 =========================================================================
 
 =========================================================================
@@ -147,7 +200,20 @@ Found no macro
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 12-bit adder                                          : 1
+ 3-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+# Comparators                                          : 1
+ 3-bit comparator greater                              : 1
+# Multiplexers                                         : 25
+ 1-bit 12-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 6
+ 12-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 9
+ 4-bit 2-to-1 multiplexer                              : 7
+
 =========================================================================
 
 =========================================================================
@@ -155,6 +221,10 @@ Found no macro
 =========================================================================
 
 Optimizing unit <FPCVT> ...
+
+Optimizing unit <twotosig> ...
+
+Optimizing unit <round> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -187,6 +257,22 @@ Top Level Output File Name         : FPCVT.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
+# BELS                             : 73
+#      GND                         : 1
+#      INV                         : 10
+#      LUT1                        : 1
+#      LUT4                        : 7
+#      LUT5                        : 15
+#      LUT6                        : 16
+#      MUXCY                       : 10
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 11
+# FlipFlops/Latches                : 3
+#      LD                          : 3
+# IO Buffers                       : 20
+#      IBUF                        : 12
+#      OBUF                        : 8
 
 Device utilization summary:
 ---------------------------
@@ -195,17 +281,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
+ Number of Slice LUTs:                   49  out of   9112     0%  
+    Number used as Logic:                49  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:     49
+   Number with an unused Flip Flop:      49  out of     49   100%  
+   Number with an unused LUT:             0  out of     49     0%  
+   Number of fully used LUT-FF pairs:     0  out of     49     0%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          20
- Number of bonded IOBs:                   0  out of    232     0%  
+ Number of bonded IOBs:                  20  out of    232     8%  
+    IOB Flip Flops/Latches:               3
 
 Specific Feature Utilization:
 
@@ -227,7 +316,15 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                     | Clock buffer(FF name)  | Load  |
+-----------------------------------------------------------------+------------------------+-------+
+block3/GND_4_o_GND_4_o_OR_47_o(block3/GND_4_o_GND_4_o_OR_47_o3:O)| NONE(*)(block3/E_0)    | 3     |
+-----------------------------------------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -238,13 +335,83 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
-   Maximum combinational path delay: No path found
+   Minimum input arrival time before clock: 8.894ns
+   Maximum output required time after clock: 3.648ns
+   Maximum combinational path delay: 12.007ns
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'block3/GND_4_o_GND_4_o_OR_47_o'
+  Total number of paths / destination ports: 3732 / 3
+-------------------------------------------------------------------------
+Offset:              8.894ns (Levels of Logic = 8)
+  Source:            D<11> (PAD)
+  Destination:       block3/E_0 (LATCH)
+  Destination Clock: block3/GND_4_o_GND_4_o_OR_47_o falling
+
+  Data Path: D<11> to block3/E_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.222   1.062  D_11_IBUF (D_11_IBUF)
+     LUT6:I4->O           12   0.203   1.156  block1/D[11]_PWR_2_o_equal_2_o1 (block1/D[11]_PWR_2_o_equal_2_o1)
+     LUT5:I1->O            8   0.203   1.167  block1/Mmux_sigMag71 (sigMag<4>)
+     LUT6:I0->O            1   0.203   0.808  block2/Mmux_E1_SW0 (N01)
+     LUT6:I3->O            5   0.205   1.079  block2/Mmux_E1 (E_temp<0>)
+     LUT6:I0->O            1   0.203   0.000  block3/Mmux_GND_4_o_GND_4_o_equal_4_o_6 (block3/Mmux_GND_4_o_GND_4_o_equal_4_o_6)
+     MUXF7:I1->O           7   0.140   1.002  block3/Mmux_GND_4_o_GND_4_o_equal_4_o_5_f7 (block3/Mmux_GND_4_o_GND_4_o_equal_4_o_5_f7)
+     LUT4:I1->O            1   0.205   0.000  block3/Mmux_E_temp[0]_E_temp[2]_MUX_46_o11 (block3/E_temp[0]_E_temp[2]_MUX_46_o)
+     LD:D                      0.037          block3/E_0
+    ----------------------------------------
+    Total                      8.894ns (2.621ns logic, 6.273ns route)
+                                       (29.5% logic, 70.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'block3/GND_4_o_GND_4_o_OR_47_o'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              3.648ns (Levels of Logic = 1)
+  Source:            block3/E_2 (LATCH)
+  Destination:       E<2> (PAD)
+  Source Clock:      block3/GND_4_o_GND_4_o_OR_47_o falling
+
+  Data Path: block3/E_2 to E<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  block3/E_2 (block3/E_2)
+     OBUF:I->O                 2.571          E_2_OBUF (E<2>)
+    ----------------------------------------
+    Total                      3.648ns (3.069ns logic, 0.579ns route)
+                                       (84.1% logic, 15.9% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5207 / 4
+-------------------------------------------------------------------------
+Delay:               12.007ns (Levels of Logic = 9)
+  Source:            D<11> (PAD)
+  Destination:       F<2> (PAD)
+
+  Data Path: D<11> to F<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.222   1.062  D_11_IBUF (D_11_IBUF)
+     LUT6:I4->O           12   0.203   1.156  block1/D[11]_PWR_2_o_equal_2_o1 (block1/D[11]_PWR_2_o_equal_2_o1)
+     LUT5:I1->O            8   0.203   1.167  block1/Mmux_sigMag71 (sigMag<4>)
+     LUT6:I0->O            1   0.203   0.808  block2/Mmux_E1_SW0 (N01)
+     LUT6:I3->O            5   0.205   1.079  block2/Mmux_E1 (E_temp<0>)
+     LUT6:I0->O            1   0.203   0.000  block3/Mmux_GND_4_o_GND_4_o_equal_4_o_6 (block3/Mmux_GND_4_o_GND_4_o_equal_4_o_6)
+     MUXF7:I1->O           7   0.140   1.002  block3/Mmux_GND_4_o_GND_4_o_equal_4_o_5_f7 (block3/Mmux_GND_4_o_GND_4_o_equal_4_o_5_f7)
+     LUT6:I3->O            1   0.205   0.579  block3/Mmux_F31 (F_2_OBUF)
+     OBUF:I->O                 2.571          F_2_OBUF (F<2>)
+    ----------------------------------------
+    Total                     12.007ns (5.155ns logic, 6.852ns route)
+                                       (42.9% logic, 57.1% route)
 
 =========================================================================
 
@@ -254,14 +421,14 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.99 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.20 secs
  
 --> 
 
-Total memory usage is 257368 kilobytes
+Total memory usage is 257048 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    9 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

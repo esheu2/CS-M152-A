@@ -5,11 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"E:/lab1/FPCVT_TB.v" Line 39: Target &lt;<arg fmt="%s" index="1">E</arg>&gt; of concurrent assignment or output port connection should be a net type.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"E:/lab1/FPCVT_TB.v" Line 40: Target &lt;<arg fmt="%s" index="1">F</arg>&gt; of concurrent assignment or output port connection should be a net type.
-</msg>
-
 </messages>
 
