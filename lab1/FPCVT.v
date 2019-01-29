@@ -243,29 +243,29 @@ module round( sig, E_temp, F_temp, E, F);
   begin
     E = E_temp;
     F = F_temp;
-  end*/
+  end
   always @(*)
     begin
       if(E_temp > 1)
         begin
-          if ( sig[10] )
+          if ( sig[11] )
             begin
-              if (sig[6])
+              if (sig[7])
                 begin
-                if (F_temp == 4'b1111)
-                begin
-                  if(E_temp == 3'b111)
-                  begin
-                     F = F_temp;
-                     E = E_temp;
-                  end
-                  else
-                  begin
-                    F = 4'b1000;
-                    E = E_temp + 1'b1;
-                  end
-                end
-                else
+                    if (F_temp == 4'b1111)
+                    begin
+                        if(E_temp == 3'b111)
+                        begin
+                            F = F_temp;
+                            E = E_temp;
+                        end
+                        else
+                        begin
+                            F = 4'b1000;
+                            E = E_temp + 1'b1;
+                        end
+                    end
+                    else
                 begin
                     F = F_temp + 1'b1;
                     E = E_temp;
@@ -310,5 +310,42 @@ module round( sig, E_temp, F_temp, E, F);
             E = E_temp;
             F = F_temp;
         end
+    end*/
+    always @(*)
+    begin
+    if(E_temp >= 1)
+    begin
+        if(sig[E_temp - 1])
+        begin
+            if(F_temp == 4'b1111)
+            begin
+                if(E_temp == 3'b111)
+                begin
+                    F = F_temp;
+                    E = E_temp;
+                end
+                else
+                begin
+                    F = 4'b1000;
+                    E = E_temp + 1;
+                end
+            end
+            else
+            begin
+                F = F_temp + 1;
+                E = E_temp;
+            end
+        end
+        else
+        begin
+            F = F_temp;
+            E = E_temp;
+        end
+    end
+    else
+    begin
+        F = F_temp;
+        E = E_temp;
+    end
     end
 endmodule

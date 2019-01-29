@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\152\CS-M152-A\lab1\FPCVT_TB_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/152/CS-M152-A/lab1/FPCVT_TB_isim_beh.wdb 
+Running: C:\Users\152\CS-M152-A\lab1\tbS_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/152/CS-M152-A/lab1/tbS_isim_beh.wdb 
 ISim P.68d (signature 0x7708f090)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
@@ -13,3 +13,6 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+# run all
+    205875 ... finishing, number of errors =           0
+Stopped at time : 205875 ns : File "C:/Users/152/Downloads/tb_grading.v" Line 75
