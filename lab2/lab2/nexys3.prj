@@ -1,4 +1,5 @@
 verilog work "../rtl/seq_add.v"
+verilog work "../rtl/multi_-seq_multi.v"
 verilog work "../rtl/uart_fifo.v"
 verilog work "../rtl/uart.v"
 verilog work "../rtl/seq_rf.v"

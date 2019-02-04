@@ -22,12 +22,15 @@ module seq_alu (/*AUTOARG*/
    reg                       o_valid;
 
    wire [alu_width-1:0]      add_data;
+   wire [alu_width-1:0]      multi_data;
    wire                      add_valid;
+   wire                      multi_valid;
    
    always @* // Verilog-2001 style
      case (i_op)
        seq_op_push: o_data = {i_data_a, i_const}; // upper bits truncated
        seq_op_add:  o_data = add_data;
+       seq_op_multi: o_data = multi_data;
        default:     o_data = i_data_a;
      endcase // case (i_op)
 
@@ -35,6 +38,7 @@ module seq_alu (/*AUTOARG*/
      case (i_op)
        seq_op_push: o_valid = i_valid;
        seq_op_add:  o_valid = add_valid;
+       seq_op_multi: o_valid = multi_valid;
        default:     o_valid = i_valid;
      endcase // case (i_op)
 
@@ -48,5 +52,14 @@ module seq_alu (/*AUTOARG*/
                  .i_valid               (i_valid),
                  .clk                   (clk),
                  .rst                   (rst));
-   
+   seq_multi multi_ (// Outputs
+                 .o_data                (multi_data),
+                 .o_valid               (multi_valid),
+                 /*AUTOINST*/
+                 // Inputs
+                 .i_data_a              (i_data_a[alu_width-1:0]),
+                 .i_data_b              (i_data_b[alu_width-1:0]),
+                 .i_valid               (i_valid),
+                 .clk                   (clk),
+                 .rst                   (rst));
 endmodule // seq_alu

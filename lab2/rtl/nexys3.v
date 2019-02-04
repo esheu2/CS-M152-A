@@ -2,7 +2,7 @@ module nexys3 (/*AUTOARG*/
    // Outputs
    RsTx, led,
    // Inputs
-   RsRx, sw, btnS, btnR, clk
+   RsRx, sw, btnS, btn1, btnR, clk
    );
 
 `include "seq_definitions.v"
@@ -15,6 +15,7 @@ module nexys3 (/*AUTOARG*/
    input  [7:0] sw;
    output [7:0] led;
    input        btnS;                 // single-step instruction
+   input        btn1;                 //send button
    input        btnR;                 // arst
    
    // Logic
@@ -41,14 +42,18 @@ module nexys3 (/*AUTOARG*/
    reg [7:0]   inst_wd;
    reg         inst_vld;
    reg [2:0]   step_d;
+   
+   reg [7:0]   inst_wd1;    //send variables
+   reg         inst_vld1;
+   reg [2:0]   step_d1;
 
    reg [7:0]   inst_cnt;
-   
+   reg [7:0]   inst_cnt1;
    // ===========================================================================
    // Asynchronous Reset
    // ===========================================================================
 
-   assign arst_i = btnR;
+   assign arst_i = btnR;        
    assign rst = arst_ff[0];
    
    always @ (posedge clk or posedge arst_i)
@@ -86,29 +91,49 @@ module nexys3 (/*AUTOARG*/
        begin
           inst_wd[7:0] <= 0;
           step_d[2:0]  <= 0;
+          inst_wd1[7:0] <= 0;
+          step_d1[2:0]  <= 0;
        end
      else if (clk_en) // Down sampling
        begin
           inst_wd[7:0] <= sw[7:0];
           step_d[2:0]  <= {btnS, step_d[2:1]};
+          inst_wd1[7:0] <= sw[7:0];
+          step_d1[2:0]  <= {btn1, step_d1[2:1]};
        end
 	   
 	// Detecting posedge of btnS
    wire is_btnS_posedge;
+   wire is_btn1_posedge;
    assign is_btnS_posedge = ~ step_d[0] & step_d[1];
+   assign is_btn1_posedge = ~ step_d1[0] & step_d1[1];
    always @ (posedge clk)
      if (rst)
+     begin
        inst_vld <= 1'b0;
+       inst_vld1 <= 1'b0;
+      end
      else if (clk_en_d)
+     begin
        inst_vld <= is_btnS_posedge;
+       inst_vld1 <= is_btn1_posedge;
+      end
 	  else
+      begin
 	    inst_vld <= 0;
-
+        inst_vld1 <= 0;
+      end
+      
    always @ (posedge clk)
      if (rst)
+     begin
        inst_cnt <= 0;
+       inst_cnt1 <= 0;
+     end
      else if (inst_vld)
        inst_cnt <= inst_cnt + 1;
+     else if (inst_vld1)
+       inst_cnt1 <= inst_cnt1 + 1;
 
    assign led[7:0] = inst_cnt[7:0];
    
@@ -123,6 +148,7 @@ module nexys3 (/*AUTOARG*/
              .i_tx_busy                 (uart_tx_busy),
              .i_inst                    (inst_wd[seq_in_width-1:0]),
              .i_inst_valid              (inst_vld),
+             .i_inst_valid              (inst_vld1),
              /*AUTOINST*/
              // Inputs
              .clk                       (clk),

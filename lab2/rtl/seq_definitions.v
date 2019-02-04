@@ -6,7 +6,7 @@ parameter seq_im_width = 4; // immediate (constant) size
 
 parameter seq_op_push = 2'b00;
 parameter seq_op_add  = 2'b01;
-parameter seq_op_mult = 2'b10;
+parameter seq_op_multi = 2'b10;
 parameter seq_op_send = 2'b11;
 
 parameter seq_dp_width = 16;

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-02-04T10:14:12</DateModified>
+  <DateModified>2019-02-04T11:41:33</DateModified>
   <ModuleName>nexys3</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2019-02-04T10:55:24</SummaryTimeStamp>
   <SavedFilePath>C:/Users/152/CS-M152-A/lab2/lab2/iseconfig/nexys3.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/152/CS-M152-A/lab2/lab2\</ImplementationReportsDirectory>
   <DateInitialized>2019-01-30T11:10:31</DateInitialized>
