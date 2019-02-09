@@ -4,7 +4,7 @@ run
 -ifn nexys3.prj
 -ofn nexys3
 -ofmt NGC
--p xc7a100t-3-csg324
+-p xc6slx16-3-csg324
 -top nexys3
 -opt_mode Speed
 -opt_level 1
@@ -40,7 +40,7 @@ run
 -use_dsp48 Auto
 -iobuf YES
 -max_fanout 100000
--bufg 32
+-bufg 16
 -register_duplication YES
 -register_balancing No
 -optimize_primitives NO

@@ -1,4 +1,4 @@
-verilog work "seq_multi.v"
+verilog work "seq_mult.v"
 verilog work "seq_add.v"
 verilog work "uart_fifo.v"
 verilog work "uart.v"

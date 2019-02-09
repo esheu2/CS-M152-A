@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    01:17:09 02/08/2019 
+// Create Date:    16:19:33 02/08/2019 
 // Design Name: 
-// Module Name:    seq_multi 
+// Module Name:    seq_mult 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module seq_multi (/*AUTOARG*/
+module seq_mult (/*AUTOARG*/
    // Outputs
    o_data, o_valid,
    // Inputs
@@ -40,5 +40,5 @@ module seq_multi (/*AUTOARG*/
    assign o_valid = i_valid;
    assign o_data  = i_data_a * i_data_b;
    
-endmodule // seq_add
+endmodule // seq_mult
 
