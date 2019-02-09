@@ -2,7 +2,7 @@ module nexys3 (/*AUTOARG*/
    // Outputs
    RsTx, led,
    // Inputs
-   RsRx, sw, btnS, btnR, clk
+   RsRx, sw, btnS, btnR, btnSend, clk
    );
 
 `include "seq_definitions.v"
@@ -16,6 +16,7 @@ module nexys3 (/*AUTOARG*/
    output [7:0] led;
    input        btnS;                 // single-step instruction
    input        btnR;                 // arst
+   input        btnSend;                 // send button
    
    // Logic
    input        clk;                  // 100MHz
@@ -39,8 +40,11 @@ module nexys3 (/*AUTOARG*/
    reg         clk_en_d;
       
    reg [7:0]   inst_wd;
+   reg [7:0]   inst_wd_send;
    reg         inst_vld;
+   reg         inst_vld_send;
    reg [2:0]   step_d;
+   reg [2:0]   step_d_send;
 
    reg [7:0]   inst_cnt;
    
@@ -83,19 +87,23 @@ module nexys3 (/*AUTOARG*/
 
    always @ (posedge clk)
      if (rst)
-       begin
+       begin          
           inst_wd[7:0] <= 0;
           step_d[2:0]  <= 0;
+          step_d_send[2:0]  <= 0;
        end
      else if (clk_en) // Down sampling
        begin
           inst_wd[7:0] <= sw[7:0];
           step_d[2:0]  <= {btnS, step_d[2:1]};
+          step_d_send[2:0]  <= {btnSend, step_d_send[2:1]};
        end
 	   
-	// Detecting posedge of btnS
+	// Detecting posedge of btnS and btnSend
    wire is_btnS_posedge;
    assign is_btnS_posedge = ~ step_d[0] & step_d[1];
+   wire is_btnSend_posedge;
+   assign is_btnSend_posedge = ~ step_d_send[0] & step_d_send[1];
    always @ (posedge clk)
      if (rst)
        inst_vld <= 1'b0;
@@ -103,12 +111,24 @@ module nexys3 (/*AUTOARG*/
        inst_vld <= is_btnS_posedge;
 	  else
 	    inst_vld <= 0;
-
+        
    always @ (posedge clk)
      if (rst)
+       inst_vld_send <= 1'b0;
+     else if (clk_en_d)
+       inst_vld_send <= is_btnSend_posedge;
+	  else
+	    inst_vld_send <= 0;
+
+   always @ (posedge clk)
+   begin
+     if (rst)
        inst_cnt <= 0;
-     else if (inst_vld)
+     else if (inst_vld | inst_vld_send)
        inst_cnt <= inst_cnt + 1;
+     //if (inst_vld && is_btnSend_posedge)
+       //inst_wd[7:6] <= 2'b11;
+   end
 
    assign led[7:0] = inst_cnt[7:0];
    
@@ -123,6 +143,7 @@ module nexys3 (/*AUTOARG*/
              .i_tx_busy                 (uart_tx_busy),
              .i_inst                    (inst_wd[seq_in_width-1:0]),
              .i_inst_valid              (inst_vld),
+             .i_inst_valid_send         (inst_vld_send),
              /*AUTOINST*/
              // Inputs
              .clk                       (clk),

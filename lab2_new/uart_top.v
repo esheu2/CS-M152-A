@@ -21,9 +21,12 @@ module uart_top (/*AUTOARG*/
    input                    rst;
 
    parameter stIdle = 0;
-   parameter stNib1 = 1;
-   parameter stNL   = uart_num_nib+1;
-   parameter stCR   = uart_num_nib+2;
+   parameter stNib1 = 4;
+   parameter stNL   = uart_num_nib+4;
+   parameter stCR   = uart_num_nib+5;
+   parameter stPrintR = 1;
+   parameter stPrintReg_num = 2;
+   parameter stPrintColon = 3;
    
    /*AUTOWIRE*/
    // Beginning of automatic wires (for undeclared instantiated-module outputs)
@@ -37,7 +40,7 @@ module uart_top (/*AUTOARG*/
    wire                 tfifo_rd;
    reg                  tfifo_rd_z;
    reg [seq_dp_width-1:0]  tx_data;
-   reg [2:0]               state;
+   reg [3:0]               state;
 
    assign o_tx_busy = (state!=stIdle);
    
@@ -90,6 +93,15 @@ module uart_top (/*AUTOARG*/
      case (state)
        stNL:    tfifo_in = "\n";
        stCR:    tfifo_in = "\r";
+       stPrintR: tfifo_in = "R";
+       stPrintReg_num: 
+                    case (i_tx_reg)
+                        2'b00: tfifo_in = "0";
+                        2'b01: tfifo_in = "1";
+                        2'b10: tfifo_in = "2";
+                        2'b11: tfifo_in = "3";
+                    endcase
+       stPrintColon: tfifo_in = ":";
        default: tfifo_in = fnNib2ASCII(tx_data[seq_dp_width-1:seq_dp_width-4]);
      endcase // case (state)
    

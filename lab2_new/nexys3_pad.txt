@@ -1,7 +1,7 @@
 Release 14.6 - par P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Feb 08 16:46:50 2019
+Fri Feb 08 17:37:55 2019
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -27,7 +27,7 @@ Pinout by Pin Number:
 |A5        |           |IOBS     |IO_L6N_0                     |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A6        |           |IOBS     |IO_L8N_VREF_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A7        |           |IOBS     |IO_L10N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|A8        |           |IOBS     |IO_L33N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
+|A8        |btnSend    |IOB      |IO_L33N_0                    |INPUT    |LVCMOS33   |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |A9        |           |IOBS     |IO_L35N_GCLK16_0             |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A10       |           |IOBS     |IO_L37N_GCLK12_0             |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A11       |           |IOBS     |IO_L39N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |

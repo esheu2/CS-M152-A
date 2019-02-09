@@ -10,23 +10,23 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri Feb 08 16:46:27 2019
+Mapped Date    : Fri Feb 08 17:37:34 2019
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    1
 Slice Logic Utilization:
-  Number of Slice Registers:                   183 out of  18,224    1%
-    Number used as Flip Flops:                 183
+  Number of Slice Registers:                   187 out of  18,224    1%
+    Number used as Flip Flops:                 187
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        260 out of   9,112    2%
-    Number used as logic:                      259 out of   9,112    2%
-      Number using O6 output only:             193
+  Number of Slice LUTs:                        262 out of   9,112    2%
+    Number used as logic:                      261 out of   9,112    2%
+      Number using O6 output only:             194
       Number using O5 output only:              22
-      Number using O5 and O6:                   44
+      Number using O5 and O6:                   45
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
     Number used exclusively as route-thrus:      1
@@ -37,13 +37,13 @@ Slice Logic Utilization:
 Slice Logic Distribution:
   Number of occupied Slices:                    77 out of   2,278    3%
   Number of MUXCYs used:                        44 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:          266
-    Number with an unused Flip Flop:            94 out of     266   35%
-    Number with an unused LUT:                   6 out of     266    2%
-    Number of fully used LUT-FF pairs:         166 out of     266   62%
-    Number of unique control sets:               8
+  Number of LUT Flip Flop pairs used:          271
+    Number with an unused Flip Flop:            95 out of     271   35%
+    Number with an unused LUT:                   9 out of     271    3%
+    Number of fully used LUT-FF pairs:         167 out of     271   61%
+    Number of unique control sets:               9
     Number of slice register sites lost
-      to control set restrictions:              17 out of  18,224    1%
+      to control set restrictions:              21 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -52,8 +52,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        21 out of     232    9%
-    Number of LOCed IOBs:                       21 out of      21  100%
+  Number of bonded IOBs:                        22 out of     232    9%
+    Number of LOCed IOBs:                       22 out of      22  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -80,10 +80,10 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.51
+Average Fanout of Non-Clock Nets:                4.46
 
 Peak Memory Usage:  371 MB
-Total REAL time to MAP completion:  11 secs 
+Total REAL time to MAP completion:  9 secs 
 Total CPU time to MAP completion:   9 secs 
 
 Table of Contents
@@ -157,6 +157,7 @@ Section 6 - IOB Properties
 | RsTx                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | btnR                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | btnS                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| btnSend                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | clk                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | led<0>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | led<1>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
