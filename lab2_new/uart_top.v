@@ -14,7 +14,7 @@ module uart_top (/*AUTOARG*/
    output [7:0]             o_rx_data;
    output                   o_rx_valid;
    
-   input i_tx_reg;
+   input [1:0]              i_tx_reg;
    input [seq_dp_width-1:0] i_tx_data;
    input                    i_tx_stb;
    
@@ -53,7 +53,7 @@ module uart_top (/*AUTOARG*/
          stIdle:
            if (i_tx_stb)
              begin
-                state   <= stNib1;
+                state   <= stPrintR;
                 tx_data <= i_tx_data;
              end
          stCR:
@@ -62,6 +62,7 @@ module uart_top (/*AUTOARG*/
            if (~tfifo_full)
              begin
                 state   <= state + 1;
+             if (state > 3)
                 tx_data <= {tx_data,4'b0000};
              end
        endcase // case (state)

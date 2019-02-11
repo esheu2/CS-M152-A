@@ -30,19 +30,19 @@ Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH
 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 35505 paths analyzed, 1157 endpoints analyzed, 0 failing endpoints
+ 35721 paths analyzed, 1158 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   7.994ns.
+ Minimum period is   8.633ns.
 --------------------------------------------------------------------------------
 
-Paths for end point seq_/rf_/rf_3_24 (SLICE_X5Y12.A2), 192 paths
+Paths for end point seq_/rf_/rf_3_18 (SLICE_X15Y7.C2), 192 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     2.006ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_wd_5 (FF)
-  Destination:          seq_/rf_/rf_3_24 (FF)
+Slack (setup path):     1.367ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_25 (FF)
+  Destination:          seq_/rf_/rf_3_18 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.958ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.001ns (0.280 - 0.281)
+  Data Path Delay:      8.562ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.036ns (0.239 - 0.275)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -53,33 +53,33 @@ Slack (setup path):     2.006ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: inst_wd_5 to seq_/rf_/rf_3_24
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_25 to seq_/rf_/rf_3_18
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y13.BQ       Tcko                  0.391   inst_wd<7>
-                                                       inst_wd_5
-    SLICE_X2Y12.B3       net (fanout=17)       1.443   inst_wd<5>
-    SLICE_X2Y12.B        Tilo                  0.203   seq_/rf_/rf_3<59>
-                                                       seq_/rf_/Mmux_o_data_a31
-    DSP48_X0Y2.B11       net (fanout=6)        0.815   seq_tx_data<11>
-    DSP48_X0Y2.M8        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X10Y15.BQ      Tcko                  0.447   seq_/rf_/rf_3<27>
+                                                       seq_/rf_/rf_3_25
+    SLICE_X16Y16.B5      net (fanout=3)        1.478   seq_/rf_/rf_3<25>
+    SLICE_X16Y16.B       Tilo                  0.205   seq_/rf_/rf_3<61>
+                                                       seq_/rf_/Mmux_o_data_a161
+    DSP48_X0Y3.B9        net (fanout=6)        1.031   seq_tx_data<9>
+    DSP48_X0Y3.M2        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X5Y12.A2       net (fanout=4)        1.420   seq_/alu_/mult_data<8>
-    SLICE_X5Y12.CLK      Tas                   0.322   seq_/rf_/rf_3<27>
-                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT151
-                                                       seq_/rf_/rf_3_24
+    SLICE_X15Y7.C2       net (fanout=4)        1.715   seq_/alu_/mult_data<2>
+    SLICE_X15Y7.CLK      Tas                   0.322   seq_/rf_/rf_3<19>
+                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT91
+                                                       seq_/rf_/rf_3_18
     -------------------------------------------------  ---------------------------
-    Total                                      7.958ns (4.280ns logic, 3.678ns route)
-                                                       (53.8% logic, 46.2% route)
+    Total                                      8.562ns (4.338ns logic, 4.224ns route)
+                                                       (50.7% logic, 49.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.236ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               seq_/rf_/rf_3_13 (FF)
-  Destination:          seq_/rf_/rf_3_24 (FF)
+Slack (setup path):     1.486ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_9 (FF)
+  Destination:          seq_/rf_/rf_3_18 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.735ns (Levels of Logic = 3)
-  Clock Path Skew:      0.006ns (0.280 - 0.274)
+  Data Path Delay:      8.443ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.036ns (0.239 - 0.275)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -90,33 +90,33 @@ Slack (setup path):     2.236ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_13 to seq_/rf_/rf_3_24
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_9 to seq_/rf_/rf_3_18
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X10Y14.BQ      Tcko                  0.447   seq_/rf_/rf_3<15>
-                                                       seq_/rf_/rf_3_13
-    SLICE_X9Y13.B3       net (fanout=3)        1.076   seq_/rf_/rf_3<13>
-    SLICE_X9Y13.B        Tilo                  0.259   inst_wd<7>
-                                                       seq_/rf_/Mmux_o_data_a51
-    DSP48_X0Y2.B13       net (fanout=5)        0.847   seq_tx_data<13>
-    DSP48_X0Y2.M8        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X11Y15.BQ      Tcko                  0.391   seq_/rf_/rf_3<11>
+                                                       seq_/rf_/rf_3_9
+    SLICE_X16Y16.B1      net (fanout=3)        1.415   seq_/rf_/rf_3<9>
+    SLICE_X16Y16.B       Tilo                  0.205   seq_/rf_/rf_3<61>
+                                                       seq_/rf_/Mmux_o_data_a161
+    DSP48_X0Y3.B9        net (fanout=6)        1.031   seq_tx_data<9>
+    DSP48_X0Y3.M2        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X5Y12.A2       net (fanout=4)        1.420   seq_/alu_/mult_data<8>
-    SLICE_X5Y12.CLK      Tas                   0.322   seq_/rf_/rf_3<27>
-                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT151
-                                                       seq_/rf_/rf_3_24
+    SLICE_X15Y7.C2       net (fanout=4)        1.715   seq_/alu_/mult_data<2>
+    SLICE_X15Y7.CLK      Tas                   0.322   seq_/rf_/rf_3<19>
+                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT91
+                                                       seq_/rf_/rf_3_18
     -------------------------------------------------  ---------------------------
-    Total                                      7.735ns (4.392ns logic, 3.343ns route)
-                                                       (56.8% logic, 43.2% route)
+    Total                                      8.443ns (4.282ns logic, 4.161ns route)
+                                                       (50.7% logic, 49.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.280ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_wd_4 (FF)
-  Destination:          seq_/rf_/rf_3_24 (FF)
+Slack (setup path):     1.504ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_6 (FF)
+  Destination:          seq_/rf_/rf_3_18 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.684ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.001ns (0.280 - 0.281)
+  Data Path Delay:      8.439ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.022ns (0.239 - 0.261)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -127,36 +127,36 @@ Slack (setup path):     2.280ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: inst_wd_4 to seq_/rf_/rf_3_24
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_6 to seq_/rf_/rf_3_18
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y13.AQ       Tcko                  0.391   inst_wd<7>
-                                                       inst_wd_4
-    SLICE_X10Y4.C3       net (fanout=17)       1.227   inst_wd<4>
-    SLICE_X10Y4.C        Tilo                  0.204   uart_top_/tx_data<3>
-                                                       seq_/rf_/Mmux_o_data_a101
-    DSP48_X0Y2.B3        net (fanout=6)        0.756   seq_tx_data<3>
-    DSP48_X0Y2.M8        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X15Y11.CQ      Tcko                  0.391   seq_/rf_/rf_3<7>
+                                                       seq_/rf_/rf_3_6
+    SLICE_X15Y13.B1      net (fanout=3)        1.795   seq_/rf_/rf_3<6>
+    SLICE_X15Y13.B       Tilo                  0.259   seq_tx_data<6>
+                                                       seq_/rf_/Mmux_o_data_a131
+    DSP48_X0Y3.B6        net (fanout=6)        0.593   seq_tx_data<6>
+    DSP48_X0Y3.M2        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X5Y12.A2       net (fanout=4)        1.420   seq_/alu_/mult_data<8>
-    SLICE_X5Y12.CLK      Tas                   0.322   seq_/rf_/rf_3<27>
-                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT151
-                                                       seq_/rf_/rf_3_24
+    SLICE_X15Y7.C2       net (fanout=4)        1.715   seq_/alu_/mult_data<2>
+    SLICE_X15Y7.CLK      Tas                   0.322   seq_/rf_/rf_3<19>
+                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT91
+                                                       seq_/rf_/rf_3_18
     -------------------------------------------------  ---------------------------
-    Total                                      7.684ns (4.281ns logic, 3.403ns route)
-                                                       (55.7% logic, 44.3% route)
+    Total                                      8.439ns (4.336ns logic, 4.103ns route)
+                                                       (51.4% logic, 48.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point seq_/rf_/rf_3_44 (SLICE_X11Y14.A4), 192 paths
+Paths for end point seq_/rf_/rf_3_17 (SLICE_X15Y7.B4), 192 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     2.083ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_wd_5 (FF)
-  Destination:          seq_/rf_/rf_3_44 (FF)
+Slack (setup path):     1.440ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_25 (FF)
+  Destination:          seq_/rf_/rf_3_17 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.861ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.021ns (0.260 - 0.281)
+  Data Path Delay:      8.489ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.036ns (0.239 - 0.275)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -167,33 +167,33 @@ Slack (setup path):     2.083ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: inst_wd_5 to seq_/rf_/rf_3_44
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_25 to seq_/rf_/rf_3_17
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y13.BQ       Tcko                  0.391   inst_wd<7>
-                                                       inst_wd_5
-    SLICE_X2Y12.B3       net (fanout=17)       1.443   inst_wd<5>
-    SLICE_X2Y12.B        Tilo                  0.203   seq_/rf_/rf_3<59>
-                                                       seq_/rf_/Mmux_o_data_a31
-    DSP48_X0Y2.B11       net (fanout=6)        0.815   seq_tx_data<11>
-    DSP48_X0Y2.M12       Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X10Y15.BQ      Tcko                  0.447   seq_/rf_/rf_3<27>
+                                                       seq_/rf_/rf_3_25
+    SLICE_X16Y16.B5      net (fanout=3)        1.478   seq_/rf_/rf_3<25>
+    SLICE_X16Y16.B       Tilo                  0.205   seq_/rf_/rf_3<61>
+                                                       seq_/rf_/Mmux_o_data_a161
+    DSP48_X0Y3.B9        net (fanout=6)        1.031   seq_tx_data<9>
+    DSP48_X0Y3.M1        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X11Y14.A4      net (fanout=4)        1.323   seq_/alu_/mult_data<12>
-    SLICE_X11Y14.CLK     Tas                   0.322   seq_/rf_/rf_3<47>
-                                                       seq_/rf_/Mmux_rf[1][15]_i_wdata[15]_mux_4_OUT41
-                                                       seq_/rf_/rf_3_44
+    SLICE_X15Y7.B4       net (fanout=4)        1.642   seq_/alu_/mult_data<1>
+    SLICE_X15Y7.CLK      Tas                   0.322   seq_/rf_/rf_3<19>
+                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT81
+                                                       seq_/rf_/rf_3_17
     -------------------------------------------------  ---------------------------
-    Total                                      7.861ns (4.280ns logic, 3.581ns route)
-                                                       (54.4% logic, 45.6% route)
+    Total                                      8.489ns (4.338ns logic, 4.151ns route)
+                                                       (51.1% logic, 48.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.318ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               seq_/rf_/rf_3_13 (FF)
-  Destination:          seq_/rf_/rf_3_44 (FF)
+Slack (setup path):     1.559ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_9 (FF)
+  Destination:          seq_/rf_/rf_3_17 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.638ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.009ns (0.154 - 0.163)
+  Data Path Delay:      8.370ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.036ns (0.239 - 0.275)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -204,33 +204,33 @@ Slack (setup path):     2.318ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_13 to seq_/rf_/rf_3_44
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_9 to seq_/rf_/rf_3_17
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X10Y14.BQ      Tcko                  0.447   seq_/rf_/rf_3<15>
-                                                       seq_/rf_/rf_3_13
-    SLICE_X9Y13.B3       net (fanout=3)        1.076   seq_/rf_/rf_3<13>
-    SLICE_X9Y13.B        Tilo                  0.259   inst_wd<7>
-                                                       seq_/rf_/Mmux_o_data_a51
-    DSP48_X0Y2.B13       net (fanout=5)        0.847   seq_tx_data<13>
-    DSP48_X0Y2.M12       Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X11Y15.BQ      Tcko                  0.391   seq_/rf_/rf_3<11>
+                                                       seq_/rf_/rf_3_9
+    SLICE_X16Y16.B1      net (fanout=3)        1.415   seq_/rf_/rf_3<9>
+    SLICE_X16Y16.B       Tilo                  0.205   seq_/rf_/rf_3<61>
+                                                       seq_/rf_/Mmux_o_data_a161
+    DSP48_X0Y3.B9        net (fanout=6)        1.031   seq_tx_data<9>
+    DSP48_X0Y3.M1        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X11Y14.A4      net (fanout=4)        1.323   seq_/alu_/mult_data<12>
-    SLICE_X11Y14.CLK     Tas                   0.322   seq_/rf_/rf_3<47>
-                                                       seq_/rf_/Mmux_rf[1][15]_i_wdata[15]_mux_4_OUT41
-                                                       seq_/rf_/rf_3_44
+    SLICE_X15Y7.B4       net (fanout=4)        1.642   seq_/alu_/mult_data<1>
+    SLICE_X15Y7.CLK      Tas                   0.322   seq_/rf_/rf_3<19>
+                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT81
+                                                       seq_/rf_/rf_3_17
     -------------------------------------------------  ---------------------------
-    Total                                      7.638ns (4.392ns logic, 3.246ns route)
-                                                       (57.5% logic, 42.5% route)
+    Total                                      8.370ns (4.282ns logic, 4.088ns route)
+                                                       (51.2% logic, 48.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.357ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_wd_4 (FF)
-  Destination:          seq_/rf_/rf_3_44 (FF)
+Slack (setup path):     1.577ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_6 (FF)
+  Destination:          seq_/rf_/rf_3_17 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.587ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.021ns (0.260 - 0.281)
+  Data Path Delay:      8.366ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.022ns (0.239 - 0.261)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -241,36 +241,36 @@ Slack (setup path):     2.357ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: inst_wd_4 to seq_/rf_/rf_3_44
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_6 to seq_/rf_/rf_3_17
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y13.AQ       Tcko                  0.391   inst_wd<7>
-                                                       inst_wd_4
-    SLICE_X10Y4.C3       net (fanout=17)       1.227   inst_wd<4>
-    SLICE_X10Y4.C        Tilo                  0.204   uart_top_/tx_data<3>
-                                                       seq_/rf_/Mmux_o_data_a101
-    DSP48_X0Y2.B3        net (fanout=6)        0.756   seq_tx_data<3>
-    DSP48_X0Y2.M12       Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X15Y11.CQ      Tcko                  0.391   seq_/rf_/rf_3<7>
+                                                       seq_/rf_/rf_3_6
+    SLICE_X15Y13.B1      net (fanout=3)        1.795   seq_/rf_/rf_3<6>
+    SLICE_X15Y13.B       Tilo                  0.259   seq_tx_data<6>
+                                                       seq_/rf_/Mmux_o_data_a131
+    DSP48_X0Y3.B6        net (fanout=6)        0.593   seq_tx_data<6>
+    DSP48_X0Y3.M1        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X11Y14.A4      net (fanout=4)        1.323   seq_/alu_/mult_data<12>
-    SLICE_X11Y14.CLK     Tas                   0.322   seq_/rf_/rf_3<47>
-                                                       seq_/rf_/Mmux_rf[1][15]_i_wdata[15]_mux_4_OUT41
-                                                       seq_/rf_/rf_3_44
+    SLICE_X15Y7.B4       net (fanout=4)        1.642   seq_/alu_/mult_data<1>
+    SLICE_X15Y7.CLK      Tas                   0.322   seq_/rf_/rf_3<19>
+                                                       seq_/rf_/Mmux_rf[2][15]_i_wdata[15]_mux_3_OUT81
+                                                       seq_/rf_/rf_3_17
     -------------------------------------------------  ---------------------------
-    Total                                      7.587ns (4.281ns logic, 3.306ns route)
-                                                       (56.4% logic, 43.6% route)
+    Total                                      8.366ns (4.336ns logic, 4.030ns route)
+                                                       (51.8% logic, 48.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point seq_/rf_/rf_3_12 (SLICE_X10Y14.A5), 192 paths
+Paths for end point seq_/rf_/rf_3_33 (SLICE_X15Y8.B3), 192 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     2.167ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_wd_5 (FF)
-  Destination:          seq_/rf_/rf_3_12 (FF)
+Slack (setup path):     1.516ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_25 (FF)
+  Destination:          seq_/rf_/rf_3_33 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.777ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.021ns (0.260 - 0.281)
+  Data Path Delay:      8.413ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.036ns (0.239 - 0.275)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -281,33 +281,33 @@ Slack (setup path):     2.167ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: inst_wd_5 to seq_/rf_/rf_3_12
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_25 to seq_/rf_/rf_3_33
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y13.BQ       Tcko                  0.391   inst_wd<7>
-                                                       inst_wd_5
-    SLICE_X2Y12.B3       net (fanout=17)       1.443   inst_wd<5>
-    SLICE_X2Y12.B        Tilo                  0.203   seq_/rf_/rf_3<59>
-                                                       seq_/rf_/Mmux_o_data_a31
-    DSP48_X0Y2.B11       net (fanout=6)        0.815   seq_tx_data<11>
-    DSP48_X0Y2.M12       Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X10Y15.BQ      Tcko                  0.447   seq_/rf_/rf_3<27>
+                                                       seq_/rf_/rf_3_25
+    SLICE_X16Y16.B5      net (fanout=3)        1.478   seq_/rf_/rf_3<25>
+    SLICE_X16Y16.B       Tilo                  0.205   seq_/rf_/rf_3<61>
+                                                       seq_/rf_/Mmux_o_data_a161
+    DSP48_X0Y3.B9        net (fanout=6)        1.031   seq_tx_data<9>
+    DSP48_X0Y3.M1        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X10Y14.A5      net (fanout=4)        1.272   seq_/alu_/mult_data<12>
-    SLICE_X10Y14.CLK     Tas                   0.289   seq_/rf_/rf_3<15>
-                                                       seq_/rf_/Mmux_rf[3][15]_i_wdata[15]_mux_2_OUT41
-                                                       seq_/rf_/rf_3_12
+    SLICE_X15Y8.B3       net (fanout=4)        1.566   seq_/alu_/mult_data<1>
+    SLICE_X15Y8.CLK      Tas                   0.322   seq_/rf_/rf_3<35>
+                                                       seq_/rf_/Mmux_rf[1][15]_i_wdata[15]_mux_4_OUT81
+                                                       seq_/rf_/rf_3_33
     -------------------------------------------------  ---------------------------
-    Total                                      7.777ns (4.247ns logic, 3.530ns route)
-                                                       (54.6% logic, 45.4% route)
+    Total                                      8.413ns (4.338ns logic, 4.075ns route)
+                                                       (51.6% logic, 48.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.411ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               seq_/rf_/rf_3_13 (FF)
-  Destination:          seq_/rf_/rf_3_12 (FF)
+Slack (setup path):     1.635ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_9 (FF)
+  Destination:          seq_/rf_/rf_3_33 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.554ns (Levels of Logic = 3)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      8.294ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.036ns (0.239 - 0.275)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -318,33 +318,33 @@ Slack (setup path):     2.411ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_13 to seq_/rf_/rf_3_12
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_9 to seq_/rf_/rf_3_33
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X10Y14.BQ      Tcko                  0.447   seq_/rf_/rf_3<15>
-                                                       seq_/rf_/rf_3_13
-    SLICE_X9Y13.B3       net (fanout=3)        1.076   seq_/rf_/rf_3<13>
-    SLICE_X9Y13.B        Tilo                  0.259   inst_wd<7>
-                                                       seq_/rf_/Mmux_o_data_a51
-    DSP48_X0Y2.B13       net (fanout=5)        0.847   seq_tx_data<13>
-    DSP48_X0Y2.M12       Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X11Y15.BQ      Tcko                  0.391   seq_/rf_/rf_3<11>
+                                                       seq_/rf_/rf_3_9
+    SLICE_X16Y16.B1      net (fanout=3)        1.415   seq_/rf_/rf_3<9>
+    SLICE_X16Y16.B       Tilo                  0.205   seq_/rf_/rf_3<61>
+                                                       seq_/rf_/Mmux_o_data_a161
+    DSP48_X0Y3.B9        net (fanout=6)        1.031   seq_tx_data<9>
+    DSP48_X0Y3.M1        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X10Y14.A5      net (fanout=4)        1.272   seq_/alu_/mult_data<12>
-    SLICE_X10Y14.CLK     Tas                   0.289   seq_/rf_/rf_3<15>
-                                                       seq_/rf_/Mmux_rf[3][15]_i_wdata[15]_mux_2_OUT41
-                                                       seq_/rf_/rf_3_12
+    SLICE_X15Y8.B3       net (fanout=4)        1.566   seq_/alu_/mult_data<1>
+    SLICE_X15Y8.CLK      Tas                   0.322   seq_/rf_/rf_3<35>
+                                                       seq_/rf_/Mmux_rf[1][15]_i_wdata[15]_mux_4_OUT81
+                                                       seq_/rf_/rf_3_33
     -------------------------------------------------  ---------------------------
-    Total                                      7.554ns (4.359ns logic, 3.195ns route)
-                                                       (57.7% logic, 42.3% route)
+    Total                                      8.294ns (4.282ns logic, 4.012ns route)
+                                                       (51.6% logic, 48.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.441ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_wd_4 (FF)
-  Destination:          seq_/rf_/rf_3_12 (FF)
+Slack (setup path):     1.658ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seq_/rf_/rf_3_6 (FF)
+  Destination:          seq_/rf_/rf_3_33 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.503ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.021ns (0.260 - 0.281)
+  Data Path Delay:      8.290ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.017ns (0.142 - 0.159)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -355,112 +355,112 @@ Slack (setup path):     2.441ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: inst_wd_4 to seq_/rf_/rf_3_12
+  Maximum Data Path at Slow Process Corner: seq_/rf_/rf_3_6 to seq_/rf_/rf_3_33
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y13.AQ       Tcko                  0.391   inst_wd<7>
-                                                       inst_wd_4
-    SLICE_X10Y4.C3       net (fanout=17)       1.227   inst_wd<4>
-    SLICE_X10Y4.C        Tilo                  0.204   uart_top_/tx_data<3>
-                                                       seq_/rf_/Mmux_o_data_a101
-    DSP48_X0Y2.B3        net (fanout=6)        0.756   seq_tx_data<3>
-    DSP48_X0Y2.M12       Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
+    SLICE_X15Y11.CQ      Tcko                  0.391   seq_/rf_/rf_3<7>
+                                                       seq_/rf_/rf_3_6
+    SLICE_X15Y13.B1      net (fanout=3)        1.795   seq_/rf_/rf_3<6>
+    SLICE_X15Y13.B       Tilo                  0.259   seq_tx_data<6>
+                                                       seq_/rf_/Mmux_o_data_a131
+    DSP48_X0Y3.B6        net (fanout=6)        0.593   seq_tx_data<6>
+    DSP48_X0Y3.M1        Tdspdo_B_M            3.364   seq_/alu_/mult_/Mmult_n0002
                                                        seq_/alu_/mult_/Mmult_n0002
-    SLICE_X10Y14.A5      net (fanout=4)        1.272   seq_/alu_/mult_data<12>
-    SLICE_X10Y14.CLK     Tas                   0.289   seq_/rf_/rf_3<15>
-                                                       seq_/rf_/Mmux_rf[3][15]_i_wdata[15]_mux_2_OUT41
-                                                       seq_/rf_/rf_3_12
+    SLICE_X15Y8.B3       net (fanout=4)        1.566   seq_/alu_/mult_data<1>
+    SLICE_X15Y8.CLK      Tas                   0.322   seq_/rf_/rf_3<35>
+                                                       seq_/rf_/Mmux_rf[1][15]_i_wdata[15]_mux_4_OUT81
+                                                       seq_/rf_/rf_3_33
     -------------------------------------------------  ---------------------------
-    Total                                      7.503ns (4.248ns logic, 3.255ns route)
-                                                       (56.6% logic, 43.4% route)
+    Total                                      8.290ns (4.336ns logic, 3.954ns route)
+                                                       (52.3% logic, 47.7% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point uart_top_/uart_/tx_bits_remaining_2 (SLICE_X24Y35.C5), 1 path
+Paths for end point uart_top_/tx_data_7 (SLICE_X16Y22.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.392ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               uart_top_/uart_/tx_bits_remaining_1 (FF)
-  Destination:          uart_top_/uart_/tx_bits_remaining_2 (FF)
+Slack (hold path):      0.412ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               uart_top_/tx_data_7 (FF)
+  Destination:          uart_top_/tx_data_7 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.392ns (Levels of Logic = 1)
+  Data Path Delay:      0.412ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: uart_top_/uart_/tx_bits_remaining_1 to uart_top_/uart_/tx_bits_remaining_2
+  Minimum Data Path at Fast Process Corner: uart_top_/tx_data_7 to uart_top_/tx_data_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X24Y35.CQ      Tcko                  0.200   uart_top_/uart_/tx_bits_remaining<3>
-                                                       uart_top_/uart_/tx_bits_remaining_1
-    SLICE_X24Y35.C5      net (fanout=3)        0.071   uart_top_/uart_/tx_bits_remaining<1>
-    SLICE_X24Y35.CLK     Tah         (-Th)    -0.121   uart_top_/uart_/tx_bits_remaining<3>
-                                                       uart_top_/uart_/Mcount_tx_bits_remaining_xor<2>11
-                                                       uart_top_/uart_/tx_bits_remaining_2
+    SLICE_X16Y22.AQ      Tcko                  0.200   uart_top_/tx_data<10>
+                                                       uart_top_/tx_data_7
+    SLICE_X16Y22.A6      net (fanout=2)        0.022   uart_top_/tx_data<7>
+    SLICE_X16Y22.CLK     Tah         (-Th)    -0.190   uart_top_/tx_data<10>
+                                                       uart_top_/state[3]_tx_data[15]_select_14_OUT<7>
+                                                       uart_top_/tx_data_7
     -------------------------------------------------  ---------------------------
-    Total                                      0.392ns (0.321ns logic, 0.071ns route)
-                                                       (81.9% logic, 18.1% route)
+    Total                                      0.412ns (0.390ns logic, 0.022ns route)
+                                                       (94.7% logic, 5.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point inst_vld_send (SLICE_X16Y37.B6), 1 path
+Paths for end point uart_top_/tx_data_14 (SLICE_X16Y21.D6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.403ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               step_d_send_0 (FF)
-  Destination:          inst_vld_send (FF)
+Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               uart_top_/tx_data_14 (FF)
+  Destination:          uart_top_/tx_data_14 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.405ns (Levels of Logic = 1)
-  Clock Path Skew:      0.002ns (0.036 - 0.034)
-  Source Clock:         clk_BUFGP rising at 10.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: step_d_send_0 to inst_vld_send
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X17Y37.AQ      Tcko                  0.198   step_d_send<2>
-                                                       step_d_send_0
-    SLICE_X16Y37.B6      net (fanout=1)        0.017   step_d_send<0>
-    SLICE_X16Y37.CLK     Tah         (-Th)    -0.190   inst_vld_send
-                                                       is_btnSend_posedge1
-                                                       inst_vld_send
-    -------------------------------------------------  ---------------------------
-    Total                                      0.405ns (0.388ns logic, 0.017ns route)
-                                                       (95.8% logic, 4.2% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point seq_/rf_/rf_3_11 (SLICE_X4Y12.D6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.411ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               seq_/rf_/rf_3_11 (FF)
-  Destination:          seq_/rf_/rf_3_11 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.411ns (Levels of Logic = 1)
+  Data Path Delay:      0.416ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: seq_/rf_/rf_3_11 to seq_/rf_/rf_3_11
+  Minimum Data Path at Fast Process Corner: uart_top_/tx_data_14 to uart_top_/tx_data_14
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X4Y12.DQ       Tcko                  0.200   seq_/rf_/rf_3<11>
-                                                       seq_/rf_/rf_3_11
-    SLICE_X4Y12.D6       net (fanout=3)        0.021   seq_/rf_/rf_3<11>
-    SLICE_X4Y12.CLK      Tah         (-Th)    -0.190   seq_/rf_/rf_3<11>
-                                                       seq_/rf_/Mmux_rf[3][15]_i_wdata[15]_mux_2_OUT31
-                                                       seq_/rf_/rf_3_11
+    SLICE_X16Y21.DQ      Tcko                  0.200   uart_top_/tx_data<14>
+                                                       uart_top_/tx_data_14
+    SLICE_X16Y21.D6      net (fanout=5)        0.026   uart_top_/tx_data<14>
+    SLICE_X16Y21.CLK     Tah         (-Th)    -0.190   uart_top_/tx_data<14>
+                                                       uart_top_/state[3]_tx_data[15]_select_14_OUT<14>
+                                                       uart_top_/tx_data_14
     -------------------------------------------------  ---------------------------
-    Total                                      0.411ns (0.390ns logic, 0.021ns route)
-                                                       (94.9% logic, 5.1% route)
+    Total                                      0.416ns (0.390ns logic, 0.026ns route)
+                                                       (93.8% logic, 6.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point uart_top_/tx_data_10 (SLICE_X16Y22.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               uart_top_/tx_data_10 (FF)
+  Destination:          uart_top_/tx_data_10 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.416ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: uart_top_/tx_data_10 to uart_top_/tx_data_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y22.DQ      Tcko                  0.200   uart_top_/tx_data<10>
+                                                       uart_top_/tx_data_10
+    SLICE_X16Y22.D6      net (fanout=2)        0.026   uart_top_/tx_data<10>
+    SLICE_X16Y22.CLK     Tah         (-Th)    -0.190   uart_top_/tx_data<10>
+                                                       uart_top_/state[3]_tx_data[15]_select_14_OUT<10>
+                                                       uart_top_/tx_data_10
+    -------------------------------------------------  ---------------------------
+    Total                                      0.416ns (0.390ns logic, 0.026ns route)
+                                                       (93.8% logic, 6.3% route)
 
 --------------------------------------------------------------------------------
 
@@ -471,7 +471,7 @@ Slack: 6.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
   Physical resource: uart_top_/tfifo_/Mram_mem/CLKAWRCLK
   Logical resource: uart_top_/tfifo_/Mram_mem/CLKAWRCLK
-  Location pin: RAMB8_X1Y17.CLKAWRCLK
+  Location pin: RAMB8_X0Y17.CLKAWRCLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 6.876ns (period - min period limit)
@@ -479,7 +479,7 @@ Slack: 6.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKB(Fmax))
   Physical resource: uart_top_/tfifo_/Mram_mem/CLKBRDCLK
   Logical resource: uart_top_/tfifo_/Mram_mem/CLKBRDCLK
-  Location pin: RAMB8_X1Y17.CLKBRDCLK
+  Location pin: RAMB8_X0Y17.CLKBRDCLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 8.270ns (period - min period limit)
@@ -504,7 +504,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.994|         |         |         |
+clk            |    8.633|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -513,16 +513,16 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 35505 paths, 0 nets, and 1527 connections
+Constraints cover 35721 paths, 0 nets, and 1570 connections
 
 Design statistics:
-   Minimum period:   7.994ns{1}   (Maximum frequency: 125.094MHz)
+   Minimum period:   8.633ns{1}   (Maximum frequency: 115.835MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Mon Feb 11 10:21:32 2019 
+Analysis completed Mon Feb 11 10:44:19 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:

@@ -159,6 +159,7 @@ module nexys3 (/*AUTOARG*/
                        .o_rx_data       (uart_rx_data[7:0]),
                        .o_rx_valid      (uart_rx_valid),
                        // Inputs
+                       .i_tx_reg        (inst_wd[5:4]),
                        .i_rx            (RsRx),
                        .i_tx_data       (seq_tx_data[seq_dp_width-1:0]),
                        .i_tx_stb        (seq_tx_valid),
