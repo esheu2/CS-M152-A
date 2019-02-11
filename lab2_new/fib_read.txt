@@ -1,0 +1,31 @@
+#add the instruction count
+10100
+#push and send 0 to reg 0 and 1 to reg 1
+00000000
+11000000
+00010001
+11010000
+#add reg 0 and reg 1 store in reg 0 print reg 0
+01000100
+11000000
+#add reg 0 and reg 0 and store in reg 1 print reg 1
+01000101
+11010000
+#add reg 0 and reg 1 store in reg 0 print reg 0
+01000100
+11000000
+#add reg 0 and reg 0 and store in reg 1 print reg 1
+01000101
+11010000
+#add reg 0 and reg 1 store in reg 0 print reg 0
+01000100
+11000000
+#add reg 0 and reg 0 and store in reg 1 print reg 1
+01000101
+11010000
+#add reg 0 and reg 1 store in reg 0 print reg 0
+01000100
+11000000
+#add reg 0 and reg 0 and store in reg 1 print reg 1
+01000101
+11010000

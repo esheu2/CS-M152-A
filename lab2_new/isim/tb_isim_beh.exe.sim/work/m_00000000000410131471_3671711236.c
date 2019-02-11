@@ -29,7 +29,7 @@ static unsigned int ng4[] = {0U, 0U};
 static unsigned int ng5[] = {3U, 0U};
 static unsigned int ng6[] = {1U, 0U};
 static unsigned int ng7[] = {2U, 0U};
-static const char *ng8 = "seq.code";
+static const char *ng8 = "fib.code";
 static const char *ng9 = "%d ... instruction %08b executed";
 static const char *ng10 = "%d ... led output changed to %08b";
 

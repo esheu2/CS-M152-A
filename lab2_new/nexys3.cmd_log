@@ -63,3 +63,4 @@ map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off nexys3_map.ncd nexys3.ncd nexys3.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml nexys3.twx nexys3.ncd -o nexys3.twr nexys3.pcf -ucf nexys3.ucf 
 bitgen -intstyle ise -f nexys3.ut nexys3.ncd 
+xst -intstyle ise -ifn "C:/Users/152/CS-M152-A/lab2_new/nexys3.xst" -ofn "C:/Users/152/CS-M152-A/lab2_new/nexys3.syr" 

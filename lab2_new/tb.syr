@@ -1,0 +1,180 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: tb.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "tb.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "tb"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : tb
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\seq_mult.v" into library work
+Parsing module <seq_mult>.
+Parsing verilog file "seq_definitions.v" included at line 28.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\seq_add.v" into library work
+Parsing module <seq_add>.
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\uart_fifo.v" into library work
+Parsing module <uart_fifo>.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\uart.v" into library work
+Parsing module <uart>.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\seq_rf.v" into library work
+Parsing module <seq_rf>.
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\seq_alu.v" into library work
+Parsing module <seq_alu>.
+Parsing verilog file "seq_definitions.v" included at line 7.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" into library work
+Parsing module <uart_top>.
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\seq.v" into library work
+Parsing module <seq>.
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" into library work
+Parsing module <nexys3>.
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\model_uart.v" into library work
+Parsing module <model_uart>.
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab2_new\tb.v" into library work
+Parsing module <tb>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 70: Port btnSend is not connected to this instance
+
+Elaborating module <tb>.
+Reading initialization file \"fib.code\".
+WARNING:HDLCompiler:1670 - "C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 32: Signal <inst_list> in initial block is partially initialized.
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b00000000
+WARNING:HDLCompiler:295 - "C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 39: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 40: case condition never applies
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11000000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b00010001
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11010000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000100
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11000000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000101
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11010000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000100
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11000000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000101
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11010000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000100
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11000000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000101
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11010000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000100
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11000000
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b01000101
+"C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 84. $display  8'b11010000
+ERROR:HDLCompiler:532 - "C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 36: Index <1024> is out of range [1023:0] for signal <inst_list>.
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:532"
+WARNING:HDLCompiler:872 - "C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 21: Using initial value of btnR since it is never assigned
+Module tb remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "C:\Users\152\CS-M152-A\lab2_new\tb.v" Line 3: Empty module <tb> remains a black box.
+--> 
+
+Total memory usage is 205468 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

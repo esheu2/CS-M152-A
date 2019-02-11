@@ -29,7 +29,7 @@ module tb;
         #1000 btnR = 0;
         #1500000;
         
-        $readmemb("seq.code", inst_list);
+        $readmemb("fib.code", inst_list);
         
         for (i = 1; inst_list[0]; i = i+1)
             begin
