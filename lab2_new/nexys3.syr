@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.12 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: nexys3.prj
 
@@ -134,6 +134,7 @@ Parsing verilog file "seq_definitions.v" included at line 8.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
+WARNING:HDLCompiler:1016 - "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" Line 156: Port i_tx_reg is not connected to this instance
 
 Elaborating module <nexys3>.
 WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" Line 128: Result of 9-bit expression is truncated to fit in 8-bit target.
@@ -150,8 +151,10 @@ Elaborating module <seq_add>.
 Elaborating module <seq_mult>.
 
 Elaborating module <uart_top>.
-WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" Line 60: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" Line 61: Result of 20-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" Line 64: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" Line 65: Result of 20-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:295 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" Line 102: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" Line 103: case condition never applies
 
 Elaborating module <uart_fifo>.
 WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\uart_fifo.v" Line 55: Result of 11-bit expression is truncated to fit in 10-bit target.
@@ -170,6 +173,7 @@ WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\uart.v" Line 192: Res
 WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab2_new\uart.v" Line 209: Result of 32-bit expression is truncated to fit in 2-bit target.
 WARNING:HDLCompiler:1127 - "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" Line 159: Assignment to uart_rx_data ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" Line 160: Assignment to uart_rx_valid ignored, since the identifier is never used
+WARNING:HDLCompiler:552 - "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" Line 156: Input port i_tx_reg is not connected on this instance
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -190,6 +194,7 @@ Synthesizing Unit <nexys3>.
         seq_rf_width = 16
         alu_width = 16
         uart_num_nib = 4
+WARNING:Xst:2898 - Port 'i_tx_reg', unconnected in block instance 'uart_top_', is tied to GND.
 INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" line 156: Output port <o_rx_data> of the instance <uart_top_> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\nexys3.v" line 156: Output port <o_rx_valid> of the instance <uart_top_> is unconnected or connected to loadless signal.
     Found 2-bit register for signal <arst_ff>.
@@ -332,22 +337,25 @@ Synthesizing Unit <uart_top>.
         alu_width = 16
         uart_num_nib = 4
         stIdle = 0
-        stNib1 = 1
-        stNL = 5
-        stCR = 6
-INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" line 100: Output port <fifo_cnt> of the instance <tfifo_> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" line 120: Output port <is_receiving> of the instance <uart_> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" line 120: Output port <recv_error> of the instance <uart_> is unconnected or connected to loadless signal.
+        stNib1 = 4
+        stNL = 8
+        stCR = 9
+        stPrintR = 1
+        stPrintReg_num = 2
+        stPrintColon = 3
+INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" line 113: Output port <fifo_cnt> of the instance <tfifo_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" line 133: Output port <is_receiving> of the instance <uart_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab2_new\uart_top.v" line 133: Output port <recv_error> of the instance <uart_> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <tx_data>.
     Found 1-bit register for signal <tfifo_rd_z>.
-    Found 3-bit register for signal <state>.
-    Found 3-bit adder for signal <state[2]_GND_8_o_add_5_OUT> created at line 60.
-    Found 16x8-bit Read Only RAM for signal <tx_data[15]_GND_8_o_wide_mux_17_OUT>
+    Found 4-bit register for signal <state>.
+    Found 4-bit adder for signal <state[3]_GND_8_o_add_5_OUT> created at line 64.
+    Found 16x8-bit Read Only RAM for signal <tx_data[15]_GND_8_o_wide_mux_18_OUT>
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred  20 D-type flip-flop(s).
-	inferred   5 Multiplexer(s).
+	inferred  21 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
 Unit <uart_top> synthesized.
 
 Synthesizing Unit <uart_fifo>.
@@ -427,7 +435,7 @@ Macro Statistics
  11-bit subtractor                                     : 2
  16-bit adder                                          : 1
  18-bit adder                                          : 1
- 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
  4-bit subtractor                                      : 2
  6-bit subtractor                                      : 2
  8-bit adder                                           : 1
@@ -438,12 +446,12 @@ Macro Statistics
  16-bit register                                       : 1
  18-bit register                                       : 1
  2-bit register                                        : 2
- 3-bit register                                        : 4
- 4-bit register                                        : 2
+ 3-bit register                                        : 3
+ 4-bit register                                        : 3
  6-bit register                                        : 2
  64-bit register                                       : 1
  8-bit register                                        : 5
-# Multiplexers                                         : 45
+# Multiplexers                                         : 46
  1-bit 2-to-1 multiplexer                              : 2
  1-bit 4-to-1 multiplexer                              : 1
  11-bit 2-to-1 multiplexer                             : 6
@@ -451,13 +459,13 @@ Macro Statistics
  16-bit 4-to-1 multiplexer                             : 3
  2-bit 2-to-1 multiplexer                              : 4
  2-bit 4-to-1 multiplexer                              : 1
- 3-bit 2-to-1 multiplexer                              : 8
+ 3-bit 2-to-1 multiplexer                              : 5
  3-bit 8-to-1 multiplexer                              : 1
- 4-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 5
  6-bit 2-to-1 multiplexer                              : 8
  6-bit 3-to-1 multiplexer                              : 1
  6-bit 7-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
 
 =========================================================================
 
@@ -503,7 +511,7 @@ INFO:Xst:3226 - The RAM <Mram_mem> will be implemented as a BLOCK RAM, absorbing
 Unit <uart_fifo> synthesized (advanced).
 
 Synthesizing (advanced) Unit <uart_top>.
-INFO:Xst:3231 - The small RAM <Mram_tx_data[15]_GND_8_o_wide_mux_17_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram_tx_data[15]_GND_8_o_wide_mux_18_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -531,7 +539,7 @@ Macro Statistics
  11-bit subtractor                                     : 2
  16-bit adder                                          : 1
  18-bit adder                                          : 1
- 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
  4-bit subtractor                                      : 1
  6-bit subtractor                                      : 2
 # Counters                                             : 2
@@ -539,9 +547,9 @@ Macro Statistics
  8-bit up counter                                      : 1
 # Accumulators                                         : 2
  10-bit up accumulator                                 : 2
-# Registers                                            : 193
- Flip-Flops                                            : 193
-# Multiplexers                                         : 54
+# Registers                                            : 194
+ Flip-Flops                                            : 194
+# Multiplexers                                         : 55
  1-bit 2-to-1 multiplexer                              : 14
  1-bit 4-to-1 multiplexer                              : 1
  11-bit 2-to-1 multiplexer                             : 6
@@ -549,13 +557,13 @@ Macro Statistics
  16-bit 4-to-1 multiplexer                             : 3
  2-bit 2-to-1 multiplexer                              : 4
  2-bit 4-to-1 multiplexer                              : 1
- 3-bit 2-to-1 multiplexer                              : 8
+ 3-bit 2-to-1 multiplexer                              : 5
  3-bit 8-to-1 multiplexer                              : 1
- 4-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 4
  6-bit 2-to-1 multiplexer                              : 6
  6-bit 3-to-1 multiplexer                              : 1
  6-bit 7-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
 
 =========================================================================
 
@@ -612,6 +620,7 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_7> has a constant value of 0 in block <nexys3>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_6> has a constant value of 0 in block <nexys3>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_5> has a constant value of 0 in block <nexys3>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <uart_top_/state_0> in Unit <nexys3> is equivalent to the following FF/Latch, which will be removed : <uart_top_/tfifo_/wp_0> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -647,15 +656,15 @@ Top Level Output File Name         : nexys3.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 386
+# BELS                             : 389
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 23
 #      LUT2                        : 25
-#      LUT3                        : 19
-#      LUT4                        : 27
-#      LUT5                        : 55
-#      LUT6                        : 152
+#      LUT3                        : 20
+#      LUT4                        : 29
+#      LUT5                        : 53
+#      LUT6                        : 154
 #      MUXCY                       : 39
 #      VCC                         : 1
 #      XORCY                       : 41
@@ -684,14 +693,14 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             187  out of  18224     1%  
- Number of Slice LUTs:                  304  out of   9112     3%  
-    Number used as Logic:               304  out of   9112     3%  
+ Number of Slice LUTs:                  307  out of   9112     3%  
+    Number used as Logic:               307  out of   9112     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    316
-   Number with an unused Flip Flop:     129  out of    316    40%  
-   Number with an unused LUT:            12  out of    316     3%  
-   Number of fully used LUT-FF pairs:   175  out of    316    55%  
+ Number of LUT Flip Flop pairs used:    319
+   Number with an unused Flip Flop:     132  out of    319    41%  
+   Number with an unused LUT:            12  out of    319     3%  
+   Number of fully used LUT-FF pairs:   175  out of    319    54%  
    Number of unique control sets:         9
 
 IO Utilization: 
@@ -748,7 +757,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 6.909ns (frequency: 144.739MHz)
-  Total number of paths / destination ports: 35489 / 462
+  Total number of paths / destination ports: 35505 / 462
 -------------------------------------------------------------------------
 Delay:               6.909ns (Levels of Logic = 3)
   Source:            inst_wd_5 (FF)
@@ -824,13 +833,13 @@ clk            |    6.909|         |         |         |
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.47 secs
+Total CPU time to Xst completion: 10.63 secs
  
 --> 
 
-Total memory usage is 262872 kilobytes
+Total memory usage is 263256 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   60 (   0 filtered)
-Number of infos    :    7 (   0 filtered)
+Number of warnings :   65 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
 

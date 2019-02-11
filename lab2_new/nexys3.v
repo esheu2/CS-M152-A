@@ -124,7 +124,7 @@ module nexys3 (/*AUTOARG*/
    begin
      if (rst)
        inst_cnt <= 0;
-     else if (inst_vld | inst_vld_send)
+     else if (inst_vld || inst_vld_send)
        inst_cnt <= inst_cnt + 1;
      //if (inst_vld && is_btnSend_posedge)
        //inst_wd[7:6] <= 2'b11;

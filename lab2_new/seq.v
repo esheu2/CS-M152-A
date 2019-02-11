@@ -106,6 +106,7 @@ module seq (/*AUTOARG*/
    // ===========================================================================
 
    assign o_tx_data  = rf_data_a[seq_dp_width-1:0];
-   assign o_tx_valid = i_inst_valid & inst_op_send & ~i_tx_busy;
+   assign o_tx_valid = ((i_inst_valid & inst_op_send) | i_inst_valid_send) & ~i_tx_busy;
+   //assign o_tx_valid = i_inst_valid & inst_op_send & ~i_tx_busy;
    
 endmodule // seq
