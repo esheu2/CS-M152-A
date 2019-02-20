@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-02-13T11:14:19</DateModified>
+  <DateModified>2019-02-20T09:57:57</DateModified>
   <ModuleName>stopwatch</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/152/CS-M152-A/lab3/iseconfig/stopwatch.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/152/CS-M152-A/lab3</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/152/CS-M152-A/lab3\</ImplementationReportsDirectory>
   <DateInitialized>2019-02-13T11:14:19</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
