@@ -18,61 +18,160 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+module top(
+    input clk,
+    input rst,
+    input btnP,
+    input switchSel,
+    input switchAdj,
+    output reg [7:0] seven_seg1,
+    output reg [7:0] seven_seg2,
+    output reg [7:0] seven_seg3,
+    output reg [7:0] seven_seg4,
+    output reg [3:0] an);
+    
+    reg [3:0] m10 = 0;
+    reg [3:0] m1 = 0;
+    reg [3:0] s10 = 0;
+    reg [3:0] s1 = 0;
+    
+    wire [3:0] outm10 = 0;
+    wire [3:0] outm1 = 0;
+    wire [3:0] outs10 = 0;
+    wire [3:0] outs1 = 0;
+    
+    wire is_pause, is_rst;
+    debouncer dR( clk, rst, is_rst);
+    debouncer dP( clk, btnP, is_pause);
+    
+    wire hz1, hz2, hz5, hz200;
+    clk_div d_clk( clk, rst, hz2, hz1, hz200, hz5);
+    stopwatch go( hz1, hz2, rst, btnP, switchSel, switchAdj, m10, m1, sec10, sec1);
+    seven_seg_display min10_disp( m10, seven_seg1 );
+    seven_seg_display min1_disp( m1, seven_seg2 );
+    seven_seg_display sec10_disp( sec10, seven_seg3 );
+    seven_seg_display sec1_disp( sec1, seven_seg4 );
+    
+endmodule
+    
 module stopwatch(
-    input clock,
-    input reset,
-    output reg [2:0] min10,
+    input hz1clk,
+    input hz2clk,
+    input rst,
+    input btnp,
+    input wire sel,
+    input wire adj,
+    output reg [3:0] min10,
     output reg  [3:0] min1,
-    output reg [2:0] sec10,
+    output reg [3:0] sec10,
     output reg [3:0] sec1);
-    always@(posedge clock)
+    
+    reg is_P;
+    
+    always@*
     begin
-    if(reset)
+    if(btnp)
+      is_P <= ~is_P;
+    else
+      is_P <= is_P;
+    end
+    
+    always@(posedge hz2clk)
     begin
-        sec10 <=3'b000;
+    if(rst)
+    begin
+        sec10 <=4'b0000;
         sec1 <=4'b0000;
-        min10 <=3'b000;
+        min10 <=4'b0000;
         min1 <=4'b0000;
     end
-    else if( sec1 < 9)
-        sec1 <= sec1+1'b1;
-    else if (sec1 == 9)
+    else if ( ~is_P && ~adj)
     begin
-        if (sec10 == 5)
+        if( sec1 < 9)
+            sec1 <= sec1+1'b1;
+        else if (sec1 == 9)
         begin
-            if(min1 == 9)
+            if (sec10 == 5)
             begin
-                if(min10 == 5)
-                    ;
+                if(min1 == 9)
+                begin
+                    if(min10 == 5)
+                        ;
+                    else
+                    begin
+                        min10 <= min10 + 1'b1;
+                        min1 <= 4'b0000;
+                        sec10 <= 4'b0000;
+                        sec1 <= 4'b0000;
+                    end
+                end
                 else
                 begin
-                    min10 <= min10 + 1'b1;
-                    min1 <= 4'b0000;
-                    sec10 <= 3'b0000;
+                    min1 <= min1 + 1'b1;
+                    sec10 <= 4'b0000;
                     sec1 <= 4'b0000;
                 end
             end
             else
             begin
-                min1 <= min1 + 1'b1;
-                sec10 <= 3'b000;
+                sec10 <= sec10 + 1'b1;
                 sec1 <= 4'b0000;
             end
         end
-        else
+    end
+    else if ( adj )
+    begin
+        if(rst)
         begin
-            sec10 <= sec10 + 1'b1;
-            sec1 <= 4'b0000;
+            sec10 <=4'b0000;
+            sec1 <=4'b0000;
+            min10 <=4'b0000;
+            min1 <=4'b0000;
+        end
+        else if( sel == 0)
+        begin
+            if( sec1 > 7)
+            begin
+                if (sec10 == 5)
+                begin
+                    sec1 <= 4'b0000;
+                    sec10 <= 4'b0000;
+                end
+                else
+                begin
+                    sec10 <= sec10 +1'b1;
+                    sec1 <= 4'b0000;
+                end
+            end
+            else
+                sec1 <= sec1 + 2;
+        end
+        else if( sel == 1)
+        begin
+            if( min1 > 7)
+            begin
+                if (min10 == 5)
+                begin
+                    min1 <= 4'b0000;
+                    min10 <= 4'b0000;
+                end
+                else
+                begin
+                    min10 <= min10 +1'b1;
+                    min1 <= 4'b0000;
+                end
+            end
+            else
+                min1 <= min1 + 2;
         end
     end
-    
-    end
+end
 endmodule
 
 module debouncer(
     input wire clk,
     input wire btn,
-    output wire is_btn_posedge);
+    output reg is_btn_posedge);
     
     wire [17:0] clk_dv_inc;
     reg [16:0]  clk_dv;
@@ -211,22 +310,22 @@ module clk_div(
  endmodule
  
  module seven_seg_display(
-    input wire number,
-    output reg [6:0] seven_seg);
+    input wire [3:0] number,
+    output reg [7:0] seven_seg);
     
     always @*
     case (number)
-    4'b0000 : seven_seg = 7'b1111110;
-    4'b0001 : seven_seg = 7'b0110000;
-    4'b0010 : seven_seg = 7'b1101101; 
-    4'b0011 : seven_seg = 7'b1111001;
-    4'b0100 : seven_seg = 7'b0110011;
-    4'b0101 : seven_seg = 7'b1011011;  
-    4'b0110 : seven_seg = 7'b1011111;
-    4'b0111 : seven_seg = 7'b1110000;
-    4'b1000 : seven_seg = 7'b1111111;
-    4'b1001 : seven_seg = 7'b1111101;
-    default: seven_seg = 7'b0000000;
+    4'b0000 : seven_seg = 8'b11000000;
+    4'b0001 : seven_seg = 8'b11111001;
+    4'b0010 : seven_seg = 8'b10100100; 
+    4'b0011 : seven_seg = 8'b10110000;
+    4'b0100 : seven_seg = 8'b10011001;
+    4'b0101 : seven_seg = 8'b10010010;  
+    4'b0110 : seven_seg = 8'b10000010;
+    4'b0111 : seven_seg = 8'b11111000;
+    4'b1000 : seven_seg = 8'b10000000;
+    4'b1001 : seven_seg = 8'b10010000;
+    default: seven_seg = 8'b11111111;
     endcase
     
  endmodule
