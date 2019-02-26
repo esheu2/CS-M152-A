@@ -271,59 +271,45 @@ module clk_div(
     output wire oneHz,
     output wire twoHundredHz,
     output wire blinkHz); // blinkHz ~= 5Hz
-    
+	 
+    //check to make sure the values of these constants make sense
+	 localparam oneHzNum = 50000000;
     localparam twoHzNum = 25000000;
-    localparam oneHzNum = 50000000;
     localparam twoHundredHzNum= 250000;
     localparam blinkHzNum = 10000000;
     
+	 reg [31:0] oneHzCount;
     reg [31:0] twoHzCount;
-    reg [31:0] oneHzCount;
     reg [31:0] twoHundredHzCount;
     reg [31:0] blinkHzCount;
-    
+	 
+	 reg oneHzDiv;
     reg twoHzDiv;
-    assign twoHz = twoHzDiv;
-    reg oneHzDiv;
-    assign oneHz = oneHzDiv;
     reg twoHundredHzDiv;
-    assign twoHundredHz = twoHundredHzDiv;
     reg blinkHzDiv;
-    assign blinkHz = blinkHzDiv;
     
-    //clk_div twoHz
-    always @ (posedge(clk), posedge(rst))
-    begin
-        if (rst == 1'b1)
-            twoHzCount <= 32'b0;
-        else if (twoHzCount == twoHzNum - 1)
-            twoHzCount <= 32'b0;
-        else
-            twoHzCount <= twoHzCount + 1;
-    end
-    
-    always @ (posedge(clk), posedge(rst))
-    begin
-        if (rst == 1'b1)
-            twoHzDiv <= 1'b0;
-        else if (twoHzCount == twoHzNum - 1)
-            twoHzDiv <= ~twoHz;
-        else
-            twoHzDiv <= twoHz;
-    end
-    
+	     
     //clk_div oneHz
     always @ (posedge(clk), posedge(rst))
     begin
         if (rst == 1'b1)
+			begin
+				oneHzDiv <= 1'b0;
             oneHzCount <= 32'b0;
+			end
         else if (oneHzCount == oneHzNum - 1)
+			begin
+				oneHzDiv <= ~oneHz;
             oneHzCount <= 32'b0;
+			end
         else
-            oneHzCount <= oneHzCount + 1;
+			begin
+				oneHzDiv <= oneHz;
+            oneHzCount <= oneHzCount + 32'b1;
+			end
     end
-    
-    always @ (posedge(clk), posedge(rst))
+	 /*
+	 always @ (posedge(clk), posedge(rst))
     begin
         if (rst == 1'b1)
             oneHzDiv <= 1'b0;
@@ -331,19 +317,58 @@ module clk_div(
             oneHzDiv <= ~oneHz;
         else
             oneHzDiv <= oneHz;
+	  end
+	  */
+    //clk_div twoHz
+    always @ (posedge(clk), posedge(rst))
+    begin
+        if (rst == 1'b1)
+			begin
+				twoHzDiv <= 1'b0;
+            twoHzCount <= 32'b0;
+			end
+        else if (twoHzCount == twoHzNum - 1)
+			begin
+				twoHzDiv <= ~twoHz;
+            twoHzCount <= 32'b0;
+			end
+        else
+			begin
+				twoHzDiv <= twoHz;
+            twoHzCount <= twoHzCount + 32'b1;
+			end
     end
-    
+	 /*
+	 always @ (posedge(clk), posedge(rst))
+    begin
+        if (rst == 1'b1)
+            twoHzDiv <= 1'b0;
+        else if (twoHzCount == twoHzNum - 1)
+            twoHzDiv <= ~twoHz;
+        else
+            twoHzDiv <= twoHz;
+	 end
+    */
     //clk_div twoHundredHz
     always @ (posedge(clk), posedge(rst))
     begin
         if (rst == 1'b1)
+			begin
+				twoHundredHzDiv <= 1'b0;
             twoHundredHzCount <= 32'b0;
+			end
         else if (twoHundredHzCount == twoHundredHzNum - 1)
+			begin
+				twoHundredHzDiv <= ~twoHundredHz;
             twoHundredHzCount <= 32'b0;
+			end
         else
-            twoHundredHzCount <= twoHundredHzCount + 1;
+			begin
+				twoHundredHzDiv <= twoHundredHz;
+            twoHundredHzCount <= twoHundredHzCount + 32'b1;
+			end
     end
-    
+    /*
     always @ (posedge(clk), posedge(rst))
     begin
         if (rst == 1'b1)
@@ -353,17 +378,27 @@ module clk_div(
         else
             twoHundredHzDiv <= twoHundredHz;
     end
+	 */
     //clk_div blinkHz
     always @ (posedge(clk), posedge(rst))
     begin
         if (rst == 1'b1)
+			begin
+				blinkHzDiv <= 1'b0;
             blinkHzCount <= 32'b0;
+			end
         else if (blinkHzCount == blinkHzNum - 1)
+			begin
+				blinkHzDiv <= ~blinkHz;
             blinkHzCount <= 32'b0;
+			end
         else
-            blinkHzCount <= blinkHzCount + 1;
+			begin
+				blinkHzDiv <= blinkHz;
+            blinkHzCount <= blinkHzCount + 32'b1;
+			end
     end
-    
+    /*
     always @ (posedge(clk), posedge(rst))
     begin
         if (rst == 1'b1)
@@ -373,6 +408,11 @@ module clk_div(
         else
             blinkHzDiv <= blinkHz;
     end
+	 */
+	 assign twoHz = twoHzDiv;
+    assign oneHz = oneHzDiv;
+    assign twoHundredHz = twoHundredHzDiv;
+    assign blinkHz = blinkHzDiv;
  endmodule
  
  module seven_seg_display(

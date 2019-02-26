@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: top.prj
@@ -187,17 +187,17 @@ Unit <debouncer> synthesized.
 Synthesizing Unit <clk_div>.
     Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
     Found 32-bit register for signal <oneHzCount>.
+    Found 32-bit register for signal <twoHzCount>.
     Found 32-bit register for signal <twoHundredHzCount>.
     Found 32-bit register for signal <blinkHzCount>.
-    Found 32-bit register for signal <twoHzCount>.
     Found 1-bit register for signal <twoHzDiv>.
-    Found 1-bit register for signal <oneHzDiv>.
     Found 1-bit register for signal <twoHundredHzDiv>.
     Found 1-bit register for signal <blinkHzDiv>.
-    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_2_OUT> created at line 302.
-    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_9_OUT> created at line 323.
-    Found 32-bit adder for signal <twoHundredHzCount[31]_GND_3_o_add_16_OUT> created at line 344.
-    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_23_OUT> created at line 364.
+    Found 1-bit register for signal <oneHzDiv>.
+    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_2_OUT> created at line 308.
+    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_7_OUT> created at line 338.
+    Found 32-bit adder for signal <twoHundredHzCount[31]_GND_3_o_add_12_OUT> created at line 368.
+    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_17_OUT> created at line 398.
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred 132 D-type flip-flop(s).
@@ -273,9 +273,9 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 
 Synthesizing (advanced) Unit <clk_div>.
 The following registers are absorbed into counter <oneHzCount>: 1 register on signal <oneHzCount>.
+The following registers are absorbed into counter <twoHzCount>: 1 register on signal <twoHzCount>.
 The following registers are absorbed into counter <twoHundredHzCount>: 1 register on signal <twoHundredHzCount>.
 The following registers are absorbed into counter <blinkHzCount>: 1 register on signal <blinkHzCount>.
-The following registers are absorbed into counter <twoHzCount>: 1 register on signal <twoHzCount>.
 Unit <clk_div> synthesized (advanced).
 
 Synthesizing (advanced) Unit <seven_seg_display>.
@@ -457,9 +457,9 @@ WARNING:Xst:2677 - Node <d_clk/oneHzCount_3> of sequential type is unconnected i
 WARNING:Xst:2677 - Node <d_clk/oneHzCount_2> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <d_clk/oneHzCount_1> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <d_clk/oneHzCount_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <d_clk/oneHzDiv> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <d_clk/blinkHzDiv> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <d_clk/twoHundredHzDiv> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzDiv> of sequential type is unconnected in block <top>.
 WARNING:Xst:1710 - FF/Latch <sw_imp/min10_temp_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <sw_imp/sec10_temp_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
@@ -769,7 +769,7 @@ d_clk/twoHzDiv   |    4.543|         |         |         |
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.51 secs
+Total CPU time to Xst completion: 9.13 secs
  
 --> 
 
