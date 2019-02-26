@@ -19,38 +19,94 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module top(
-    input clk,
-    input rst,
-    input btnP,
-    input switchSel,
-    input switchAdj,
-    output reg [7:0] seven_seg1,
-    output reg [7:0] seven_seg2,
-    output reg [7:0] seven_seg3,
-    output reg [7:0] seven_seg4,
-    output reg [3:0] an);
+    input wire clk,
+    input wire rst,
+    input wire btnP,
+    input wire switchSel,
+    input wire switchAdj,
+    output wire [3:0] an,
+    output wire [7:0] seg);
     
-    reg [3:0] m10 = 0;
-    reg [3:0] m1 = 0;
-    reg [3:0] s10 = 0;
-    reg [3:0] s1 = 0;
+    reg [3:0] an_temp;
+    reg [7:0] seg_temp;
     
-    wire [3:0] outm10 = 0;
-    wire [3:0] outm1 = 0;
-    wire [3:0] outs10 = 0;
-    wire [3:0] outs1 = 0;
+    wire [7:0] seven_seg1;
+    wire [7:0] seven_seg2;
+    wire [7:0] seven_seg3;
+    wire [7:0] seven_seg4;
+    
+    //reg [7:0] seven_seg1_temp;
+    //reg [7:0] seven_seg2_temp;
+    //reg [7:0] seven_seg3_temp;
+    //reg [7:0] seven_seg4_temp;
+    
+    //seven_seg1_temp = seven_seg1;
+    //seven_seg2_temp = seven_seg2;
+    //seven_seg3_temp = seven_seg3;
+    //seven_seg4_temp = seven_seg4;
+    
+    wire [3:0] m10;
+    wire [3:0] m1;
+    wire [3:0] s10;
+    wire [3:0] s1;
+    
+    assign an = an_temp;
+    assign seg = seg_temp;
     
     wire is_pause, is_rst;
-    debouncer dR( clk, rst, is_rst);
-    debouncer dP( clk, btnP, is_pause);
+    debouncer dR(.clk (clk), .btn(rst), .is_btn_posedge(is_rst));
+    debouncer dP(.clk(clk), .btn(btnP), .is_btn_posedge(is_pause));
     
     wire hz1, hz2, hz5, hz200;
-    clk_div d_clk( clk, rst, hz2, hz1, hz200, hz5);
-    stopwatch go( hz1, hz2, rst, btnP, switchSel, switchAdj, m10, m1, sec10, sec1);
-    seven_seg_display min10_disp( m10, seven_seg1 );
-    seven_seg_display min1_disp( m1, seven_seg2 );
-    seven_seg_display sec10_disp( sec10, seven_seg3 );
-    seven_seg_display sec1_disp( sec1, seven_seg4 );
+    clk_div d_clk( .clk (clk), 
+                   .rst (is_rst), 
+                   .twoHz (hz2), 
+                   .oneHz (hz1), 
+                   .twoHundredHz (hz200), 
+                   .blinkHz (hz5));
+    stopwatch sw_imp( .hz1clk (hz1), 
+                      .hz2clk (hz2), 
+                      .rst (is_rst), 
+                      .btnp (is_pause), 
+                      .sel (switchSel), 
+                      .adj (switchAdj), 
+                      .min10 (m10), 
+                      .min1 (m1), 
+                      .sec10 (sec10), 
+                      .sec1 (sec1));
+    seven_seg_display min10_disp( .number (m10), .seven_seg (seven_seg1) );
+    seven_seg_display min1_disp( .number (m1), .seven_seg(seven_seg2) );
+    seven_seg_display sec10_disp( .number (sec10), .seven_seg (seven_seg3) );
+    seven_seg_display sec1_disp( .number (sec1), .seven_seg (seven_seg4) );
+    
+    reg [2:0] count = 0;
+    always @(hz200)
+    begin
+        if (count == 0)
+        begin
+            an_temp <= 4'b0111;
+            seg_temp <= seven_seg1;
+            count <= count + 1;
+        end
+        else if (count == 1)
+        begin
+            an_temp <= 4'b1011;
+            seg_temp <= seven_seg2;
+            count <= count + 1;
+        end
+        else if (count == 2)
+        begin
+            an_temp <= 4'b1101;
+            seg_temp <= seven_seg3;
+            count <= count + 1;
+        end
+        else if (count == 3)
+        begin
+            an_temp <= 4'b1110;
+            seg_temp <= seven_seg4;
+            count <= 0;
+        end
+    end
     
 endmodule
     
@@ -61,10 +117,20 @@ module stopwatch(
     input btnp,
     input wire sel,
     input wire adj,
-    output reg [3:0] min10,
-    output reg  [3:0] min1,
-    output reg [3:0] sec10,
-    output reg [3:0] sec1);
+    output wire [3:0] min10,
+    output wire [3:0] min1,
+    output wire [3:0] sec10,
+    output wire [3:0] sec1);
+    
+    reg [3:0] min10_temp;
+    reg [3:0] min1_temp;
+    reg [3:0] sec10_temp;
+    reg [3:0] sec1_temp;
+    
+    assign min10 = min10_temp;
+    assign min1 = min1_temp;
+    assign sec10 = sec10_temp;
+    assign sec1 = sec1_temp;
     
     reg is_P;
     
@@ -80,42 +146,42 @@ module stopwatch(
     begin
     if(rst)
     begin
-        sec10 <=4'b0000;
-        sec1 <=4'b0000;
-        min10 <=4'b0000;
-        min1 <=4'b0000;
+        sec10_temp <=4'b0000;
+        sec1_temp <=4'b0000;
+        min10_temp <=4'b0000;
+        min1_temp <=4'b0000;
     end
     else if ( ~is_P && ~adj)
     begin
-        if( sec1 < 9)
-            sec1 <= sec1+1'b1;
-        else if (sec1 == 9)
+        if( sec1_temp < 9)
+            sec1_temp <= sec1_temp+1'b1;
+        else if (sec1_temp == 9)
         begin
-            if (sec10 == 5)
+            if (sec10_temp == 5)
             begin
-                if(min1 == 9)
+                if(min1_temp == 9)
                 begin
-                    if(min10 == 5)
+                    if(min10_temp == 5)
                         ;
                     else
                     begin
-                        min10 <= min10 + 1'b1;
-                        min1 <= 4'b0000;
-                        sec10 <= 4'b0000;
-                        sec1 <= 4'b0000;
+                        min10_temp <= min10 + 1'b1;
+                        min1_temp <= 4'b0000;
+                        sec10_temp <= 4'b0000;
+                        sec1_temp <= 4'b0000;
                     end
                 end
                 else
                 begin
-                    min1 <= min1 + 1'b1;
-                    sec10 <= 4'b0000;
-                    sec1 <= 4'b0000;
+                    min1_temp <= min1_temp + 1'b1;
+                    sec10_temp <= 4'b0000;
+                    sec1_temp <= 4'b0000;
                 end
             end
             else
             begin
-                sec10 <= sec10 + 1'b1;
-                sec1 <= 4'b0000;
+                sec10_temp <= sec10_temp + 1'b1;
+                sec1_temp <= 4'b0000;
             end
         end
     end
@@ -123,46 +189,46 @@ module stopwatch(
     begin
         if(rst)
         begin
-            sec10 <=4'b0000;
-            sec1 <=4'b0000;
-            min10 <=4'b0000;
-            min1 <=4'b0000;
+            sec10_temp <=4'b0000;
+            sec1_temp <=4'b0000;
+            min10_temp <=4'b0000;
+            min1_temp <=4'b0000;
         end
         else if( sel == 0)
         begin
-            if( sec1 > 7)
+            if( sec1_temp > 7)
             begin
-                if (sec10 == 5)
+                if (sec10_temp == 5)
                 begin
-                    sec1 <= 4'b0000;
-                    sec10 <= 4'b0000;
+                    sec1_temp <= 4'b0000;
+                    sec10_temp <= 4'b0000;
                 end
                 else
                 begin
-                    sec10 <= sec10 +1'b1;
-                    sec1 <= 4'b0000;
+                    sec10_temp <= sec10_temp +1'b1;
+                    sec1_temp <= 4'b0000;
                 end
             end
             else
-                sec1 <= sec1 + 2;
+                sec1_temp <= sec1_temp + 2;
         end
         else if( sel == 1)
         begin
-            if( min1 > 7)
+            if( min1_temp > 7)
             begin
-                if (min10 == 5)
+                if (min10_temp == 5)
                 begin
-                    min1 <= 4'b0000;
-                    min10 <= 4'b0000;
+                    min1_temp <= 4'b0000;
+                    min10_temp <= 4'b0000;
                 end
                 else
                 begin
-                    min10 <= min10 +1'b1;
-                    min1 <= 4'b0000;
+                    min10_temp <= min10_temp +1'b1;
+                    min1_temp <= 4'b0000;
                 end
             end
             else
-                min1 <= min1 + 2;
+                min1_temp <= min1_temp + 2;
         end
     end
 end
@@ -203,7 +269,7 @@ module clk_div(
     input wire rst,
     output wire twoHz,
     output wire oneHz,
-    output wire twoHundreadHz,
+    output wire twoHundredHz,
     output wire blinkHz); // blinkHz ~= 5Hz
     
     localparam twoHzNum = 25000000;
@@ -315,17 +381,17 @@ module clk_div(
     
     always @*
     case (number)
-    4'b0000 : seven_seg = 8'b11000000;
-    4'b0001 : seven_seg = 8'b11111001;
-    4'b0010 : seven_seg = 8'b10100100; 
-    4'b0011 : seven_seg = 8'b10110000;
-    4'b0100 : seven_seg = 8'b10011001;
-    4'b0101 : seven_seg = 8'b10010010;  
-    4'b0110 : seven_seg = 8'b10000010;
-    4'b0111 : seven_seg = 8'b11111000;
-    4'b1000 : seven_seg = 8'b10000000;
-    4'b1001 : seven_seg = 8'b10010000;
-    default: seven_seg = 8'b11111111;
+    4'b0000 : seven_seg <= 8'b11000000;
+    4'b0001 : seven_seg <= 8'b11111001;
+    4'b0010 : seven_seg <= 8'b10100100; 
+    4'b0011 : seven_seg <= 8'b10110000;
+    4'b0100 : seven_seg <= 8'b10011001;
+    4'b0101 : seven_seg <= 8'b10010010;  
+    4'b0110 : seven_seg <= 8'b10000010;
+    4'b0111 : seven_seg <= 8'b11111000;
+    4'b1000 : seven_seg <= 8'b10000000;
+    4'b1001 : seven_seg <= 8'b10010000;
+    default: seven_seg <= 8'b11111111;
     endcase
     
  endmodule

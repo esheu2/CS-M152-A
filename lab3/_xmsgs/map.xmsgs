@@ -5,22 +5,115 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="MapLib" num="562" delta="new" >No environment variables are currently set.
+<msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
 </msg>
 
-<msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg1&quot; (output signal=seg_0_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_lut&lt;1&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
 </msg>
 
-<msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg1&quot; (output signal=seg_0_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
 </msg>
 
-<msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT4 symbol &quot;Mmux_seg121&quot; (output signal=Mmux_seg12)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_lut&lt;1&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
 </msg>
 
-<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT4 symbol &quot;Mmux_seg121&quot; (output signal=Mmux_seg12)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
 </msg>
 
-<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg2&quot; (output signal=seg_1_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_lut&lt;1&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg2&quot; (output signal=seg_1_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg3&quot; (output signal=seg_2_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_lut&lt;1&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg3&quot; (output signal=seg_2_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="new" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg43_F&quot; (output signal=N25)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_lut&lt;1&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="new" ><arg fmt="%s" index="1">LUT5 symbol &quot;Mmux_seg43_G&quot; (output signal=N26)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_lut&lt;1&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="new" ><arg fmt="%s" index="1">LUT5 symbol &quot;Mmux_seg53_F&quot; (output signal=N23)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="new" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg53_G&quot; (output signal=N24)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="new" ><arg fmt="%s" index="1">LUT5 symbol &quot;Mmux_seg63_F&quot; (output signal=N21)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="new" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg63_G&quot; (output signal=N22)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg7&quot; (output signal=seg_6_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_cy&lt;0&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="error" file="MapLib" num="979" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg7&quot; (output signal=seg_6_OBUF)</arg> has input signal &quot;<arg fmt="%s" index="2">Madd_count[2]_GND_1_o_add_7_OUT_lut&lt;1&gt;</arg>&quot; which will be trimmed. See Section 5 of the Map Report File for details about why the input signal will become undriven.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">an&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">an&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">an&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">an&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">an&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">an&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">an&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">an&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg1&quot; (output signal=seg_0_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg1&quot; (output signal=seg_0_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I2</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT4 symbol &quot;Mmux_seg121&quot; (output signal=Mmux_seg12)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT4 symbol &quot;Mmux_seg121&quot; (output signal=Mmux_seg12)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I1</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg2&quot; (output signal=seg_1_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I1</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg2&quot; (output signal=seg_1_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I2</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg3&quot; (output signal=seg_2_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I2</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg3&quot; (output signal=seg_2_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I3</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="new" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg43_F&quot; (output signal=N25)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="new" ><arg fmt="%s" index="1">LUT5 symbol &quot;Mmux_seg43_G&quot; (output signal=N26)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="new" ><arg fmt="%s" index="1">LUT5 symbol &quot;Mmux_seg53_F&quot; (output signal=N23)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="new" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg53_G&quot; (output signal=N24)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="new" ><arg fmt="%s" index="1">LUT5 symbol &quot;Mmux_seg63_F&quot; (output signal=N21)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="new" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg63_G&quot; (output signal=N22)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg7&quot; (output signal=seg_6_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I0</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
+</msg>
+
+<msg type="error" file="MapLib" num="978" delta="old" ><arg fmt="%s" index="1">LUT6 symbol &quot;Mmux_seg7&quot; (output signal=seg_6_OBUF)</arg> has an equation that uses input pin <arg fmt="%s" index="2">I5</arg>, which no longer has a connected signal. Please ensure that all the pins used in the equation for this LUT have signals that are not trimmed (see Section 5 of the Map Report File for details on which signals were trimmed).
 </msg>
 
 </messages>
