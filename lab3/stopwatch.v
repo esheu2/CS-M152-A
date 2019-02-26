@@ -377,23 +377,27 @@ module clk_div(
  
  module seven_seg_display(
     input wire [3:0] number,
-    output reg [7:0] seven_seg);
+    output wire [7:0] seven_seg);
     
+	 reg [7:0] seven_seg_temp;
+	 
     always @*
     case (number)
-    4'b0000 : seven_seg <= 8'b11000000;
-    4'b0001 : seven_seg <= 8'b11111001;
-    4'b0010 : seven_seg <= 8'b10100100; 
-    4'b0011 : seven_seg <= 8'b10110000;
-    4'b0100 : seven_seg <= 8'b10011001;
-    4'b0101 : seven_seg <= 8'b10010010;  
-    4'b0110 : seven_seg <= 8'b10000010;
-    4'b0111 : seven_seg <= 8'b11111000;
-    4'b1000 : seven_seg <= 8'b10000000;
-    4'b1001 : seven_seg <= 8'b10010000;
-    default: seven_seg <= 8'b11111111;
+    4'b0000 : seven_seg_temp <= 8'b11000000;
+    4'b0001 : seven_seg_temp <= 8'b11111001;
+    4'b0010 : seven_seg_temp <= 8'b10100100; 
+    4'b0011 : seven_seg_temp <= 8'b10110000;
+    4'b0100 : seven_seg_temp <= 8'b10011001;
+    4'b0101 : seven_seg_temp <= 8'b10010010;  
+    4'b0110 : seven_seg_temp <= 8'b10000010;
+    4'b0111 : seven_seg_temp <= 8'b11111000;
+    4'b1000 : seven_seg_temp <= 8'b10000000;
+    4'b1001 : seven_seg_temp <= 8'b10010000;
+    default: seven_seg_temp <= 8'b11111111;
     endcase
-    
+	 
+    assign seven_seg = seven_seg_temp;
+	 
  endmodule
  
  

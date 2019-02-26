@@ -1,18 +1,21 @@
-Release 14.6 - xst P.68d (nt64)
+Release 14.7 - xst P.20160913 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to xst/projnav.tmp
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.05 secs
  
---> Parameter xsthdpdir set to xst
+--> 
+Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.05 secs
  
---> Reading design: top.prj
+--> 
+Reading design: top.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -105,7 +108,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\152\CS-M152-A\lab3\stopwatch.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" into library work
 Parsing module <top>.
 Parsing module <stopwatch>.
 Parsing module <debouncer>.
@@ -121,41 +124,41 @@ Elaborating module <top>.
 Elaborating module <debouncer>.
 
 Elaborating module <clk_div>.
-WARNING:HDLCompiler:1127 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 65: Assignment to hz200 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 66: Assignment to hz5 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 65: Assignment to hz200 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 66: Assignment to hz5 ignored, since the identifier is never used
 
 Elaborating module <stopwatch>.
-WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 213: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 231: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:189 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 75: Size mismatch in connection of port <sec10>. Formal port size is 4-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 76: Size mismatch in connection of port <sec1>. Formal port size is 4-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 213: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 231: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 75: Size mismatch in connection of port <sec10>. Formal port size is 4-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 76: Size mismatch in connection of port <sec1>. Formal port size is 4-bit while actual signal size is 1-bit.
 
 Elaborating module <seven_seg_display>.
-WARNING:HDLCompiler:189 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 79: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 80: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 85: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 88: Signal <seven_seg1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 89: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 89: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 91: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 94: Signal <seven_seg2> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 95: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 95: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 97: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 100: Signal <seven_seg3> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 101: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 101: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 103: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 106: Signal <seven_seg4> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 79: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 80: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 85: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 88: Signal <seven_seg1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 89: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 89: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 91: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 94: Signal <seven_seg2> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 95: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 95: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 97: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 100: Signal <seven_seg3> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 101: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 101: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 103: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 106: Signal <seven_seg4> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <top>.
-    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
-INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" line 61: Output port <twoHundredHz> of the instance <d_clk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" line 61: Output port <blinkHz> of the instance <d_clk> is unconnected or connected to loadless signal.
+    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
+INFO:Xst:3210 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" line 61: Output port <twoHundredHz> of the instance <d_clk> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" line 61: Output port <blinkHz> of the instance <d_clk> is unconnected or connected to loadless signal.
     Found 3-bit adder for signal <count[2]_GND_1_o_add_7_OUT> created at line 101.
     Found 8-bit 4-to-1 multiplexer for signal <seg> created at line 28.
 WARNING:Xst:737 - Found 1-bit latch for signal <count<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -172,7 +175,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <an_temp<0>>. Latches may be gene
 Unit <top> synthesized.
 
 Synthesizing Unit <debouncer>.
-    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
+    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
     Found 1-bit register for signal <is_btn_posedge>.
     Found 17-bit register for signal <clk_dv>.
     Found 18-bit adder for signal <n0016> created at line 245.
@@ -182,7 +185,7 @@ Synthesizing Unit <debouncer>.
 Unit <debouncer> synthesized.
 
 Synthesizing Unit <clk_div>.
-    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
+    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
     Found 32-bit register for signal <oneHzCount>.
     Found 32-bit register for signal <twoHundredHzCount>.
     Found 32-bit register for signal <blinkHzCount>.
@@ -202,7 +205,7 @@ Synthesizing Unit <clk_div>.
 Unit <clk_div> synthesized.
 
 Synthesizing Unit <stopwatch>.
-    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
+    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
 WARNING:Xst:647 - Input <hz1clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 4-bit register for signal <sec10_temp>.
     Found 4-bit register for signal <sec1_temp>.
@@ -227,8 +230,8 @@ WARNING:Xst:737 - Found 1-bit latch for signal <is_P>. Latches may be generated 
 Unit <stopwatch> synthesized.
 
 Synthesizing Unit <seven_seg_display>.
-    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
-    Found 16x8-bit Read Only RAM for signal <seven_seg>
+    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
+    Found 16x8-bit Read Only RAM for signal <seven_seg_temp>
     Summary:
 	inferred   1 RAM(s).
 Unit <seven_seg_display> synthesized.
@@ -276,7 +279,7 @@ The following registers are absorbed into counter <twoHzCount>: 1 register on si
 Unit <clk_div> synthesized (advanced).
 
 Synthesizing (advanced) Unit <seven_seg_display>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_seven_seg> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_seven_seg_temp> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -285,7 +288,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_seven_seg> will be implemented on LU
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <number>        |          |
     |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to signal <seven_seg>     |          |
+    |     doA            | connected to signal <seven_seg_temp> |          |
     -----------------------------------------------------------------------
 Unit <seven_seg_display> synthesized (advanced).
 
@@ -577,7 +580,7 @@ Clock Signal                       | Clock buffer(FF name)   | Load  |
 clk                                | BUFGP                   | 62    |
 d_clk/twoHzDiv                     | NONE(sw_imp/min1_temp_3)| 14    |
 dP/is_btn_posedge                  | NONE(sw_imp/is_P)       | 1     |
-min10_disp/Mram_seven_seg7         | NONE(an_temp_2)         | 4     |
+min10_disp/Mram_seven_seg_temp7    | NONE(an_temp_2)         | 4     |
 -----------------------------------+-------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -723,7 +726,7 @@ Offset:              6.251ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q            12   0.447   1.156  sw_imp/min1_temp_3 (sw_imp/min1_temp_3)
-     LUT4:I0->O            2   0.203   0.961  min1_disp/Mram_seven_seg11 (min1_disp/Mram_seven_seg)
+     LUT4:I0->O            2   0.203   0.961  min1_disp/Mram_seven_seg_temp11 (min1_disp/Mram_seven_seg_temp)
      LUT6:I1->O            1   0.203   0.000  Mmux_seg43_F (N25)
      MUXF7:I0->O           1   0.131   0.579  Mmux_seg43 (seg_3_OBUF)
      OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
@@ -765,12 +768,13 @@ d_clk/twoHzDiv   |    4.543|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.53 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.51 secs
  
 --> 
 
-Total memory usage is 258708 kilobytes
+
+Total memory usage is 482804 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  146 (   0 filtered)

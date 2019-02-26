@@ -1,4 +1,4 @@
-Release 14.6 Map P.68d (nt64)
+Release 14.7 Map P.20160913 (lin64)
 Xilinx Mapping Report File for Design 'top'
 
 Design Information
@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Mon Feb 25 18:03:25 2019
+Mapped Date    : Tue Feb 26 22:01:34 2019
 
 Design Summary
 --------------
