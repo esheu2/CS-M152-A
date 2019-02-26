@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Feb 26 22:35:33 2019
+Mapped Date    : Tue Feb 26 22:42:54 2019
 
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 INFO:Security:54 - 'xc6slx16' is a WebPack part.
@@ -51,27 +51,27 @@ ERROR:MapLib:979 - LUT6 symbol "Mmux_seg3" (output signal=seg_2_OBUF) has input
    signal "Madd_count[2]_GND_1_o_add_7_OUT_cy<0>" which will be trimmed. See
    Section 5 of the Map Report File for details about why the input signal will
    become undriven.
-ERROR:MapLib:979 - LUT6 symbol "Mmux_seg43_F" (output signal=N25) has input
+ERROR:MapLib:979 - LUT6 symbol "Mmux_seg43_F" (output signal=N58) has input
    signal "Madd_count[2]_GND_1_o_add_7_OUT_lut<1>" which will be trimmed. See
    Section 5 of the Map Report File for details about why the input signal will
    become undriven.
-ERROR:MapLib:979 - LUT5 symbol "Mmux_seg43_G" (output signal=N26) has input
+ERROR:MapLib:979 - LUT5 symbol "Mmux_seg43_G" (output signal=N59) has input
    signal "Madd_count[2]_GND_1_o_add_7_OUT_lut<1>" which will be trimmed. See
    Section 5 of the Map Report File for details about why the input signal will
    become undriven.
-ERROR:MapLib:979 - LUT5 symbol "Mmux_seg53_F" (output signal=N23) has input
+ERROR:MapLib:979 - LUT5 symbol "Mmux_seg53_F" (output signal=N56) has input
    signal "Madd_count[2]_GND_1_o_add_7_OUT_cy<0>" which will be trimmed. See
    Section 5 of the Map Report File for details about why the input signal will
    become undriven.
-ERROR:MapLib:979 - LUT6 symbol "Mmux_seg53_G" (output signal=N24) has input
+ERROR:MapLib:979 - LUT6 symbol "Mmux_seg53_G" (output signal=N57) has input
    signal "Madd_count[2]_GND_1_o_add_7_OUT_cy<0>" which will be trimmed. See
    Section 5 of the Map Report File for details about why the input signal will
    become undriven.
-ERROR:MapLib:979 - LUT5 symbol "Mmux_seg63_F" (output signal=N21) has input
+ERROR:MapLib:979 - LUT5 symbol "Mmux_seg63_F" (output signal=N54) has input
    signal "Madd_count[2]_GND_1_o_add_7_OUT_cy<0>" which will be trimmed. See
    Section 5 of the Map Report File for details about why the input signal will
    become undriven.
-ERROR:MapLib:979 - LUT6 symbol "Mmux_seg63_G" (output signal=N22) has input
+ERROR:MapLib:979 - LUT6 symbol "Mmux_seg63_G" (output signal=N55) has input
    signal "Madd_count[2]_GND_1_o_add_7_OUT_cy<0>" which will be trimmed. See
    Section 5 of the Map Report File for details about why the input signal will
    become undriven.
@@ -131,32 +131,32 @@ ERROR:MapLib:978 - LUT6 symbol "Mmux_seg3" (output signal=seg_2_OBUF) has an
    Please ensure that all the pins used in the equation for this LUT have
    signals that are not trimmed (see Section 5 of the Map Report File for
    details on which signals were trimmed).
-ERROR:MapLib:978 - LUT6 symbol "Mmux_seg43_F" (output signal=N25) has an
+ERROR:MapLib:978 - LUT6 symbol "Mmux_seg43_F" (output signal=N58) has an
    equation that uses input pin I0, which no longer has a connected signal.
    Please ensure that all the pins used in the equation for this LUT have
    signals that are not trimmed (see Section 5 of the Map Report File for
    details on which signals were trimmed).
-ERROR:MapLib:978 - LUT5 symbol "Mmux_seg43_G" (output signal=N26) has an
+ERROR:MapLib:978 - LUT5 symbol "Mmux_seg43_G" (output signal=N59) has an
    equation that uses input pin I0, which no longer has a connected signal.
    Please ensure that all the pins used in the equation for this LUT have
    signals that are not trimmed (see Section 5 of the Map Report File for
    details on which signals were trimmed).
-ERROR:MapLib:978 - LUT5 symbol "Mmux_seg53_F" (output signal=N23) has an
+ERROR:MapLib:978 - LUT5 symbol "Mmux_seg53_F" (output signal=N56) has an
    equation that uses input pin I0, which no longer has a connected signal.
    Please ensure that all the pins used in the equation for this LUT have
    signals that are not trimmed (see Section 5 of the Map Report File for
    details on which signals were trimmed).
-ERROR:MapLib:978 - LUT6 symbol "Mmux_seg53_G" (output signal=N24) has an
+ERROR:MapLib:978 - LUT6 symbol "Mmux_seg53_G" (output signal=N57) has an
    equation that uses input pin I0, which no longer has a connected signal.
    Please ensure that all the pins used in the equation for this LUT have
    signals that are not trimmed (see Section 5 of the Map Report File for
    details on which signals were trimmed).
-ERROR:MapLib:978 - LUT5 symbol "Mmux_seg63_F" (output signal=N21) has an
+ERROR:MapLib:978 - LUT5 symbol "Mmux_seg63_F" (output signal=N54) has an
    equation that uses input pin I0, which no longer has a connected signal.
    Please ensure that all the pins used in the equation for this LUT have
    signals that are not trimmed (see Section 5 of the Map Report File for
    details on which signals were trimmed).
-ERROR:MapLib:978 - LUT6 symbol "Mmux_seg63_G" (output signal=N22) has an
+ERROR:MapLib:978 - LUT6 symbol "Mmux_seg63_G" (output signal=N55) has an
    equation that uses input pin I0, which no longer has a connected signal.
    Please ensure that all the pins used in the equation for this LUT have
    signals that are not trimmed (see Section 5 of the Map Report File for

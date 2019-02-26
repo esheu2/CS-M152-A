@@ -235,32 +235,33 @@ end
 endmodule
 
 module debouncer(
-    input wire clk,
-    input wire btn,
-    output reg is_btn_posedge);
+    input clk,
+    input btn,
+    output is_btn_posedge);
     
-    wire [17:0] clk_dv_inc;
-    reg [16:0]  clk_dv;
-    
-    assign clk_dv_inc = clk_dv + 1;
-    
+    reg [15:0]  clk_dv;
+	 reg is_btn_poseedge_temp = 0;
+        
     always@(posedge clk)
-    begin
+		begin
         if( btn == 0 )
         begin
             clk_dv <= 0;
-            is_btn_posedge <= 0;
+            is_btn_poseedge_temp <= 0;
         end
         else
-        begin
-            clk_dv <= clk_dv_inc[16:0];
-            if(clk_dv_inc[17] == 1)
+			begin
+            clk_dv <= clk_dv + 1'b1;
+            if(clk_dv == 16'hffff)
             begin
                 clk_dv <= 0;
-                is_btn_posedge <= 1;
+                is_btn_poseedge_temp <= 1;
             end
-        end
-    end
+			end
+		end
+	 
+	assign is_btn_posedge = is_btn_poseedge_temp;
+	
 endmodule
 
 module clk_div(

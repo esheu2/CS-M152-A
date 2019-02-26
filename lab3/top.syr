@@ -4,14 +4,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.03 secs
  
 --> 
@@ -176,12 +176,12 @@ Unit <top> synthesized.
 
 Synthesizing Unit <debouncer>.
     Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
-    Found 1-bit register for signal <is_btn_posedge>.
-    Found 17-bit register for signal <clk_dv>.
-    Found 18-bit adder for signal <n0016> created at line 245.
+    Found 1-bit register for signal <is_btn_poseedge_temp>.
+    Found 16-bit register for signal <clk_dv>.
+    Found 16-bit adder for signal <clk_dv[15]_GND_2_o_add_2_OUT> created at line 254.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  18 D-type flip-flop(s).
+	inferred  17 D-type flip-flop(s).
 Unit <debouncer> synthesized.
 
 Synthesizing Unit <clk_div>.
@@ -194,10 +194,10 @@ Synthesizing Unit <clk_div>.
     Found 1-bit register for signal <twoHundredHzDiv>.
     Found 1-bit register for signal <blinkHzDiv>.
     Found 1-bit register for signal <oneHzDiv>.
-    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_2_OUT> created at line 308.
-    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_7_OUT> created at line 338.
-    Found 32-bit adder for signal <twoHundredHzCount[31]_GND_3_o_add_12_OUT> created at line 368.
-    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_17_OUT> created at line 398.
+    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_2_OUT> created at line 309.
+    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_7_OUT> created at line 339.
+    Found 32-bit adder for signal <twoHundredHzCount[31]_GND_3_o_add_12_OUT> created at line 369.
+    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_17_OUT> created at line 399.
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred 132 D-type flip-flop(s).
@@ -243,13 +243,13 @@ Macro Statistics
 # RAMs                                                 : 4
  16x8-bit single-port Read Only RAM                    : 4
 # Adders/Subtractors                                   : 11
- 18-bit adder                                          : 2
+ 16-bit adder                                          : 2
  3-bit adder                                           : 1
  32-bit adder                                          : 4
  4-bit adder                                           : 4
 # Registers                                            : 16
  1-bit register                                        : 6
- 17-bit register                                       : 2
+ 16-bit register                                       : 2
  32-bit register                                       : 4
  4-bit register                                        : 4
 # Latches                                              : 8
@@ -278,6 +278,10 @@ The following registers are absorbed into counter <twoHundredHzCount>: 1 registe
 The following registers are absorbed into counter <blinkHzCount>: 1 register on signal <blinkHzCount>.
 Unit <clk_div> synthesized (advanced).
 
+Synthesizing (advanced) Unit <debouncer>.
+The following registers are absorbed into counter <clk_dv>: 1 register on signal <clk_dv>.
+Unit <debouncer> synthesized (advanced).
+
 Synthesizing (advanced) Unit <seven_seg_display>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_seven_seg_temp> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
@@ -298,14 +302,14 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 4
  16x8-bit single-port distributed Read Only RAM        : 4
-# Adders/Subtractors                                   : 7
- 18-bit adder                                          : 2
+# Adders/Subtractors                                   : 5
  3-bit adder                                           : 1
  4-bit adder                                           : 4
-# Counters                                             : 4
+# Counters                                             : 6
+ 16-bit up counter                                     : 2
  32-bit up counter                                     : 4
-# Registers                                            : 56
- Flip-Flops                                            : 56
+# Registers                                            : 22
+ Flip-Flops                                            : 22
 # Comparators                                          : 3
  4-bit comparator greater                              : 3
 # Multiplexers                                         : 21
@@ -355,8 +359,6 @@ WARNING:Xst:1294 - Latch <count_1> is equivalent to a wire in block <top>.
 WARNING:Xst:1293 - FF/Latch <count_2> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1294 - Latch <count_0> is equivalent to a wire in block <top>.
 WARNING:Xst:1294 - Latch <count_1> is equivalent to a wire in block <top>.
-
-Optimizing unit <debouncer> ...
 
 Optimizing unit <clk_div> ...
 
@@ -480,8 +482,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 76
- Flip-Flops                                            : 76
+# Registers                                            : 74
+ Flip-Flops                                            : 74
 
 =========================================================================
 
@@ -504,25 +506,25 @@ Top Level Output File Name         : top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 307
+# BELS                             : 288
 #      GND                         : 1
-#      INV                         : 12
-#      LUT1                        : 56
-#      LUT2                        : 33
-#      LUT3                        : 39
-#      LUT4                        : 8
-#      LUT5                        : 12
-#      LUT6                        : 23
-#      MUXCY                       : 60
+#      INV                         : 9
+#      LUT1                        : 54
+#      LUT2                        : 40
+#      LUT3                        : 8
+#      LUT4                        : 11
+#      LUT5                        : 11
+#      LUT6                        : 39
+#      MUXCY                       : 54
 #      MUXF7                       : 3
 #      VCC                         : 1
-#      XORCY                       : 59
-# FlipFlops/Latches                : 81
-#      FD                          : 34
+#      XORCY                       : 57
+# FlipFlops/Latches                : 79
+#      FD                          : 2
 #      FDC                         : 25
 #      FDCE                        : 1
-#      FDR                         : 2
-#      FDRE                        : 14
+#      FDR                         : 39
+#      FDRE                        : 7
 #      LD                          : 5
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -537,16 +539,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              77  out of  18224     0%  
- Number of Slice LUTs:                  183  out of   9112     2%  
-    Number used as Logic:               183  out of   9112     2%  
+ Number of Slice Registers:              75  out of  18224     0%  
+ Number of Slice LUTs:                  172  out of   9112     1%  
+    Number used as Logic:               172  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    185
-   Number with an unused Flip Flop:     108  out of    185    58%  
-   Number with an unused LUT:             2  out of    185     1%  
-   Number of fully used LUT-FF pairs:    75  out of    185    40%  
-   Number of unique control sets:        11
+ Number of LUT Flip Flop pairs used:    172
+   Number with an unused Flip Flop:      97  out of    172    56%  
+   Number with an unused LUT:             0  out of    172     0%  
+   Number of fully used LUT-FF pairs:    75  out of    172    43%  
+   Number of unique control sets:        15
 
 IO Utilization: 
  Number of IOs:                          17
@@ -577,9 +579,9 @@ Clock Information:
 -----------------------------------+-------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)   | Load  |
 -----------------------------------+-------------------------+-------+
-clk                                | BUFGP                   | 62    |
+clk                                | BUFGP                   | 60    |
 d_clk/twoHzDiv                     | NONE(sw_imp/min1_temp_3)| 14    |
-dP/is_btn_posedge                  | NONE(sw_imp/is_P)       | 1     |
+dP/is_btn_poseedge_temp            | NONE(sw_imp/is_P)       | 1     |
 min10_disp/Mram_seven_seg_temp7    | NONE(an_temp_2)         | 4     |
 -----------------------------------+-------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -592,9 +594,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.543ns (Maximum Frequency: 220.107MHz)
-   Minimum input arrival time before clock: 5.658ns
-   Maximum output required time after clock: 6.251ns
+   Minimum period: 4.660ns (Maximum Frequency: 214.606MHz)
+   Minimum input arrival time before clock: 5.786ns
+   Maximum output required time after clock: 6.392ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -604,7 +606,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 4.172ns (frequency: 239.692MHz)
-  Total number of paths / destination ports: 1922 / 89
+  Total number of paths / destination ports: 1820 / 117
 -------------------------------------------------------------------------
 Delay:               4.172ns (Levels of Logic = 2)
   Source:            d_clk/twoHzCount_9 (FF)
@@ -626,10 +628,10 @@ Delay:               4.172ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'd_clk/twoHzDiv'
-  Clock period: 4.543ns (frequency: 220.107MHz)
-  Total number of paths / destination ports: 405 / 39
+  Clock period: 4.660ns (frequency: 214.606MHz)
+  Total number of paths / destination ports: 422 / 32
 -------------------------------------------------------------------------
-Delay:               4.543ns (Levels of Logic = 3)
+Delay:               4.660ns (Levels of Logic = 3)
   Source:            sw_imp/min10_temp_1 (FF)
   Destination:       sw_imp/sec1_temp_3 (FF)
   Source Clock:      d_clk/twoHzDiv rising
@@ -639,42 +641,62 @@ Delay:               4.543ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            11   0.447   1.111  sw_imp/min10_temp_1 (sw_imp/min10_temp_1)
-     LUT3:I0->O            4   0.205   0.788  sw_imp/GND_4_o_GND_4_o_equal_11_o<3>1 (sw_imp/GND_4_o_GND_4_o_equal_11_o)
-     LUT6:I4->O            1   0.203   0.580  sw_imp/_n0255_inv12 (sw_imp/_n0255_inv12)
-     LUT4:I3->O            4   0.205   0.683  sw_imp/_n0255_inv13 (sw_imp/_n0255_inv1)
-     FDRE:CE                   0.322          sw_imp/sec1_temp_0
+     FDR:C->Q             13   0.447   1.161  sw_imp/min10_temp_1 (sw_imp/min10_temp_1)
+     LUT3:I0->O            6   0.205   0.849  sw_imp/GND_4_o_GND_4_o_equal_11_o<3>1 (sw_imp/GND_4_o_GND_4_o_equal_11_o)
+     LUT6:I4->O            2   0.203   0.617  sw_imp/_n0255_inv12 (sw_imp/_n0255_inv12)
+     LUT4:I3->O            3   0.205   0.650  sw_imp/_n0255_inv13 (sw_imp/_n0255_inv1)
+     FDRE:CE                   0.322          sw_imp/sec1_temp_1
     ----------------------------------------
-    Total                      4.543ns (1.382ns logic, 3.161ns route)
-                                       (30.4% logic, 69.6% route)
+    Total                      4.660ns (1.382ns logic, 3.278ns route)
+                                       (29.7% logic, 70.3% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'dP/is_btn_posedge'
+Timing constraint: Default period analysis for Clock 'dP/is_btn_poseedge_temp'
   Clock period: 2.277ns (frequency: 439.184MHz)
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Delay:               2.277ns (Levels of Logic = 1)
   Source:            sw_imp/is_P (LATCH)
   Destination:       sw_imp/is_P (LATCH)
-  Source Clock:      dP/is_btn_posedge falling
-  Destination Clock: dP/is_btn_posedge falling
+  Source Clock:      dP/is_btn_poseedge_temp falling
+  Destination Clock: dP/is_btn_poseedge_temp falling
 
   Data Path: sw_imp/is_P to sw_imp/is_P
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q              14   0.498   0.957  sw_imp/is_P (sw_imp/is_P)
-     INV:I->O              1   0.206   0.579  sw_imp/is_P_INV_8_o1_INV_0 (sw_imp/is_P_INV_8_o)
+     INV:I->O              1   0.206   0.579  sw_imp/is_P_INV_9_o1_INV_0 (sw_imp/is_P_INV_9_o)
      LD:D                      0.037          sw_imp/is_P
     ----------------------------------------
     Total                      2.277ns (0.741ns logic, 1.536ns route)
                                        (32.5% logic, 67.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'd_clk/twoHzDiv'
-  Total number of paths / destination ports: 71 / 35
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 34 / 34
 -------------------------------------------------------------------------
-Offset:              5.658ns (Levels of Logic = 4)
+Offset:              3.840ns (Levels of Logic = 2)
+  Source:            btnP (PAD)
+  Destination:       dP/clk_dv_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: btnP to dP/clk_dv_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.222   0.981  btnP_IBUF (btnP_IBUF)
+     LUT6:I0->O           16   0.203   1.004  dP/Mcount_clk_dv_val1 (dP/Mcount_clk_dv_val)
+     FDR:R                     0.430          dP/clk_dv_9
+    ----------------------------------------
+    Total                      3.840ns (1.855ns logic, 1.985ns route)
+                                       (48.3% logic, 51.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'd_clk/twoHzDiv'
+  Total number of paths / destination ports: 76 / 29
+-------------------------------------------------------------------------
+Offset:              5.786ns (Levels of Logic = 4)
   Source:            switchAdj (PAD)
   Destination:       sw_imp/sec1_temp_3 (FF)
   Destination Clock: d_clk/twoHzDiv rising
@@ -683,40 +705,20 @@ Offset:              5.658ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            17   1.222   1.392  switchAdj_IBUF (switchAdj_IBUF)
-     LUT6:I0->O            6   0.203   0.745  sw_imp/_n0239_inv111 (sw_imp/_n0239_inv11)
-     LUT5:I4->O            1   0.205   0.684  sw_imp/_n0255_inv11 (sw_imp/_n0255_inv11)
-     LUT4:I2->O            4   0.203   0.683  sw_imp/_n0255_inv13 (sw_imp/_n0255_inv1)
-     FDRE:CE                   0.322          sw_imp/sec1_temp_0
+     IBUF:I->O            20   1.222   1.457  switchAdj_IBUF (switchAdj_IBUF)
+     LUT6:I0->O            8   0.203   0.803  sw_imp/_n0239_inv111 (sw_imp/_n0239_inv11)
+     LUT5:I4->O            2   0.205   0.721  sw_imp/_n0255_inv11 (sw_imp/_n0255_inv11)
+     LUT4:I2->O            3   0.203   0.650  sw_imp/_n0255_inv13 (sw_imp/_n0255_inv1)
+     FDRE:CE                   0.322          sw_imp/sec1_temp_1
     ----------------------------------------
-    Total                      5.658ns (2.155ns logic, 3.503ns route)
-                                       (38.1% logic, 61.9% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 36 / 36
--------------------------------------------------------------------------
-Offset:              3.486ns (Levels of Logic = 2)
-  Source:            btnP (PAD)
-  Destination:       dP/is_btn_posedge (FF)
-  Destination Clock: clk rising
-
-  Data Path: btnP to dP/is_btn_posedge
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            18   1.222   1.049  btnP_IBUF (btnP_IBUF)
-     INV:I->O              1   0.206   0.579  dP/btn_inv1_INV_0 (dP/btn_inv)
-     FDR:R                     0.430          dP/is_btn_posedge
-    ----------------------------------------
-    Total                      3.486ns (1.858ns logic, 1.628ns route)
-                                       (53.3% logic, 46.7% route)
+    Total                      5.786ns (2.155ns logic, 3.631ns route)
+                                       (37.2% logic, 62.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'd_clk/twoHzDiv'
   Total number of paths / destination ports: 66 / 7
 -------------------------------------------------------------------------
-Offset:              6.251ns (Levels of Logic = 4)
+Offset:              6.392ns (Levels of Logic = 4)
   Source:            sw_imp/min1_temp_3 (FF)
   Destination:       seg<3> (PAD)
   Source Clock:      d_clk/twoHzDiv rising
@@ -725,14 +727,14 @@ Offset:              6.251ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            12   0.447   1.156  sw_imp/min1_temp_3 (sw_imp/min1_temp_3)
+     FDRE:C->Q            18   0.447   1.297  sw_imp/min1_temp_3 (sw_imp/min1_temp_3)
      LUT4:I0->O            2   0.203   0.961  min1_disp/Mram_seven_seg_temp11 (min1_disp/Mram_seven_seg_temp)
-     LUT6:I1->O            1   0.203   0.000  Mmux_seg43_F (N25)
+     LUT6:I1->O            1   0.203   0.000  Mmux_seg43_F (N58)
      MUXF7:I0->O           1   0.131   0.579  Mmux_seg43 (seg_3_OBUF)
      OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
     ----------------------------------------
-    Total                      6.251ns (3.555ns logic, 2.696ns route)
-                                       (56.9% logic, 43.1% route)
+    Total                      6.392ns (3.555ns logic, 2.837ns route)
+                                       (55.6% logic, 44.4% route)
 
 =========================================================================
 
@@ -747,29 +749,29 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |    4.172|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dP/is_btn_posedge
------------------+---------+---------+---------+---------+
-                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------+---------+---------+---------+---------+
-dP/is_btn_posedge|         |         |    2.277|         |
------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock dP/is_btn_poseedge_temp
+-----------------------+---------+---------+---------+---------+
+                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------+---------+---------+---------+---------+
+dP/is_btn_poseedge_temp|         |         |    2.277|         |
+-----------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock d_clk/twoHzDiv
------------------+---------+---------+---------+---------+
-                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------+---------+---------+---------+---------+
-clk              |    4.269|         |         |         |
-dP/is_btn_posedge|         |    4.844|         |         |
-d_clk/twoHzDiv   |    4.543|         |         |         |
------------------+---------+---------+---------+---------+
+-----------------------+---------+---------+---------+---------+
+                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------+---------+---------+---------+---------+
+clk                    |    4.316|         |         |         |
+dP/is_btn_poseedge_temp|         |    4.907|         |         |
+d_clk/twoHzDiv         |    4.660|         |         |         |
+-----------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.13 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.85 secs
  
 --> 
 
