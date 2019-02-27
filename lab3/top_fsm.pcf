@@ -1,0 +1,71 @@
+//! **************************************************************************
+// Written by: Map P.20160913 on Wed Feb 27 19:49:40 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "sel" LOCATE = SITE "T9" LEVEL 1;
+COMP "rst" LOCATE = SITE "A8" LEVEL 1;
+COMP "seven_seg<0>" LOCATE = SITE "T17" LEVEL 1;
+COMP "seven_seg<1>" LOCATE = SITE "T18" LEVEL 1;
+COMP "seven_seg<2>" LOCATE = SITE "U17" LEVEL 1;
+COMP "seven_seg<3>" LOCATE = SITE "U18" LEVEL 1;
+COMP "seven_seg<4>" LOCATE = SITE "M14" LEVEL 1;
+COMP "seven_seg<5>" LOCATE = SITE "N14" LEVEL 1;
+COMP "seven_seg<6>" LOCATE = SITE "L14" LEVEL 1;
+COMP "seven_seg<7>" LOCATE = SITE "M13" LEVEL 1;
+COMP "pause" LOCATE = SITE "B8" LEVEL 1;
+COMP "adjust" LOCATE = SITE "T10" LEVEL 1;
+COMP "anode_count<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "anode_count<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "anode_count<2>" LOCATE = SITE "P18" LEVEL 1;
+COMP "anode_count<3>" LOCATE = SITE "P17" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "divs/blinkHzCount_23" BEL "divs/blinkHzCount_22"
+        BEL "divs/blinkHzCount_21" BEL "divs/blinkHzCount_20" BEL
+        "divs/blinkHzCount_19" BEL "divs/blinkHzCount_18" BEL
+        "divs/blinkHzCount_17" BEL "divs/blinkHzCount_16" BEL
+        "divs/blinkHzCount_15" BEL "divs/blinkHzCount_14" BEL
+        "divs/blinkHzCount_13" BEL "divs/blinkHzCount_12" BEL
+        "divs/blinkHzCount_11" BEL "divs/blinkHzCount_10" BEL
+        "divs/blinkHzCount_9" BEL "divs/blinkHzCount_8" BEL
+        "divs/blinkHzCount_7" BEL "divs/blinkHzCount_6" BEL
+        "divs/blinkHzCount_5" BEL "divs/blinkHzCount_4" BEL
+        "divs/blinkHzCount_3" BEL "divs/blinkHzCount_2" BEL
+        "divs/blinkHzCount_1" BEL "divs/blinkHzCount_0" BEL
+        "divs/refreshHzCount_16" BEL "divs/refreshHzCount_15" BEL
+        "divs/refreshHzCount_14" BEL "divs/refreshHzCount_13" BEL
+        "divs/refreshHzCount_12" BEL "divs/refreshHzCount_11" BEL
+        "divs/refreshHzCount_10" BEL "divs/refreshHzCount_9" BEL
+        "divs/refreshHzCount_8" BEL "divs/refreshHzCount_7" BEL
+        "divs/refreshHzCount_6" BEL "divs/twoHzCount_24" BEL
+        "divs/twoHzCount_23" BEL "divs/twoHzCount_22" BEL "divs/twoHzCount_21"
+        BEL "divs/twoHzCount_20" BEL "divs/twoHzCount_19" BEL
+        "divs/twoHzCount_18" BEL "divs/twoHzCount_17" BEL "divs/twoHzCount_16"
+        BEL "divs/twoHzCount_15" BEL "divs/twoHzCount_14" BEL
+        "divs/twoHzCount_13" BEL "divs/twoHzCount_12" BEL "divs/twoHzCount_11"
+        BEL "divs/twoHzCount_10" BEL "divs/twoHzCount_9" BEL
+        "divs/twoHzCount_8" BEL "divs/twoHzCount_7" BEL "divs/twoHzCount_6"
+        BEL "divs/oneHzCount_25" BEL "divs/oneHzCount_24" BEL
+        "divs/oneHzCount_23" BEL "divs/oneHzCount_22" BEL "divs/oneHzCount_21"
+        BEL "divs/oneHzCount_20" BEL "divs/oneHzCount_19" BEL
+        "divs/oneHzCount_18" BEL "divs/oneHzCount_17" BEL "divs/oneHzCount_16"
+        BEL "divs/oneHzCount_15" BEL "divs/oneHzCount_14" BEL
+        "divs/oneHzCount_13" BEL "divs/oneHzCount_12" BEL "divs/oneHzCount_11"
+        BEL "divs/oneHzCount_10" BEL "divs/oneHzCount_9" BEL
+        "divs/oneHzCount_8" BEL "divs/oneHzCount_7" BEL "divs/oneHzDiv" BEL
+        "divs/blinkHzDiv" BEL "divs/refreshHzDiv" BEL "divs/twoHzDiv" BEL
+        "pause_btn/is_btn_poseedge_temp" BEL "rst_btn/is_btn_poseedge_temp"
+        BEL "rst_btn/mem_0" BEL "pause_btn/mem_0" BEL "rst_btn/mem_1" BEL
+        "rst_btn/mem_2" BEL "rst_btn/mem_3" BEL "rst_btn/mem_4" BEL
+        "rst_btn/mem_5" BEL "rst_btn/mem_6" BEL "rst_btn/mem_7" BEL
+        "rst_btn/mem_8" BEL "rst_btn/mem_9" BEL "rst_btn/mem_10" BEL
+        "rst_btn/mem_11" BEL "rst_btn/mem_12" BEL "rst_btn/mem_13" BEL
+        "rst_btn/mem_14" BEL "rst_btn/mem_15" BEL "pause_btn/mem_1" BEL
+        "pause_btn/mem_2" BEL "pause_btn/mem_3" BEL "pause_btn/mem_4" BEL
+        "pause_btn/mem_5" BEL "pause_btn/mem_6" BEL "pause_btn/mem_7" BEL
+        "pause_btn/mem_8" BEL "pause_btn/mem_9" BEL "pause_btn/mem_10" BEL
+        "pause_btn/mem_11" BEL "pause_btn/mem_12" BEL "pause_btn/mem_13" BEL
+        "pause_btn/mem_14" BEL "pause_btn/mem_15" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+
