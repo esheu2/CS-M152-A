@@ -1,21 +1,18 @@
-Release 14.7 - xst P.20160913 (lin64)
+Release 14.6 - xst P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> 
-Parameter TMPDIR set to xst/projnav.tmp
+--> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.12 secs
  
---> 
-Parameter xsthdpdir set to xst
+--> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.13 secs
  
---> 
-Reading design: top.prj
+--> Reading design: top.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -108,9 +105,10 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" into library work
+Analyzing Verilog file "C:\Users\152\CS-M152-A\lab3\stopwatch.v" into library work
 Parsing module <top>.
 Parsing module <stopwatch>.
+Parsing module <clock_selector>.
 Parsing module <debouncer>.
 Parsing module <clk_div>.
 Parsing module <seven_seg_display>.
@@ -124,80 +122,92 @@ Elaborating module <top>.
 Elaborating module <debouncer>.
 
 Elaborating module <clk_div>.
-WARNING:HDLCompiler:1127 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 65: Assignment to hz200 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 66: Assignment to hz5 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 55: Assignment to hzrefresh ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 56: Assignment to hzblinking ignored, since the identifier is never used
 
 Elaborating module <stopwatch>.
-WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 214: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 232: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 75: Size mismatch in connection of port <sec10>. Formal port size is 4-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 76: Size mismatch in connection of port <sec1>. Formal port size is 4-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 216: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 234: Result of 5-bit expression is truncated to fit in 4-bit target.
 
 Elaborating module <seven_seg_display>.
-WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 79: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 80: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 85: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 88: Signal <seven_seg1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 89: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 89: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 91: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 94: Signal <seven_seg2> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 95: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 95: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 97: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 100: Signal <seven_seg3> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 101: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 101: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 103: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 106: Signal <seven_seg4> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 82: Signal <adj> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 89: Signal <iter> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 92: Signal <seg_min10> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 93: Signal <iter> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 93: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 95: Signal <iter> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 98: Signal <seg_min1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 99: Signal <iter> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 99: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 101: Signal <iter> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 104: Signal <seg_sec10> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 105: Signal <iter> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:413 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 105: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 107: Signal <iter> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" Line 110: Signal <seg_sec1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <top>.
-    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
-INFO:Xst:3210 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" line 61: Output port <twoHundredHz> of the instance <d_clk> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" line 61: Output port <blinkHz> of the instance <d_clk> is unconnected or connected to loadless signal.
-    Found 3-bit adder for signal <count[2]_GND_1_o_add_7_OUT> created at line 101.
-    Found 8-bit 4-to-1 multiplexer for signal <seg> created at line 28.
-WARNING:Xst:737 - Found 1-bit latch for signal <count<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <count<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <count<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <an_temp<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <an_temp<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <an_temp<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <an_temp<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
+INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" line 51: Output port <refreshHz> of the instance <clks> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\152\CS-M152-A\lab3\stopwatch.v" line 51: Output port <blinkHz> of the instance <clks> is unconnected or connected to loadless signal.
+    Found 3-bit adder for signal <iter[2]_GND_1_o_add_6_OUT> created at line 105.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0123> created at line 80.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0125> created at line 80.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0127> created at line 80.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0129> created at line 80.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0131> created at line 80.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0133> created at line 80.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0135> created at line 80.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0137> created at line 80.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seg<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <iter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <iter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <iter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   7 Latch(s).
-	inferred   6 Multiplexer(s).
+	inferred  15 Latch(s).
+	inferred  13 Multiplexer(s).
 Unit <top> synthesized.
 
 Synthesizing Unit <debouncer>.
-    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
+    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
     Found 1-bit register for signal <is_btn_poseedge_temp>.
     Found 16-bit register for signal <clk_dv>.
-    Found 16-bit adder for signal <clk_dv[15]_GND_2_o_add_2_OUT> created at line 255.
+    Found 16-bit adder for signal <clk_dv[15]_GND_2_o_add_2_OUT> created at line 282.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
 Unit <debouncer> synthesized.
 
 Synthesizing Unit <clk_div>.
-    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
+    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
     Found 32-bit register for signal <oneHzCount>.
     Found 32-bit register for signal <twoHzCount>.
-    Found 32-bit register for signal <twoHundredHzCount>.
+    Found 32-bit register for signal <refreshHzCount>.
     Found 32-bit register for signal <blinkHzCount>.
     Found 1-bit register for signal <twoHzDiv>.
-    Found 1-bit register for signal <twoHundredHzDiv>.
+    Found 1-bit register for signal <refreshHzDiv>.
     Found 1-bit register for signal <blinkHzDiv>.
     Found 1-bit register for signal <oneHzDiv>.
-    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_2_OUT> created at line 310.
-    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_7_OUT> created at line 340.
-    Found 32-bit adder for signal <twoHundredHzCount[31]_GND_3_o_add_12_OUT> created at line 370.
-    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_17_OUT> created at line 400.
+    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_2_OUT> created at line 337.
+    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_7_OUT> created at line 367.
+    Found 32-bit adder for signal <refreshHzCount[31]_GND_3_o_add_12_OUT> created at line 397.
+    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_17_OUT> created at line 427.
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred 132 D-type flip-flop(s).
@@ -205,22 +215,22 @@ Synthesizing Unit <clk_div>.
 Unit <clk_div> synthesized.
 
 Synthesizing Unit <stopwatch>.
-    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
+    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
 WARNING:Xst:647 - Input <hz1clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 4-bit register for signal <sec10_temp>.
     Found 4-bit register for signal <sec1_temp>.
     Found 4-bit register for signal <min10_temp>.
     Found 4-bit register for signal <min1_temp>.
-    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_6_OUT> created at line 158.
-    Found 4-bit adder for signal <min10[3]_GND_4_o_add_11_OUT> created at line 169.
-    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_16_OUT> created at line 177.
-    Found 4-bit adder for signal <sec10_temp[3]_GND_4_o_add_37_OUT> created at line 209.
-    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_39_OUT> created at line 214.
-    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_47_OUT> created at line 232.
+    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_2_OUT> created at line 160.
+    Found 4-bit adder for signal <min10[3]_GND_4_o_add_7_OUT> created at line 171.
+    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_12_OUT> created at line 179.
+    Found 4-bit adder for signal <sec10_temp[3]_GND_4_o_add_33_OUT> created at line 211.
+    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_35_OUT> created at line 216.
+    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_43_OUT> created at line 234.
 WARNING:Xst:737 - Found 1-bit latch for signal <is_P>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 4-bit comparator greater for signal <sec1_temp[3]_PWR_4_o_LessThan_6_o> created at line 157
-    Found 4-bit comparator greater for signal <GND_4_o_sec1_temp[3]_LessThan_36_o> created at line 200
-    Found 4-bit comparator greater for signal <GND_4_o_min1_temp[3]_LessThan_44_o> created at line 218
+    Found 4-bit comparator greater for signal <sec1_temp[3]_PWR_4_o_LessThan_2_o> created at line 159
+    Found 4-bit comparator greater for signal <GND_4_o_sec1_temp[3]_LessThan_32_o> created at line 202
+    Found 4-bit comparator greater for signal <GND_4_o_min1_temp[3]_LessThan_40_o> created at line 220
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred  16 D-type flip-flop(s).
@@ -230,7 +240,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <is_P>. Latches may be generated 
 Unit <stopwatch> synthesized.
 
 Synthesizing Unit <seven_seg_display>.
-    Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
+    Related source file is "C:\Users\152\CS-M152-A\lab3\stopwatch.v".
     Found 16x8-bit Read Only RAM for signal <seven_seg_temp>
     Summary:
 	inferred   1 RAM(s).
@@ -252,16 +262,16 @@ Macro Statistics
  16-bit register                                       : 2
  32-bit register                                       : 4
  4-bit register                                        : 4
-# Latches                                              : 8
- 1-bit latch                                           : 8
+# Latches                                              : 16
+ 1-bit latch                                           : 16
 # Comparators                                          : 3
  4-bit comparator greater                              : 3
-# Multiplexers                                         : 25
+# Multiplexers                                         : 32
  1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 4-to-1 multiplexer                              : 8
  3-bit 2-to-1 multiplexer                              : 2
  32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 15
- 8-bit 4-to-1 multiplexer                              : 1
 
 =========================================================================
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -274,7 +284,7 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 Synthesizing (advanced) Unit <clk_div>.
 The following registers are absorbed into counter <oneHzCount>: 1 register on signal <oneHzCount>.
 The following registers are absorbed into counter <twoHzCount>: 1 register on signal <twoHzCount>.
-The following registers are absorbed into counter <twoHundredHzCount>: 1 register on signal <twoHundredHzCount>.
+The following registers are absorbed into counter <refreshHzCount>: 1 register on signal <refreshHzCount>.
 The following registers are absorbed into counter <blinkHzCount>: 1 register on signal <blinkHzCount>.
 Unit <clk_div> synthesized (advanced).
 
@@ -312,165 +322,134 @@ Macro Statistics
  Flip-Flops                                            : 22
 # Comparators                                          : 3
  4-bit comparator greater                              : 3
-# Multiplexers                                         : 21
+# Multiplexers                                         : 28
  1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 4-to-1 multiplexer                              : 8
  3-bit 2-to-1 multiplexer                              : 2
  4-bit 2-to-1 multiplexer                              : 15
- 8-bit 4-to-1 multiplexer                              : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
-   incompatible with the Spartan6 architecture. The two primary causes of this is
-   either a register or latch described with both an asynchronous set and
-   asynchronous reset, or a register or latch described with an asynchronous
-   set or reset which however has an initialization value of the opposite 
-   polarity (i.e. asynchronous reset with an initialization value of 1).
-    While this circuit can be built, it creates a sub-optimal implementation
-   in terms of area, power and performance. For a more optimal implementation
-   Xilinx highly recommends one of the following:
-
-          1) Remove either the set or reset from all registers and latches
-             if not needed for required functionality
-          2) Modify the code in order to produce a synchronous set
-             and/or reset (both is preferred)
-          3) Ensure all registers have the same initialization value as the
-             described asynchronous set or reset polarity
-          4) Use the -async_to_sync option to transform the asynchronous
-             set/reset to synchronous operation
-             (timing simulation highly recommended when using this option)
-
-  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
-
-  List of register instances with asynchronous set and reset:
-    an_temp_0 in unit <top>
-    an_temp_1 in unit <top>
-    an_temp_3 in unit <top>
-    an_temp_2 in unit <top>
-
+WARNING:Xst:1710 - FF/Latch <seg_7> (without init value) has a constant value of 1 in block <top>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <top> ...
-WARNING:Xst:1293 - FF/Latch <count_2> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1294 - Latch <count_0> is equivalent to a wire in block <top>.
-WARNING:Xst:1294 - Latch <count_1> is equivalent to a wire in block <top>.
-WARNING:Xst:1293 - FF/Latch <count_2> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1294 - Latch <count_0> is equivalent to a wire in block <top>.
-WARNING:Xst:1294 - Latch <count_1> is equivalent to a wire in block <top>.
+WARNING:Xst:1710 - FF/Latch <iter_2> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <iter_2> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <clk_div> ...
 
 Optimizing unit <stopwatch> ...
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_31> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_30> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_29> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_28> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_27> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_26> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_25> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_24> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_23> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_22> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_21> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_20> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_19> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_18> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_17> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_16> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_15> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_14> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_13> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_12> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_11> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_10> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_9> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_8> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_7> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_6> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_5> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_4> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_3> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_2> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_1> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzCount_0> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_31> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_30> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_29> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_28> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_27> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_26> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_25> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_24> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_23> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_22> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_21> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_20> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_19> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_18> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_17> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_16> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_15> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_14> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_13> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_12> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_11> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_10> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_9> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_8> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_7> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_6> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_5> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_4> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_3> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_2> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_1> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzCount_0> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_31> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_30> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_29> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_28> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_27> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_26> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_25> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_24> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_23> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_22> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_21> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_20> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_19> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_18> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_17> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_16> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_15> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_14> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_13> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_12> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_11> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_10> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_9> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_8> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_7> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_6> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_5> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_4> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_3> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_2> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_1> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzCount_0> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/oneHzDiv> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/blinkHzDiv> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <d_clk/twoHundredHzDiv> of sequential type is unconnected in block <top>.
-WARNING:Xst:1710 - FF/Latch <sw_imp/min10_temp_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <sw_imp/sec10_temp_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_30> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_29> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_28> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_27> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_26> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_clk/twoHzCount_25> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzCount_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzCount_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzCount_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/oneHzDiv> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/blinkHzDiv> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <clks/refreshHzDiv> of sequential type is unconnected in block <top>.
+WARNING:Xst:1293 - FF/Latch <s/min10_temp_3> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <s/sec10_temp_3> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clks/twoHzCount_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clks/twoHzCount_30> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clks/twoHzCount_29> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clks/twoHzCount_28> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clks/twoHzCount_27> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clks/twoHzCount_26> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clks/twoHzCount_25> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -506,27 +485,29 @@ Top Level Output File Name         : top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 288
+# BELS                             : 303
 #      GND                         : 1
 #      INV                         : 9
 #      LUT1                        : 54
-#      LUT2                        : 40
-#      LUT3                        : 8
-#      LUT4                        : 11
-#      LUT5                        : 11
-#      LUT6                        : 39
+#      LUT2                        : 41
+#      LUT3                        : 16
+#      LUT4                        : 17
+#      LUT5                        : 8
+#      LUT6                        : 43
 #      MUXCY                       : 54
-#      MUXF7                       : 3
+#      MUXF7                       : 2
 #      VCC                         : 1
 #      XORCY                       : 57
-# FlipFlops/Latches                : 79
+# FlipFlops/Latches                : 88
 #      FD                          : 2
 #      FDC                         : 25
 #      FDCE                        : 1
 #      FDR                         : 39
 #      FDRE                        : 7
-#      LD                          : 5
-# Clock Buffers                    : 1
+#      LD                          : 1
+#      LDE_1                       : 13
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 16
 #      IBUF                        : 4
@@ -539,24 +520,23 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              75  out of  18224     0%  
- Number of Slice LUTs:                  172  out of   9112     1%  
-    Number used as Logic:               172  out of   9112     1%  
+ Number of Slice Registers:              88  out of  18224     0%  
+ Number of Slice LUTs:                  188  out of   9112     2%  
+    Number used as Logic:               188  out of   9112     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    172
-   Number with an unused Flip Flop:      97  out of    172    56%  
-   Number with an unused LUT:             0  out of    172     0%  
-   Number of fully used LUT-FF pairs:    75  out of    172    43%  
+ Number of LUT Flip Flop pairs used:    188
+   Number with an unused Flip Flop:     100  out of    188    53%  
+   Number with an unused LUT:             0  out of    188     0%  
+   Number of fully used LUT-FF pairs:    88  out of    188    46%  
    Number of unique control sets:        15
 
 IO Utilization: 
  Number of IOs:                          17
  Number of bonded IOBs:                  17  out of    232     7%  
-    IOB Flip Flops/Latches:               4
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -576,14 +556,14 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)   | Load  |
------------------------------------+-------------------------+-------+
-clk                                | BUFGP                   | 60    |
-d_clk/twoHzDiv                     | NONE(sw_imp/min1_temp_3)| 14    |
-dP/is_btn_poseedge_temp            | NONE(sw_imp/is_P)       | 1     |
-min10_disp/Mram_seven_seg_temp7    | NONE(an_temp_2)         | 4     |
------------------------------------+-------------------------+-------+
+------------------------------------+------------------------+-------+
+Clock Signal                        | Clock buffer(FF name)  | Load  |
+------------------------------------+------------------------+-------+
+adj                                 | IBUF+BUFG              | 13    |
+clk                                 | BUFGP                  | 60    |
+clks/twoHzDiv                       | NONE(s/min1_temp_3)    | 14    |
+pause_debouncer/is_btn_poseedge_temp| NONE(s/is_P)           | 1     |
+------------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -594,9 +574,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.660ns (Maximum Frequency: 214.606MHz)
+   Minimum period: 4.766ns (Maximum Frequency: 209.822MHz)
    Minimum input arrival time before clock: 5.786ns
-   Maximum output required time after clock: 6.392ns
+   Maximum output required time after clock: 3.648ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -604,70 +584,94 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'adj'
+  Clock period: 3.080ns (frequency: 324.659MHz)
+  Total number of paths / destination ports: 32 / 13
+-------------------------------------------------------------------------
+Delay:               3.080ns (Levels of Logic = 3)
+  Source:            iter_1 (LATCH)
+  Destination:       seg_0 (LATCH)
+  Source Clock:      adj rising
+  Destination Clock: adj rising
+
+  Data Path: iter_1 to seg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE_1:G->Q           15   0.498   1.346  iter_1 (iter_1)
+     LUT6:I0->O            3   0.203   0.651  seg[7]_seg_min10[7]_mux_18_OUT<3><3>21 (seg[7]_seg_min10[7]_mux_18_OUT<3><3>21)
+     LUT6:I5->O            1   0.205   0.000  seg[7]_seg_min10[7]_mux_18_OUT<0><0>3_G (N53)
+     MUXF7:I1->O           1   0.140   0.000  seg[7]_seg_min10[7]_mux_18_OUT<0><0>3 (seg[7]_seg_min10[7]_mux_18_OUT<0>)
+     LDE_1:D                   0.037          seg_0
+    ----------------------------------------
+    Total                      3.080ns (1.083ns logic, 1.997ns route)
+                                       (35.2% logic, 64.8% route)
+
+=========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 4.172ns (frequency: 239.692MHz)
   Total number of paths / destination ports: 1820 / 117
 -------------------------------------------------------------------------
 Delay:               4.172ns (Levels of Logic = 2)
-  Source:            d_clk/twoHzCount_9 (FF)
-  Destination:       d_clk/twoHzDiv (FF)
+  Source:            clks/twoHzCount_9 (FF)
+  Destination:       clks/twoHzDiv (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: d_clk/twoHzCount_9 to d_clk/twoHzDiv
+  Data Path: clks/twoHzCount_9 to clks/twoHzDiv
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.447   0.981  d_clk/twoHzCount_9 (d_clk/twoHzCount_9)
-     LUT6:I0->O            1   0.203   0.808  d_clk/twoHzCount[31]_GND_3_o_equal_7_o<31>4 (d_clk/twoHzCount[31]_GND_3_o_equal_7_o<31>3)
-     LUT6:I3->O           26   0.205   1.206  d_clk/twoHzCount[31]_GND_3_o_equal_7_o<31>5 (d_clk/twoHzCount[31]_GND_3_o_equal_7_o)
-     FDCE:CE                   0.322          d_clk/twoHzDiv
+     FDC:C->Q              2   0.447   0.981  clks/twoHzCount_9 (clks/twoHzCount_9)
+     LUT6:I0->O            1   0.203   0.808  clks/twoHzCount[31]_GND_3_o_equal_7_o<31>4 (clks/twoHzCount[31]_GND_3_o_equal_7_o<31>3)
+     LUT6:I3->O           26   0.205   1.206  clks/twoHzCount[31]_GND_3_o_equal_7_o<31>5 (clks/twoHzCount[31]_GND_3_o_equal_7_o)
+     FDCE:CE                   0.322          clks/twoHzDiv
     ----------------------------------------
     Total                      4.172ns (1.177ns logic, 2.995ns route)
                                        (28.2% logic, 71.8% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'd_clk/twoHzDiv'
-  Clock period: 4.660ns (frequency: 214.606MHz)
+Timing constraint: Default period analysis for Clock 'clks/twoHzDiv'
+  Clock period: 4.766ns (frequency: 209.822MHz)
   Total number of paths / destination ports: 422 / 32
 -------------------------------------------------------------------------
-Delay:               4.660ns (Levels of Logic = 3)
-  Source:            sw_imp/min10_temp_1 (FF)
-  Destination:       sw_imp/sec1_temp_3 (FF)
-  Source Clock:      d_clk/twoHzDiv rising
-  Destination Clock: d_clk/twoHzDiv rising
+Delay:               4.766ns (Levels of Logic = 3)
+  Source:            s/sec10_temp_1 (FF)
+  Destination:       s/sec1_temp_3 (FF)
+  Source Clock:      clks/twoHzDiv rising
+  Destination Clock: clks/twoHzDiv rising
 
-  Data Path: sw_imp/min10_temp_1 to sw_imp/sec1_temp_3
+  Data Path: s/sec10_temp_1 to s/sec1_temp_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             13   0.447   1.161  sw_imp/min10_temp_1 (sw_imp/min10_temp_1)
-     LUT3:I0->O            6   0.205   0.849  sw_imp/GND_4_o_GND_4_o_equal_11_o<3>1 (sw_imp/GND_4_o_GND_4_o_equal_11_o)
-     LUT6:I4->O            2   0.203   0.617  sw_imp/_n0255_inv12 (sw_imp/_n0255_inv12)
-     LUT4:I3->O            3   0.205   0.650  sw_imp/_n0255_inv13 (sw_imp/_n0255_inv1)
-     FDRE:CE                   0.322          sw_imp/sec1_temp_1
+     FDRE:C->Q            12   0.447   1.137  s/sec10_temp_1 (s/sec10_temp_1)
+     LUT3:I0->O            7   0.205   0.878  s/GND_4_o_GND_4_o_equal_5_o<3>1 (s/GND_4_o_GND_4_o_equal_5_o)
+     LUT5:I3->O            2   0.203   0.721  s/_n0255_inv11 (s/_n0255_inv11)
+     LUT4:I2->O            3   0.203   0.650  s/_n0255_inv13 (s/_n0255_inv1)
+     FDRE:CE                   0.322          s/sec1_temp_1
     ----------------------------------------
-    Total                      4.660ns (1.382ns logic, 3.278ns route)
-                                       (29.7% logic, 70.3% route)
+    Total                      4.766ns (1.380ns logic, 3.386ns route)
+                                       (29.0% logic, 71.0% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'dP/is_btn_poseedge_temp'
+Timing constraint: Default period analysis for Clock 'pause_debouncer/is_btn_poseedge_temp'
   Clock period: 2.277ns (frequency: 439.184MHz)
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Delay:               2.277ns (Levels of Logic = 1)
-  Source:            sw_imp/is_P (LATCH)
-  Destination:       sw_imp/is_P (LATCH)
-  Source Clock:      dP/is_btn_poseedge_temp falling
-  Destination Clock: dP/is_btn_poseedge_temp falling
+  Source:            s/is_P (LATCH)
+  Destination:       s/is_P (LATCH)
+  Source Clock:      pause_debouncer/is_btn_poseedge_temp falling
+  Destination Clock: pause_debouncer/is_btn_poseedge_temp falling
 
-  Data Path: sw_imp/is_P to sw_imp/is_P
+  Data Path: s/is_P to s/is_P
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q              14   0.498   0.957  sw_imp/is_P (sw_imp/is_P)
-     INV:I->O              1   0.206   0.579  sw_imp/is_P_INV_9_o1_INV_0 (sw_imp/is_P_INV_9_o)
-     LD:D                      0.037          sw_imp/is_P
+     LD:G->Q              14   0.498   0.957  s/is_P (s/is_P)
+     INV:I->O              1   0.206   0.579  s/is_P_INV_9_o1_INV_0 (s/is_P_INV_9_o)
+     LD:D                      0.037          s/is_P
     ----------------------------------------
     Total                      2.277ns (0.741ns logic, 1.536ns route)
                                        (32.5% logic, 67.5% route)
@@ -677,69 +681,75 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 34 / 34
 -------------------------------------------------------------------------
 Offset:              3.840ns (Levels of Logic = 2)
-  Source:            btnP (PAD)
-  Destination:       dP/clk_dv_3 (FF)
+  Source:            rst (PAD)
+  Destination:       rst_debouncer/clk_dv_1 (FF)
   Destination Clock: clk rising
 
-  Data Path: btnP to dP/clk_dv_3
+  Data Path: rst to rst_debouncer/clk_dv_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.222   0.981  btnP_IBUF (btnP_IBUF)
-     LUT6:I0->O           16   0.203   1.004  dP/Mcount_clk_dv_val1 (dP/Mcount_clk_dv_val)
-     FDR:R                     0.430          dP/clk_dv_9
+     IBUF:I->O             2   1.222   0.981  rst_IBUF (rst_IBUF)
+     LUT6:I0->O           16   0.203   1.004  rst_debouncer/Mcount_clk_dv_val1 (rst_debouncer/Mcount_clk_dv_val)
+     FDR:R                     0.430          rst_debouncer/clk_dv_9
     ----------------------------------------
     Total                      3.840ns (1.855ns logic, 1.985ns route)
                                        (48.3% logic, 51.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'd_clk/twoHzDiv'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clks/twoHzDiv'
   Total number of paths / destination ports: 76 / 29
 -------------------------------------------------------------------------
 Offset:              5.786ns (Levels of Logic = 4)
-  Source:            switchAdj (PAD)
-  Destination:       sw_imp/sec1_temp_3 (FF)
-  Destination Clock: d_clk/twoHzDiv rising
+  Source:            adj (PAD)
+  Destination:       s/sec1_temp_3 (FF)
+  Destination Clock: clks/twoHzDiv rising
 
-  Data Path: switchAdj to sw_imp/sec1_temp_3
+  Data Path: adj to s/sec1_temp_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            20   1.222   1.457  switchAdj_IBUF (switchAdj_IBUF)
-     LUT6:I0->O            8   0.203   0.803  sw_imp/_n0239_inv111 (sw_imp/_n0239_inv11)
-     LUT5:I4->O            2   0.205   0.721  sw_imp/_n0255_inv11 (sw_imp/_n0255_inv11)
-     LUT4:I2->O            3   0.203   0.650  sw_imp/_n0255_inv13 (sw_imp/_n0255_inv1)
-     FDRE:CE                   0.322          sw_imp/sec1_temp_1
+     IBUF:I->O            20   1.222   1.457  adj_IBUF (adj_IBUF)
+     LUT6:I0->O            8   0.203   0.803  s/_n0239_inv111 (s/_n0239_inv11)
+     LUT5:I4->O            2   0.205   0.721  s/_n0255_inv11 (s/_n0255_inv11)
+     LUT4:I2->O            3   0.203   0.650  s/_n0255_inv13 (s/_n0255_inv1)
+     FDRE:CE                   0.322          s/sec1_temp_1
     ----------------------------------------
     Total                      5.786ns (2.155ns logic, 3.631ns route)
                                        (37.2% logic, 62.8% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'd_clk/twoHzDiv'
-  Total number of paths / destination ports: 66 / 7
+Timing constraint: Default OFFSET OUT AFTER for Clock 'adj'
+  Total number of paths / destination ports: 11 / 11
 -------------------------------------------------------------------------
-Offset:              6.392ns (Levels of Logic = 4)
-  Source:            sw_imp/min1_temp_3 (FF)
-  Destination:       seg<3> (PAD)
-  Source Clock:      d_clk/twoHzDiv rising
+Offset:              3.648ns (Levels of Logic = 1)
+  Source:            seg_6 (LATCH)
+  Destination:       seg<6> (PAD)
+  Source Clock:      adj rising
 
-  Data Path: sw_imp/min1_temp_3 to seg<3>
+  Data Path: seg_6 to seg<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            18   0.447   1.297  sw_imp/min1_temp_3 (sw_imp/min1_temp_3)
-     LUT4:I0->O            2   0.203   0.961  min1_disp/Mram_seven_seg_temp11 (min1_disp/Mram_seven_seg_temp)
-     LUT6:I1->O            1   0.203   0.000  Mmux_seg43_F (N58)
-     MUXF7:I0->O           1   0.131   0.579  Mmux_seg43 (seg_3_OBUF)
-     OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
+     LDE_1:G->Q            1   0.498   0.579  seg_6 (seg_6)
+     OBUF:I->O                 2.571          seg_6_OBUF (seg<6>)
     ----------------------------------------
-    Total                      6.392ns (3.555ns logic, 2.837ns route)
-                                       (55.6% logic, 44.4% route)
+    Total                      3.648ns (3.069ns logic, 0.579ns route)
+                                       (84.1% logic, 15.9% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
+
+Clock to Setup on destination clock adj
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+adj            |    3.080|         |         |         |
+clks/twoHzDiv  |    3.726|         |         |         |
+---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
@@ -749,36 +759,35 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |    4.172|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dP/is_btn_poseedge_temp
------------------------+---------+---------+---------+---------+
-                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------+---------+---------+---------+---------+
-dP/is_btn_poseedge_temp|         |         |    2.277|         |
------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock clks/twoHzDiv
+------------------------------------+---------+---------+---------+---------+
+                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------+---------+---------+---------+---------+
+clk                                 |    4.316|         |         |         |
+clks/twoHzDiv                       |    4.766|         |         |         |
+pause_debouncer/is_btn_poseedge_temp|         |    4.907|         |         |
+------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock d_clk/twoHzDiv
------------------------+---------+---------+---------+---------+
-                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------+---------+---------+---------+---------+
-clk                    |    4.316|         |         |         |
-dP/is_btn_poseedge_temp|         |    4.907|         |         |
-d_clk/twoHzDiv         |    4.660|         |         |         |
------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock pause_debouncer/is_btn_poseedge_temp
+------------------------------------+---------+---------+---------+---------+
+                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------+---------+---------+---------+---------+
+pause_debouncer/is_btn_poseedge_temp|         |         |    2.277|         |
+------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 15.75 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.97 secs
  
 --> 
 
-
-Total memory usage is 482800 kilobytes
+Total memory usage is 258452 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  146 (   0 filtered)
+Number of warnings :  147 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

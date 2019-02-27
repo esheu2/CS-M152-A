@@ -1,0 +1,54 @@
+//! **************************************************************************
+// Written by: Map P.68d on Tue Feb 26 17:42:01 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "P17" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "pause" LOCATE = SITE "B8" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "T17" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "T18" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "U17" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "U18" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
+COMP "sel" LOCATE = SITE "T9" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
+COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
+COMP "adj" LOCATE = SITE "T10" LEVEL 1;
+COMP "rst" LOCATE = SITE "A8" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "rst_debouncer/clk_dv_1" BEL
+        "rst_debouncer/clk_dv_4" BEL "rst_debouncer/clk_dv_2" BEL
+        "rst_debouncer/clk_dv_3" BEL "rst_debouncer/clk_dv_7" BEL
+        "rst_debouncer/clk_dv_5" BEL "rst_debouncer/clk_dv_6" BEL
+        "rst_debouncer/clk_dv_8" BEL "rst_debouncer/clk_dv_9" BEL
+        "rst_debouncer/clk_dv_10" BEL "rst_debouncer/clk_dv_11" BEL
+        "rst_debouncer/clk_dv_14" BEL "rst_debouncer/clk_dv_12" BEL
+        "rst_debouncer/clk_dv_13" BEL "rst_debouncer/clk_dv_15" BEL
+        "pause_debouncer/clk_dv_3" BEL "pause_debouncer/clk_dv_1" BEL
+        "pause_debouncer/clk_dv_2" BEL "pause_debouncer/clk_dv_6" BEL
+        "pause_debouncer/clk_dv_4" BEL "pause_debouncer/clk_dv_5" BEL
+        "pause_debouncer/clk_dv_9" BEL "pause_debouncer/clk_dv_7" BEL
+        "pause_debouncer/clk_dv_8" BEL "pause_debouncer/clk_dv_12" BEL
+        "pause_debouncer/clk_dv_10" BEL "pause_debouncer/clk_dv_11" BEL
+        "pause_debouncer/clk_dv_15" BEL "pause_debouncer/clk_dv_13" BEL
+        "pause_debouncer/clk_dv_14" BEL "clks/twoHzCount_24" BEL
+        "clks/twoHzCount_23" BEL "clks/twoHzCount_22" BEL "clks/twoHzCount_21"
+        BEL "clks/twoHzCount_20" BEL "clks/twoHzCount_19" BEL
+        "clks/twoHzCount_18" BEL "clks/twoHzCount_17" BEL "clks/twoHzCount_16"
+        BEL "clks/twoHzCount_15" BEL "clks/twoHzCount_14" BEL
+        "clks/twoHzCount_13" BEL "clks/twoHzCount_12" BEL "clks/twoHzCount_11"
+        BEL "clks/twoHzCount_10" BEL "clks/twoHzCount_9" BEL
+        "clks/twoHzCount_8" BEL "clks/twoHzCount_7" BEL "clks/twoHzCount_6"
+        BEL "clks/twoHzCount_5" BEL "clks/twoHzCount_4" BEL
+        "clks/twoHzCount_3" BEL "clks/twoHzCount_2" BEL "clks/twoHzCount_1"
+        BEL "clks/twoHzCount_0" BEL "clks/twoHzDiv" BEL
+        "rst_debouncer/is_btn_poseedge_temp" BEL
+        "pause_debouncer/is_btn_poseedge_temp" BEL "rst_debouncer/clk_dv_0"
+        BEL "pause_debouncer/clk_dv_0" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

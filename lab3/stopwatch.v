@@ -18,14 +18,109 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-/*
+module top( input clk,
+            input pause,
+            input rst,
+            input sel,
+            input adj,
+            output reg [7:0] seg,
+            output reg [3:0] an);
+
+    wire pause_deb;
+    wire rst_deb;
+    
+    wire [3:0] min10;
+    wire [3:0] min1;
+    wire [3:0] sec10;
+    wire [3:0] sec1;
+    
+    wire [7:0] seg_min10;
+    wire [7:0] seg_min1;
+    wire [7:0] seg_sec10;
+    wire [7:0] seg_sec1;
+    
+    wire hz1clk, hz2clk, hzblinking, hzrefresh;
+    
+    debouncer pause_debouncer(  .clk(clk),
+                                .btn(pause),
+                                .is_btn_posedge(pause_deb));
+    debouncer rst_debouncer(  .clk(clk),
+                              .btn(rst),
+                              .is_btn_posedge(rst_deb));
+    
+    clk_div clks( .clk(clk),
+                  .rst(rst_deb),
+                  .twoHz(hz2clk),
+                  .oneHz(hz1clk),
+                  .refreshHz(hzrefresh),
+                  .blinkHz(hzblinking));
+                  
+    stopwatch s( .hz1clk(hz1clk),
+                 .hz2clk(hz2clk),
+                 .rst_deb(rst_deb),
+                 .pause_deb(pause_deb),
+                 .sel(sel),
+                 .adj(adj),
+                 .min10(min10),
+                 .min1(min1),
+                 .sec10(sec10),
+                 .sec1(sec1));
+                 
+    seven_seg_display min10_disp( .number(min10),
+                                  .seven_seg(seg_min10));
+    seven_seg_display min1_disp( .number(min1),
+                                  .seven_seg(seg_min1));
+    seven_seg_display sec10_disp( .number(sec10),
+                                  .seven_seg(seg_sec10));
+    seven_seg_display sec1_disp( .number(sec1),
+                                  .seven_seg(seg_sec1));
+                                  
+    reg [2:0] iter;
+    
+    always @(hzrefresh)
+    begin
+        if (adj != 0)
+        begin       //blinking in adjust mode
+            //
+        end
+        
+        else
+        begin       //regular display
+            if (iter == 0)
+            begin
+                an <= 4'b0111;
+                seg <= seg_min10;
+                iter <= iter + 1;
+            end
+            else if (iter == 1)
+            begin
+                an <= 4'b1011;
+                seg <= seg_min1;
+                iter <= iter + 1;
+            end
+            else if (iter == 2)
+            begin
+                an <= 4'b1101;
+                seg <= seg_sec10;
+                iter <= iter + 1;
+            end
+            else if (iter == 3)
+            begin
+                an <= 4'b1110;
+                seg <= seg_sec1;
+                iter <= 0;
+            end
+        end
+    end
+
+endmodule
 module stopwatch(
     input hz1clk,
     input hz2clk,
-    input rst,
-    input pause,
+    input rst_deb,
+    input pause_deb,
     input wire sel,
-    input wire [1:0] adj,
+    input wire adj,
     output wire [3:0] min10,
     output wire [3:0] min1,
     output wire [3:0] sec10,
@@ -38,21 +133,21 @@ module stopwatch(
     
     reg is_P = 0;
 	 
-	 wire sclk;
+	wire sclk;
 	 
 	 //clk selector?
     
     always@*
     begin
-    if(btnp)
+    if(pause_deb)
       is_P <= ~is_P;
     else
       is_P <= is_P;
     end
     
-    always@(posedge hz2clk)
+    always@(posedge hz1clk)
     begin
-    if(rst)
+    if(rst_deb)
     begin
         sec10_temp <=4'b0000;
         sec1_temp <=4'b0000;
@@ -95,7 +190,7 @@ module stopwatch(
     end
     else if ( adj )
     begin
-        if(rst)
+        if(rst_deb)
         begin
             sec10_temp <=4'b0000;
             sec1_temp <=4'b0000;
@@ -166,7 +261,7 @@ module clock_selector(
 		
 		assign clk_val = clk_val_tmp;
 endmodule
-*/				
+				
 module debouncer(
     input wire clk,
     input wire btn,
@@ -203,23 +298,23 @@ module clk_div(
     input wire rst,
     output wire twoHz,
     output wire oneHz,
-    output wire twoHundredHz,
+    output wire refreshHz,
     output wire blinkHz); // blinkHz ~= 5Hz
 	 
     //check to make sure the values of these constants make sense
-	 localparam oneHzNum = 50000000;
+	localparam oneHzNum = 50000000;
     localparam twoHzNum = 25000000;
-    localparam twoHundredHzNum= 250000;
+    localparam refreshHzNum= 72000; //~695hz
     localparam blinkHzNum = 10000000;
     
-	 reg [31:0] oneHzCount;
+	reg [31:0] oneHzCount;
     reg [31:0] twoHzCount;
-    reg [31:0] twoHundredHzCount;
+    reg [31:0] refreshHzCount;
     reg [31:0] blinkHzCount;
 	 
-	 reg oneHzDiv;
+	reg oneHzDiv;
     reg twoHzDiv;
-    reg twoHundredHzDiv;
+    reg refreshHzDiv;
     reg blinkHzDiv;
     
 	     
@@ -288,18 +383,18 @@ module clk_div(
     begin
         if (rst == 1'b1)
 			begin
-				twoHundredHzDiv <= 1'b0;
-            twoHundredHzCount <= 32'b0;
+				refreshHzDiv <= 1'b0;
+            refreshHzCount <= 32'b0;
 			end
-        else if (twoHundredHzCount == twoHundredHzNum - 1)
+        else if (refreshHzCount == refreshHzNum - 1)
 			begin
-				twoHundredHzDiv <= ~twoHundredHz;
-            twoHundredHzCount <= 32'b0;
+				refreshHzDiv <= ~refreshHz;
+            refreshHzCount <= 32'b0;
 			end
         else
 			begin
-				twoHundredHzDiv <= twoHundredHz;
-            twoHundredHzCount <= twoHundredHzCount + 32'b1;
+				refreshHzDiv <= refreshHz;
+            refreshHzCount <= refreshHzCount + 32'b1;
 			end
     end
     /*
@@ -343,9 +438,9 @@ module clk_div(
             blinkHzDiv <= blinkHz;
     end
 	 */
-	 assign twoHz = twoHzDiv;
+	assign twoHz = twoHzDiv;
     assign oneHz = oneHzDiv;
-    assign twoHundredHz = twoHundredHzDiv;
+    assign refreshHz = refreshHzDiv;
     assign blinkHz = blinkHzDiv;
  endmodule
  
