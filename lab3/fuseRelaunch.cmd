@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/Desktop/CS-M152-A/lab3/stopwatch_tb_isim_beh.exe" -prj "/home/ise/Desktop/CS-M152-A/lab3/stopwatch_tb_beh.prj" "work.stopwatch_tb" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/Desktop/CS-M152-A/lab3/seven_seg_display_tb_isim_beh.exe" -prj "/home/ise/Desktop/CS-M152-A/lab3/seven_seg_display_tb_beh.prj" "work.seven_seg_display_tb" "work.glbl" 

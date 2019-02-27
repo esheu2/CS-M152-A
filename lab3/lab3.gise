@@ -49,6 +49,9 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="seven_seg_display_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="seven_seg_display_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="seven_seg_display_tb_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="stopwatch.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="stopwatch.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="stopwatch.lso"/>
@@ -130,17 +133,18 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551255882" xil_pn:in_ck="-5989325003584865705" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1551255882">
+    <transform xil_pn:end_ts="1551256600" xil_pn:in_ck="-6196167781035708924" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1551256600">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="seven_seg_display_tb.v"/>
       <outfile xil_pn:name="stopwatch.v"/>
       <outfile xil_pn:name="stopwatch_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1551252755" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7957178558585001335" xil_pn:start_ts="1551252755">
+    <transform xil_pn:end_ts="1551256385" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-1110235027260743104" xil_pn:start_ts="1551256385">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551252755" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="5522229231244260423" xil_pn:start_ts="1551252755">
+    <transform xil_pn:end_ts="1551256385" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1835735320946276862" xil_pn:start_ts="1551256385">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -148,13 +152,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551255882" xil_pn:in_ck="-5989325003584865705" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1551255882">
+    <transform xil_pn:end_ts="1551256600" xil_pn:in_ck="-6196167781035708924" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1551256600">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="seven_seg_display_tb.v"/>
       <outfile xil_pn:name="stopwatch.v"/>
       <outfile xil_pn:name="stopwatch_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1551255884" xil_pn:in_ck="-5989325003584865705" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3388098801876675119" xil_pn:start_ts="1551255882">
+    <transform xil_pn:end_ts="1551256602" xil_pn:in_ck="-6196167781035708924" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6772154197833086817" xil_pn:start_ts="1551256600">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -162,16 +167,16 @@
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="stopwatch_tb_beh.prj"/>
-      <outfile xil_pn:name="stopwatch_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="seven_seg_display_tb_beh.prj"/>
+      <outfile xil_pn:name="seven_seg_display_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1551255885" xil_pn:in_ck="1420080445628670883" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6721229581296724628" xil_pn:start_ts="1551255884">
+    <transform xil_pn:end_ts="1551256603" xil_pn:in_ck="3628084878522904634" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6382741098470691134" xil_pn:start_ts="1551256602">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="stopwatch_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="seven_seg_display_tb_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1551146585" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1551146585">
       <status xil_pn:value="SuccessfullyRun"/>
