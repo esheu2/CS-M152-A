@@ -28,6 +28,19 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="clk_div.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="clk_div.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="clk_div.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="clk_div.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="clk_div.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clk_div.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="clk_div.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="clk_div.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="clk_div.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="clk_div_envsettings.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="clk_div_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="clk_div_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="clk_div_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="debouncer.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="debouncer.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="debouncer.xst"/>
@@ -76,7 +89,6 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="top_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="top_map.mrp" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="top_map.ngm" xil_pn:subbranch="Map"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="top_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -89,11 +101,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551146585" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-4764573739467360760" xil_pn:start_ts="1551146585">
+    <transform xil_pn:end_ts="1551226001" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-7878275964855148239" xil_pn:start_ts="1551226001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551146585" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-4990106746368420233" xil_pn:start_ts="1551146585">
+    <transform xil_pn:end_ts="1551226001" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="8992059164346681344" xil_pn:start_ts="1551226001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -101,7 +113,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551146585" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-4861304912705368374" xil_pn:start_ts="1551146585">
+    <transform xil_pn:end_ts="1551226001" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-3106579156381250829" xil_pn:start_ts="1551226001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -109,44 +121,50 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551146585" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-4184065843208035007" xil_pn:start_ts="1551146585">
+    <transform xil_pn:end_ts="1551226001" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-451923597410456630" xil_pn:start_ts="1551226001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551220963" xil_pn:in_ck="181676357740337281" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4999329376957284762" xil_pn:start_ts="1551220953">
+    <transform xil_pn:end_ts="1551226402" xil_pn:in_ck="181676357740337281" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7683077350315513551" xil_pn:start_ts="1551226379">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="clk_div.lso"/>
+      <outfile xil_pn:name="clk_div.ngc"/>
+      <outfile xil_pn:name="clk_div.ngr"/>
+      <outfile xil_pn:name="clk_div.prj"/>
+      <outfile xil_pn:name="clk_div.stx"/>
+      <outfile xil_pn:name="clk_div.syr"/>
+      <outfile xil_pn:name="clk_div.xst"/>
+      <outfile xil_pn:name="clk_div_xst.xrpt"/>
       <outfile xil_pn:name="stopwatch.ngr"/>
-      <outfile xil_pn:name="top.lso"/>
-      <outfile xil_pn:name="top.ngc"/>
-      <outfile xil_pn:name="top.ngr"/>
-      <outfile xil_pn:name="top.prj"/>
-      <outfile xil_pn:name="top.stx"/>
-      <outfile xil_pn:name="top.syr"/>
-      <outfile xil_pn:name="top.xst"/>
-      <outfile xil_pn:name="top_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1551146597" xil_pn:in_ck="5252585598274710" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="3734212952611957" xil_pn:start_ts="1551146597">
+    <transform xil_pn:end_ts="1551226043" xil_pn:in_ck="5252585598274710" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="1262981262157504798" xil_pn:start_ts="1551226043">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1551220973" xil_pn:in_ck="7553685512490256210" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="372758132830708024" xil_pn:start_ts="1551220967">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1551226195" xil_pn:in_ck="2257196862023452596" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1675022070007269247" xil_pn:start_ts="1551226180">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
-      <outfile xil_pn:name="top.bld"/>
-      <outfile xil_pn:name="top.ngd"/>
-      <outfile xil_pn:name="top_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="clk_div.bld"/>
+      <outfile xil_pn:name="clk_div_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1551220977" xil_pn:in_ck="7553685555108699188" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1551220973">
+    <transform xil_pn:end_ts="1551224579" xil_pn:in_ck="7553685555108699188" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1551224564">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForced"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="top_map.map"/>
       <outfile xil_pn:name="top_map.mrp"/>

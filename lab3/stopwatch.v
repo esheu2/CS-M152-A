@@ -18,121 +18,29 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module top(
-    input wire clk,
-    input wire rst,
-    input wire btnP,
-    input wire switchSel,
-    input wire switchAdj,
-    output wire [3:0] an,
-    output wire [7:0] seg);
-    
-    reg [3:0] an_temp;
-    reg [7:0] seg_temp;
-    
-    wire [7:0] seven_seg1;
-    wire [7:0] seven_seg2;
-    wire [7:0] seven_seg3;
-    wire [7:0] seven_seg4;
-    
-    //reg [7:0] seven_seg1_temp;
-    //reg [7:0] seven_seg2_temp;
-    //reg [7:0] seven_seg3_temp;
-    //reg [7:0] seven_seg4_temp;
-    
-    //seven_seg1_temp = seven_seg1;
-    //seven_seg2_temp = seven_seg2;
-    //seven_seg3_temp = seven_seg3;
-    //seven_seg4_temp = seven_seg4;
-    
-    wire [3:0] m10;
-    wire [3:0] m1;
-    wire [3:0] s10;
-    wire [3:0] s1;
-    
-    assign an = an_temp;
-    assign seg = seg_temp;
-    
-    wire is_pause, is_rst;
-    debouncer dR(.clk (clk), .btn(rst), .is_btn_posedge(is_rst));
-    debouncer dP(.clk(clk), .btn(btnP), .is_btn_posedge(is_pause));
-    
-    wire hz1, hz2, hz5, hz200;
-    clk_div d_clk( .clk (clk), 
-                   .rst (is_rst), 
-                   .twoHz (hz2), 
-                   .oneHz (hz1), 
-                   .twoHundredHz (hz200), 
-                   .blinkHz (hz5));
-    stopwatch sw_imp( .hz1clk (hz1), 
-                      .hz2clk (hz2), 
-                      .rst (is_rst), 
-                      .btnp (is_pause), 
-                      .sel (switchSel), 
-                      .adj (switchAdj), 
-                      .min10 (m10), 
-                      .min1 (m1), 
-                      .sec10 (sec10), 
-                      .sec1 (sec1));
-    seven_seg_display min10_disp( .number (m10), .seven_seg (seven_seg1) );
-    seven_seg_display min1_disp( .number (m1), .seven_seg(seven_seg2) );
-    seven_seg_display sec10_disp( .number (sec10), .seven_seg (seven_seg3) );
-    seven_seg_display sec1_disp( .number (sec1), .seven_seg (seven_seg4) );
-    
-    reg [2:0] count = 0;
-    always @(hz200)
-    begin
-        if (count == 0)
-        begin
-            an_temp <= 4'b0111;
-            seg_temp <= seven_seg1;
-            count <= count + 1;
-        end
-        else if (count == 1)
-        begin
-            an_temp <= 4'b1011;
-            seg_temp <= seven_seg2;
-            count <= count + 1;
-        end
-        else if (count == 2)
-        begin
-            an_temp <= 4'b1101;
-            seg_temp <= seven_seg3;
-            count <= count + 1;
-        end
-        else if (count == 3)
-        begin
-            an_temp <= 4'b1110;
-            seg_temp <= seven_seg4;
-            count <= 0;
-        end
-    end
-    
-endmodule
-    
+/*
 module stopwatch(
     input hz1clk,
     input hz2clk,
     input rst,
-    input btnp,
+    input pause,
     input wire sel,
-    input wire adj,
+    input wire [1:0] adj,
     output wire [3:0] min10,
     output wire [3:0] min1,
     output wire [3:0] sec10,
     output wire [3:0] sec1);
     
-    reg [3:0] min10_temp;
-    reg [3:0] min1_temp;
-    reg [3:0] sec10_temp;
-    reg [3:0] sec1_temp;
+    reg [3:0] min10_temp = 0;
+    reg [3:0] min1_temp = 0;
+    reg [3:0] sec10_temp = 0;
+    reg [3:0] sec1_temp = 0;
     
-    assign min10 = min10_temp;
-    assign min1 = min1_temp;
-    assign sec10 = sec10_temp;
-    assign sec1 = sec1_temp;
-    
-    reg is_P;
+    reg is_P = 0;
+	 
+	 wire sclk;
+	 
+	 //clk selector?
     
     always@*
     begin
@@ -232,12 +140,37 @@ module stopwatch(
         end
     end
 end
+   
+    assign min10 = min10_temp;
+    assign min1 = min1_temp;
+    assign sec10 = sec10_temp;
+    assign sec1 = sec1_temp;
+	 
 endmodule
 
+module clock_selector(
+	 input wire clk,
+	 input wire constant,
+	 input wire [1:0] ta,
+	 output wire clk_val);
+	 
+	 reg clk_val_tmp;
+	 
+	 always@*
+		begin
+			if (!ta)
+				clk_val_tmp = clk;
+			else
+				clk_val_tmp = constant;
+		end
+		
+		assign clk_val = clk_val_tmp;
+endmodule
+*/				
 module debouncer(
-    input clk,
-    input btn,
-    output is_btn_posedge);
+    input wire clk,
+    input wire btn,
+    output wire is_btn_posedge);
     
     reg [15:0]  clk_dv;
 	 reg is_btn_poseedge_temp = 0;

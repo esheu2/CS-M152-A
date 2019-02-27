@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: top.prj
@@ -128,8 +128,8 @@ WARNING:HDLCompiler:1127 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 6
 WARNING:HDLCompiler:1127 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 66: Assignment to hz5 ignored, since the identifier is never used
 
 Elaborating module <stopwatch>.
-WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 213: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 231: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 214: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 232: Result of 5-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 75: Size mismatch in connection of port <sec10>. Formal port size is 4-bit while actual signal size is 1-bit.
 WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v" Line 76: Size mismatch in connection of port <sec1>. Formal port size is 4-bit while actual signal size is 1-bit.
 
@@ -178,7 +178,7 @@ Synthesizing Unit <debouncer>.
     Related source file is "/home/ise/Desktop/CS-M152-A/lab3/stopwatch.v".
     Found 1-bit register for signal <is_btn_poseedge_temp>.
     Found 16-bit register for signal <clk_dv>.
-    Found 16-bit adder for signal <clk_dv[15]_GND_2_o_add_2_OUT> created at line 254.
+    Found 16-bit adder for signal <clk_dv[15]_GND_2_o_add_2_OUT> created at line 255.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
@@ -194,10 +194,10 @@ Synthesizing Unit <clk_div>.
     Found 1-bit register for signal <twoHundredHzDiv>.
     Found 1-bit register for signal <blinkHzDiv>.
     Found 1-bit register for signal <oneHzDiv>.
-    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_2_OUT> created at line 309.
-    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_7_OUT> created at line 339.
-    Found 32-bit adder for signal <twoHundredHzCount[31]_GND_3_o_add_12_OUT> created at line 369.
-    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_17_OUT> created at line 399.
+    Found 32-bit adder for signal <oneHzCount[31]_GND_3_o_add_2_OUT> created at line 310.
+    Found 32-bit adder for signal <twoHzCount[31]_GND_3_o_add_7_OUT> created at line 340.
+    Found 32-bit adder for signal <twoHundredHzCount[31]_GND_3_o_add_12_OUT> created at line 370.
+    Found 32-bit adder for signal <blinkHzCount[31]_GND_3_o_add_17_OUT> created at line 400.
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred 132 D-type flip-flop(s).
@@ -211,16 +211,16 @@ WARNING:Xst:647 - Input <hz1clk> is never used. This port will be preserved and 
     Found 4-bit register for signal <sec1_temp>.
     Found 4-bit register for signal <min10_temp>.
     Found 4-bit register for signal <min1_temp>.
-    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_6_OUT> created at line 157.
-    Found 4-bit adder for signal <min10[3]_GND_4_o_add_11_OUT> created at line 168.
-    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_16_OUT> created at line 176.
-    Found 4-bit adder for signal <sec10_temp[3]_GND_4_o_add_37_OUT> created at line 208.
-    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_39_OUT> created at line 213.
-    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_47_OUT> created at line 231.
+    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_6_OUT> created at line 158.
+    Found 4-bit adder for signal <min10[3]_GND_4_o_add_11_OUT> created at line 169.
+    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_16_OUT> created at line 177.
+    Found 4-bit adder for signal <sec10_temp[3]_GND_4_o_add_37_OUT> created at line 209.
+    Found 4-bit adder for signal <sec1_temp[3]_GND_4_o_add_39_OUT> created at line 214.
+    Found 4-bit adder for signal <min1_temp[3]_GND_4_o_add_47_OUT> created at line 232.
 WARNING:Xst:737 - Found 1-bit latch for signal <is_P>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 4-bit comparator greater for signal <sec1_temp[3]_PWR_4_o_LessThan_6_o> created at line 156
-    Found 4-bit comparator greater for signal <GND_4_o_sec1_temp[3]_LessThan_36_o> created at line 199
-    Found 4-bit comparator greater for signal <GND_4_o_min1_temp[3]_LessThan_44_o> created at line 217
+    Found 4-bit comparator greater for signal <sec1_temp[3]_PWR_4_o_LessThan_6_o> created at line 157
+    Found 4-bit comparator greater for signal <GND_4_o_sec1_temp[3]_LessThan_36_o> created at line 200
+    Found 4-bit comparator greater for signal <GND_4_o_min1_temp[3]_LessThan_44_o> created at line 218
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred  16 D-type flip-flop(s).
@@ -770,13 +770,13 @@ d_clk/twoHzDiv         |    4.660|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.85 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.75 secs
  
 --> 
 
 
-Total memory usage is 482804 kilobytes
+Total memory usage is 482800 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  146 (   0 filtered)
