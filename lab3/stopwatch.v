@@ -321,28 +321,31 @@ end
     assign sec1 = sec1_temp;
 	 
 endmodule
-				
+
+//This debouncer was made with inspiration from the following documentation: 
+//https://www.eecs.umich.edu/courses/eecs270/270lab/270_docs/debounce.html				
 module debouncer(
     input wire clk,
     input wire btn,
     output wire is_btn_posedge);
     
-    reg [15:0]  clk_dv;
+    reg [15:0]  mem = 0;
 	 reg is_btn_poseedge_temp = 0;
         
     always@(posedge clk)
 		begin
         if( btn == 0 )
         begin
-            clk_dv <= 0;
+            mem <= 0;
             is_btn_poseedge_temp <= 0;
         end
         else
 			begin
-            clk_dv <= clk_dv + 1'b1;
-            if(clk_dv == 16'hffff)
+            mem <= mem + 1;
+				// mem[15:0] <= {btn, mem[15:1]};
+            if(mem == 16'hffff)
             begin
-                clk_dv <= 0;
+                mem <= 0;
                 is_btn_poseedge_temp <= 1;
             end
 			end
@@ -397,17 +400,7 @@ module clk_div(
             oneHzCount <= oneHzCount + 32'b1;
 			end
     end
-	 /*
-	 always @ (posedge(clk), posedge(rst))
-    begin
-        if (rst == 1'b1)
-            oneHzDiv <= 1'b0;
-        else if (oneHzCount == oneHzNum - 1)
-            oneHzDiv <= ~oneHz;
-        else
-            oneHzDiv <= oneHz;
-	  end
-	  */
+
     //clk_div twoHz
     always @ (posedge(clk), posedge(rst))
     begin
@@ -427,17 +420,7 @@ module clk_div(
             twoHzCount <= twoHzCount + 32'b1;
 			end
     end
-	 /*
-	 always @ (posedge(clk), posedge(rst))
-    begin
-        if (rst == 1'b1)
-            twoHzDiv <= 1'b0;
-        else if (twoHzCount == twoHzNum - 1)
-            twoHzDiv <= ~twoHz;
-        else
-            twoHzDiv <= twoHz;
-	 end
-    */
+
     //clk_div twoHundredHz
     always @ (posedge(clk), posedge(rst))
     begin
@@ -457,17 +440,7 @@ module clk_div(
             refreshHzCount <= refreshHzCount + 32'b1;
 			end
     end
-    /*
-    always @ (posedge(clk), posedge(rst))
-    begin
-        if (rst == 1'b1)
-            twoHundredHzDiv <= 1'b0;
-        else if (twoHundredHzCount == twoHundredHzNum - 1)
-            twoHundredHzDiv <= ~twoHundredHz;
-        else
-            twoHundredHzDiv <= twoHundredHz;
-    end
-	 */
+
     //clk_div blinkHz
     always @ (posedge(clk), posedge(rst))
     begin
@@ -487,17 +460,7 @@ module clk_div(
             blinkHzCount <= blinkHzCount + 32'b1;
 			end
     end
-    /*
-    always @ (posedge(clk), posedge(rst))
-    begin
-        if (rst == 1'b1)
-            blinkHzDiv <= 1'b0;
-        else if (blinkHzCount == blinkHzNum - 1)
-            blinkHzDiv <= ~blinkHz;
-        else
-            blinkHzDiv <= blinkHz;
-    end
-	 */
+
 	assign twoHz = twoHzDiv;
     assign oneHz = oneHzDiv;
     assign refreshHz = refreshHzDiv;
