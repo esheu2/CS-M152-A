@@ -81,7 +81,49 @@ module top( input clk,
     begin
         if (adj != 0)
         begin       //blinking in adjust mode
-            //
+            if (sel == 0)		//adjust minutes
+				begin
+					if (iter == 0)
+					begin
+						an <= 4'b0111;
+						if (hzblinking == 1)
+							seg <= seg_min10;
+						else
+							seg <= 8'b11111111;
+						iter <= iter + 1;
+					end
+					if (iter == 1)
+					begin
+						an <= 4'b1011;
+						if (hzblinking == 1)
+							seg <= seg_min1;
+						else
+							seg <= 8'b11111111;
+						iter <= iter + 1;
+					end
+				end
+				
+				if (sel == 1)		//adjust seconds
+				begin
+					if (iter == 2)
+					begin
+						an <= 4'b1101;
+						if (hzblinking == 1)
+							seg <= seg_sec10;
+						else
+							seg <= 8'b11111111;
+						iter <= iter + 1;
+					end
+					if (iter == 3)
+					begin
+						an <= 4'b1110;
+						if (hzblinking == 1)
+							seg <= seg_sec1;
+						else
+							seg <= 8'b11111111;
+						iter <= 0;
+					end
+				end
         end
         
         else
@@ -133,19 +175,30 @@ module stopwatch(
     
     reg is_P = 0;
 	 
-	wire sclk;
+	 wire s_clk;
 	 
 	 //clk selector?
     
-    always@*
+	 reg clk_temp;
+	 always@*
+	 begin
+		if (adj == 0)
+			clk_temp <= hz1clk;
+		else
+			clk_temp <= hz2clk;
+	 end
+	 
+	 assign s_clk = clk_temp;
+	 
+    always @(posedge pause_deb or posedge s_clk)
     begin
     if(pause_deb)
       is_P <= ~is_P;
-    else
-      is_P <= is_P;
+	 else
+		is_P <= is_P;
     end
     
-    always@(posedge hz1clk)
+    always@(posedge s_clk or posedge rst_deb)
     begin
     if(rst_deb)
     begin
@@ -157,7 +210,7 @@ module stopwatch(
     else if ( ~is_P && ~adj)
     begin
         if( sec1_temp < 9)
-            sec1_temp <= sec1_temp+1'b1;
+            sec1_temp <= sec1_temp + 1'b1;
         else if (sec1_temp == 9)
         begin
             if (sec10_temp == 5)
@@ -188,7 +241,7 @@ module stopwatch(
             end
         end
     end
-    else if ( adj )
+    else if (  ~is_P && adj )		//adjust mode
     begin
         if(rst_deb)
         begin
@@ -197,9 +250,9 @@ module stopwatch(
             min10_temp <=4'b0000;
             min1_temp <=4'b0000;
         end
-        else if( sel == 0)
+        else if( sel == 1)			//adjust seconds
         begin
-            if( sec1_temp > 7)
+            if( sec1_temp == 8)
             begin
                 if (sec10_temp == 5)
                 begin
@@ -208,16 +261,29 @@ module stopwatch(
                 end
                 else
                 begin
+						  sec1_temp <= 4'b0000;
                     sec10_temp <= sec10_temp +1'b1;
-                    sec1_temp <= 4'b0000;
+                end
+            end
+				else if( sec1_temp == 9)
+            begin
+                if (sec10_temp == 5)
+                begin
+                    sec10_temp <= 4'b0000;
+                    sec1_temp <= 4'b0001;
+                end
+                else
+                begin
+                    sec10_temp <= sec10_temp +1'b1;
+                    sec1_temp <= 4'b0001;
                 end
             end
             else
                 sec1_temp <= sec1_temp + 2;
         end
-        else if( sel == 1)
+        else if( sel == 0)			//adjust minutes
         begin
-            if( min1_temp > 7)
+            if( min1_temp == 8)
             begin
                 if (min10_temp == 5)
                 begin
@@ -226,8 +292,21 @@ module stopwatch(
                 end
                 else
                 begin
+						  min1_temp <= 4'b0000;
                     min10_temp <= min10_temp +1'b1;
-                    min1_temp <= 4'b0000;
+                end
+            end
+				else if( min1_temp == 9)
+            begin
+                if (min10_temp == 5)
+                begin
+                    min10_temp <= 4'b0000;
+                    min1_temp <= 4'b0001;
+                end
+                else
+                begin
+                    min10_temp <= min10_temp +1'b1;
+                    min1_temp <= 4'b0001;
                 end
             end
             else
@@ -241,25 +320,6 @@ end
     assign sec10 = sec10_temp;
     assign sec1 = sec1_temp;
 	 
-endmodule
-
-module clock_selector(
-	 input wire clk,
-	 input wire constant,
-	 input wire [1:0] ta,
-	 output wire clk_val);
-	 
-	 reg clk_val_tmp;
-	 
-	 always@*
-		begin
-			if (!ta)
-				clk_val_tmp = clk;
-			else
-				clk_val_tmp = constant;
-		end
-		
-		assign clk_val = clk_val_tmp;
 endmodule
 				
 module debouncer(
@@ -448,7 +508,7 @@ module clk_div(
     input wire [3:0] number,
     output wire [7:0] seven_seg);
     
-	 reg [7:0] seven_seg_temp;
+	 reg [7:0] seven_seg_temp = 8'b11111111;
 	 
     always @*
     case (number)

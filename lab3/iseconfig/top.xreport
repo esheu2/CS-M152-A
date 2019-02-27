@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-02-27T00:20:45</DateModified>
-  <ModuleName>clk_div</ModuleName>
+  <DateModified>2019-02-27T07:31:45</DateModified>
+  <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2019-02-27T00:13:22</SummaryTimeStamp>
   <SavedFilePath>/home/ise/Desktop/CS-M152-A/lab3/iseconfig/top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/Desktop/CS-M152-A/lab3/</ImplementationReportsDirectory>
