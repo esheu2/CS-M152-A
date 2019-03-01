@@ -1,25 +1,25 @@
 //! **************************************************************************
-// Written by: Map P.20160913 on Wed Feb 27 19:49:40 2019
+// Written by: Map P.20160913 on Fri Mar 01 23:52:32 2019
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "adj" LOCATE = SITE "T10" LEVEL 1;
 COMP "clk" LOCATE = SITE "V10" LEVEL 1;
 COMP "sel" LOCATE = SITE "T9" LEVEL 1;
 COMP "rst" LOCATE = SITE "A8" LEVEL 1;
-COMP "seven_seg<0>" LOCATE = SITE "T17" LEVEL 1;
-COMP "seven_seg<1>" LOCATE = SITE "T18" LEVEL 1;
-COMP "seven_seg<2>" LOCATE = SITE "U17" LEVEL 1;
-COMP "seven_seg<3>" LOCATE = SITE "U18" LEVEL 1;
-COMP "seven_seg<4>" LOCATE = SITE "M14" LEVEL 1;
-COMP "seven_seg<5>" LOCATE = SITE "N14" LEVEL 1;
-COMP "seven_seg<6>" LOCATE = SITE "L14" LEVEL 1;
-COMP "seven_seg<7>" LOCATE = SITE "M13" LEVEL 1;
+COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "P17" LEVEL 1;
 COMP "pause" LOCATE = SITE "B8" LEVEL 1;
-COMP "adjust" LOCATE = SITE "T10" LEVEL 1;
-COMP "anode_count<0>" LOCATE = SITE "N16" LEVEL 1;
-COMP "anode_count<1>" LOCATE = SITE "N15" LEVEL 1;
-COMP "anode_count<2>" LOCATE = SITE "P18" LEVEL 1;
-COMP "anode_count<3>" LOCATE = SITE "P17" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "T17" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "T18" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "U17" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "U18" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
+COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
 TIMEGRP sys_clk_pin = BEL "divs/blinkHzCount_23" BEL "divs/blinkHzCount_22"
         BEL "divs/blinkHzCount_21" BEL "divs/blinkHzCount_20" BEL
         "divs/blinkHzCount_19" BEL "divs/blinkHzCount_18" BEL

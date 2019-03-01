@@ -23,20 +23,20 @@ module top_fsm(
 	input rst,
 	input pause,
 	input sel,
-	input wire adjust,
-	output reg [7:0] seven_seg,
-	output reg [3:0] anode_count
+	input wire adj,
+	output reg [7:0] seg,
+	output reg [3:0] an
     );
 
-wire [3:0] sec0_count;
+wire [3:0] sec10_count;
 wire [3:0] sec1_count;
-wire [3:0] min0_count;
+wire [3:0] min10_count;
 wire [3:0] min1_count;
 
 wire [7:0] seven_seg_min1;
-wire [7:0] seven_seg_min0;
+wire [7:0] seven_seg_min10;
 wire [7:0] seven_seg_sec1;
-wire [7:0] seven_seg_sec0;
+wire [7:0] seven_seg_sec10;
 
 wire one_hz, two_hz, seg_hz, blink_hz;
 
@@ -69,18 +69,12 @@ stopwatch stopwatch(
 	.rst_deb(rst_state),
 	.pause_deb(pause_state),
 	.sel(sel),
-	.adj(adjust),
-	.min10(min0_count),
+	.adj(adj),
+	.min10(min10_count),
 	.min1(min1_count),
-	.sec10(sec0_count),
+	.sec10(sec10_count),
 	.sec1(sec1_count)
 	);
-
-reg [1:0] cnt = 2'b00;
-
-/////////////////////////////////////////////////
-// get 7-segment displays for each digit
-/////////////////////////////////////////////////
 
 seven_seg_display minute1(
 	.number(min1_count),
@@ -88,7 +82,7 @@ seven_seg_display minute1(
 	);
 	
 seven_seg_display minute0 (
-	.number(min0_count),
+	.number(min10_count),
 	.seven_seg(seven_seg_min0)
 	);
 	
@@ -98,117 +92,109 @@ seven_seg_display second1 (
 	);
 	
 seven_seg_display second0(
-	.number(sec0_count),
+	.number(sec10_count),
 	.seven_seg(seven_seg_sec0)
 	);
 	
+reg [1:0] cnt = 2'b00;
 wire [7:0] blank_digit;
 seven_seg_display blank_val(
 	.number(4'b1111),
 	.seven_seg(blank_digit)
 	);
 
-/////////////////////////////////////////////
-// rapidly cycle through digits
-/////////////////////////////////////////////
-
 reg minute_blink = 1'b0;
 reg second_blink = 1'b0;
 
 always @ (posedge seg_hz) begin
 
-	// blinking mode
-	if (adjust == 1) begin
-		
-		// blinking mode - minutes
-		if (sel == 0) begin // blink minutes
+	if (adj == 1) begin
+		if (sel == 0) begin
 			if (cnt == 0) begin
-				anode_count <= 4'b0111;
+				an <= 4'b0111;
 				if (blink_hz) begin
-					seven_seg <= seven_seg_min1;
+					seg <= seven_seg_min1;
 				end
 				else begin
-					seven_seg <= blank_digit;
+					seg <= blank_digit;
 				end
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 1) begin
-				anode_count <= 4'b1011;
+				an <= 4'b1011;
 				if (blink_hz) begin
-					seven_seg <= seven_seg_min0;
+					seg <= seven_seg_min0;
 				end
 				else begin
-					seven_seg <= blank_digit;
+					seg <= blank_digit;
 				end
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 2) begin
-				anode_count <= 4'b1101;
-				seven_seg <= seven_seg_sec1;
+				an <= 4'b1101;
+				seg <= seven_seg_sec1;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 3) begin
-				anode_count <= 4'b1110;
-				seven_seg <= seven_seg_sec0;
+				an <= 4'b1110;
+				seg <= seven_seg_sec0;
 				cnt <= cnt + 1;
 			end
 		end
 		
-		// blinking mode - seconds
-		else begin //if (sel == 1) begin // blink seconds
+		else begin
 			if (cnt == 0) begin
-				anode_count <= 4'b0111;
-				seven_seg <= seven_seg_min1;
+				an <= 4'b0111;
+				seg <= seven_seg_min1;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 1) begin
-				anode_count <= 4'b1011;
-				seven_seg <= seven_seg_min0;
+				an <= 4'b1011;
+				seg <= seven_seg_min0;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 2) begin
-				anode_count <= 4'b1101;
+				an <= 4'b1101;
 				if (blink_hz) begin
-					seven_seg <= seven_seg_sec1;
+					seg <= seven_seg_sec1;
 				end
 				else begin
-					seven_seg <= blank_digit;
+					seg <= blank_digit;
 				end
 				cnt <= cnt + 1;
 			end
 			else begin // if (cnt == 3) begin
-				anode_count <= 4'b1110;
+				an <= 4'b1110;
 				if (blink_hz) begin
-					seven_seg <= seven_seg_sec0;
+					seg <= seven_seg_sec0;
 				end
 				else begin
-					seven_seg <= blank_digit;
+					seg <= blank_digit;
 				end
 				cnt <= cnt + 1;
 			end
 		end
 	end	
 	
-	// regular mode
 	else begin
 		if (cnt == 0) begin
-			anode_count <= 4'b0111;
-			seven_seg <= seven_seg_min1;
+			an <= 4'b0111;
+			seg <= seven_seg_min1;
 			cnt <= cnt + 1;
 		end
 		if (cnt == 1) begin
-			anode_count <= 4'b1011;
-			seven_seg <= seven_seg_min0;
+			an <= 4'b1011;
+			seg <= seven_seg_min0;
 			cnt <= cnt + 1;
 		end
 		if (cnt == 2) begin
-			anode_count <= 4'b1101;
-			seven_seg <= seven_seg_sec1;
+			an <= 4'b1101;
+			seg <= seven_seg_sec1;
 			cnt <= cnt + 1;
 		end
 		if (cnt == 3) begin
-			anode_count <= 4'b1110;
-			seven_seg <= seven_seg_sec0;
+			an <= 4'b1110;
+			seg <= seven_seg_sec0;
 			cnt <= cnt + 1;
 		end
 	end

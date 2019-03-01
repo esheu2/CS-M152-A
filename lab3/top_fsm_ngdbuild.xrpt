@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Wed Feb 27 19:48:44 2019">
+  <application stringID="NgdBuild" timeStamp="Fri Mar  1 23:52:20 2019">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -41,15 +41,15 @@
       </table>
       <item stringID="User_EnvOs" value="OS Information">
         <item stringID="User_EnvOsname" value="OracleServer"/>
-        <item stringID="User_EnvOsrelease" value="Oracle Linux Server release 6.4"/>
+        <item stringID="User_EnvOsrelease" value="Oracle Linux Server release 6.10"/>
       </item>
       <item stringID="User_EnvHost" value="localhost.localdomain"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz"/>
-          <item stringID="speed" value="2808.004 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz"/>
+          <item stringID="speed" value="3696.004 MHz"/>
         </row>
       </table>
     </section>
@@ -71,7 +71,7 @@
       </section>
       <section stringID="NGDBUILD_PRE_UNISIM_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_BUFGP" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FD" value="45"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FD" value="46"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="85"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="8"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDR" value="2"/>
@@ -81,9 +81,9 @@
         <item dataType="int" stringID="NGDBUILD_NUM_LD" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="118"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="81"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="10"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="38"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="7"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="29"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="69"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="118"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="1"/>
@@ -93,7 +93,7 @@
       </section>
       <section stringID="NGDBUILD_POST_UNISIM_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_BUFG" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FD" value="45"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FD" value="46"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="85"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="8"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDR" value="2"/>
@@ -104,9 +104,9 @@
         <item dataType="int" stringID="NGDBUILD_NUM_LD" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="118"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="81"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="10"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="38"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="7"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="29"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="69"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="118"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="1"/>

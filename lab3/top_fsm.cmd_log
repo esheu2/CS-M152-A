@@ -11,3 +11,19 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-
 map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_fsm_map.ncd top_fsm.ngd top_fsm.pcf 
 par -w -intstyle ise -ol high -mt off top_fsm_map.ncd top_fsm.ncd top_fsm.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml top_fsm.twx top_fsm.ncd -o top_fsm.twr top_fsm.pcf -ucf nexys3.ucf 
+xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab3/top_fsm.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab3/top_fsm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 top_fsm.ngc top_fsm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_fsm_map.ncd top_fsm.ngd top_fsm.pcf 
+par -w -intstyle ise -ol high -mt off top_fsm_map.ncd top_fsm.ncd top_fsm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml top_fsm.twx top_fsm.ncd -o top_fsm.twr top_fsm.pcf -ucf nexys3.ucf 
+bitgen -intstyle ise -f top_fsm.ut top_fsm.ncd 
+xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab3/top_fsm.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab3/top_fsm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 top_fsm.ngc top_fsm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_fsm_map.ncd top_fsm.ngd top_fsm.pcf 
+par -w -intstyle ise -ol high -mt off top_fsm_map.ncd top_fsm.ncd top_fsm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml top_fsm.twx top_fsm.ncd -o top_fsm.twr top_fsm.pcf -ucf nexys3.ucf 
+xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab3/top_fsm.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab3/top_fsm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 top_fsm.ngc top_fsm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_fsm_map.ncd top_fsm.ngd top_fsm.pcf 
+par -w -intstyle ise -ol high -mt off top_fsm_map.ncd top_fsm.ncd top_fsm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml top_fsm.twx top_fsm.ncd -o top_fsm.twr top_fsm.pcf -ucf nexys3.ucf 
