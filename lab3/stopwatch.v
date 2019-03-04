@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module top_fsm(
+module top(
 	input clk,
 	input rst,
 	input pause,
@@ -77,23 +77,23 @@ stopwatch stopwatch(
 	);
 
 seven_seg_display minute1(
+	.number(min10_count),
+	.seven_seg(seven_seg_min10)
+	);
+	
+seven_seg_display minute0 (
 	.number(min1_count),
 	.seven_seg(seven_seg_min1)
 	);
 	
-seven_seg_display minute0 (
-	.number(min10_count),
-	.seven_seg(seven_seg_min0)
-	);
-	
 seven_seg_display second1 (
-	.number(sec1_count),
-	.seven_seg(seven_seg_sec1)
+	.number(sec10_count),
+	.seven_seg(seven_seg_sec10)
 	);
 	
 seven_seg_display second0(
-	.number(sec10_count),
-	.seven_seg(seven_seg_sec0)
+	.number(sec1_count),
+	.seven_seg(seven_seg_sec1)
 	);
 	
 reg [1:0] cnt = 2'b00;
@@ -113,6 +113,16 @@ always @ (posedge seg_hz) begin
 			if (cnt == 0) begin
 				an <= 4'b0111;
 				if (blink_hz) begin
+					seg <= seven_seg_min10;
+				end
+				else begin
+					seg <= blank_digit;
+				end
+				cnt <= cnt + 1;
+			end
+			else if (cnt == 1) begin
+				an <= 4'b1011;
+				if (blink_hz) begin
 					seg <= seven_seg_min1;
 				end
 				else begin
@@ -120,24 +130,14 @@ always @ (posedge seg_hz) begin
 				end
 				cnt <= cnt + 1;
 			end
-			else if (cnt == 1) begin
-				an <= 4'b1011;
-				if (blink_hz) begin
-					seg <= seven_seg_min0;
-				end
-				else begin
-					seg <= blank_digit;
-				end
-				cnt <= cnt + 1;
-			end
 			else if (cnt == 2) begin
 				an <= 4'b1101;
-				seg <= seven_seg_sec1;
+				seg <= seven_seg_sec10;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 3) begin
 				an <= 4'b1110;
-				seg <= seven_seg_sec0;
+				seg <= seven_seg_sec1;
 				cnt <= cnt + 1;
 			end
 		end
@@ -145,18 +145,18 @@ always @ (posedge seg_hz) begin
 		else begin
 			if (cnt == 0) begin
 				an <= 4'b0111;
-				seg <= seven_seg_min1;
+				seg <= seven_seg_min10;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 1) begin
 				an <= 4'b1011;
-				seg <= seven_seg_min0;
+				seg <= seven_seg_min1;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 2) begin
 				an <= 4'b1101;
 				if (blink_hz) begin
-					seg <= seven_seg_sec1;
+					seg <= seven_seg_sec10;
 				end
 				else begin
 					seg <= blank_digit;
@@ -166,7 +166,7 @@ always @ (posedge seg_hz) begin
 			else begin // if (cnt == 3) begin
 				an <= 4'b1110;
 				if (blink_hz) begin
-					seg <= seven_seg_sec0;
+					seg <= seven_seg_sec1;
 				end
 				else begin
 					seg <= blank_digit;
@@ -179,22 +179,22 @@ always @ (posedge seg_hz) begin
 	else begin
 		if (cnt == 0) begin
 			an <= 4'b0111;
-			seg <= seven_seg_min1;
+			seg <= seven_seg_min10;
 			cnt <= cnt + 1;
 		end
 		if (cnt == 1) begin
 			an <= 4'b1011;
-			seg <= seven_seg_min0;
+			seg <= seven_seg_min1;
 			cnt <= cnt + 1;
 		end
 		if (cnt == 2) begin
 			an <= 4'b1101;
-			seg <= seven_seg_sec1;
+			seg <= seven_seg_sec10;
 			cnt <= cnt + 1;
 		end
 		if (cnt == 3) begin
 			an <= 4'b1110;
-			seg <= seven_seg_sec0;
+			seg <= seven_seg_sec1;
 			cnt <= cnt + 1;
 		end
 	end
