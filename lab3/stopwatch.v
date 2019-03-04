@@ -18,144 +18,189 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module top( input clk,
-            input pause,
-            input rst,
-            input sel,
-            input adj,
-            output reg [7:0] seg,
-            output reg [3:0] an);
+module top_fsm(
+	input clk,
+	input rst,
+	input pause,
+	input sel,
+	input wire adj,
+	output reg [7:0] seg,
+	output reg [3:0] an
+    );
 
-    wire pause_deb;
-    wire rst_deb;
-    
-    wire [3:0] min10;
-    wire [3:0] min1;
-    wire [3:0] sec10;
-    wire [3:0] sec1;
-    
-    wire [7:0] seg_min10;
-    wire [7:0] seg_min1;
-    wire [7:0] seg_sec10;
-    wire [7:0] seg_sec1;
-    
-    wire hz1clk, hz2clk, hzblinking, hzrefresh;
-    
-    debouncer pause_debouncer(  .clk(clk),
-                                .btn(pause),
-                                .is_btn_posedge(pause_deb));
-    debouncer rst_debouncer(  .clk(clk),
-                              .btn(rst),
-                              .is_btn_posedge(rst_deb));
-    
-    clk_div clks( .clk(clk),
-                  .rst(rst_deb),
-                  .twoHz(hz2clk),
-                  .oneHz(hz1clk),
-                  .refreshHz(hzrefresh),
-                  .blinkHz(hzblinking));
-                  
-    stopwatch s( .hz1clk(hz1clk),
-                 .hz2clk(hz2clk),
-                 .rst_deb(rst_deb),
-                 .pause_deb(pause_deb),
-                 .sel(sel),
-                 .adj(adj),
-                 .min10(min10),
-                 .min1(min1),
-                 .sec10(sec10),
-                 .sec1(sec1));
-                 
-    seven_seg_display min10_disp( .number(min10),
-                                  .seven_seg(seg_min10));
-    seven_seg_display min1_disp( .number(min1),
-                                  .seven_seg(seg_min1));
-    seven_seg_display sec10_disp( .number(sec10),
-                                  .seven_seg(seg_sec10));
-    seven_seg_display sec1_disp( .number(sec1),
-                                  .seven_seg(seg_sec1));
-                                  
-    reg [2:0] iter;
-    
-    always @(hzrefresh)
-    begin
-        if (adj != 0)
-        begin       //blinking in adjust mode
-            if (sel == 0)		//adjust minutes
-				begin
-					if (iter == 0)
-					begin
-						an <= 4'b0111;
-						if (hzblinking == 1)
-							seg <= seg_min10;
-						else
-							seg <= 8'b11111111;
-						iter <= iter + 1;
-					end
-					if (iter == 1)
-					begin
-						an <= 4'b1011;
-						if (hzblinking == 1)
-							seg <= seg_min1;
-						else
-							seg <= 8'b11111111;
-						iter <= iter + 1;
-					end
-				end
-				
-				if (sel == 1)		//adjust seconds
-				begin
-					if (iter == 2)
-					begin
-						an <= 4'b1101;
-						if (hzblinking == 1)
-							seg <= seg_sec10;
-						else
-							seg <= 8'b11111111;
-						iter <= iter + 1;
-					end
-					if (iter == 3)
-					begin
-						an <= 4'b1110;
-						if (hzblinking == 1)
-							seg <= seg_sec1;
-						else
-							seg <= 8'b11111111;
-						iter <= 0;
-					end
-				end
-        end
-        
-        else
-        begin       //regular display
-            if (iter == 0)
-            begin
-                an <= 4'b0111;
-                seg <= seg_min10;
-                iter <= iter + 1;
-            end
-            else if (iter == 1)
-            begin
-                an <= 4'b1011;
-                seg <= seg_min1;
-                iter <= iter + 1;
-            end
-            else if (iter == 2)
-            begin
-                an <= 4'b1101;
-                seg <= seg_sec10;
-                iter <= iter + 1;
-            end
-            else if (iter == 3)
-            begin
-                an <= 4'b1110;
-                seg <= seg_sec1;
-                iter <= 0;
-            end
-        end
-    end
+wire [3:0] sec10_count;
+wire [3:0] sec1_count;
+wire [3:0] min10_count;
+wire [3:0] min1_count;
 
+wire [7:0] seven_seg_min1;
+wire [7:0] seven_seg_min10;
+wire [7:0] seven_seg_sec1;
+wire [7:0] seven_seg_sec10;
+
+wire one_hz, two_hz, seg_hz, blink_hz;
+
+wire rst_state, pause_state;
+	
+debouncer rst_btn(
+	.clk(clk),
+	.btn(rst),
+	.is_btn_posedge(rst_state)
+	);
+
+debouncer pause_btn(
+	.clk(clk),
+	.btn(pause),
+	.is_btn_posedge(pause_state)
+	);
+
+clk_div divs(
+	.clk(clk),
+	.rst(rst_state),
+	.twoHz(two_hz),
+	.oneHz(one_hz),
+	.refreshHz(seg_hz),
+	.blinkHz(blink_hz)
+	);
+
+stopwatch stopwatch(
+	.hz1clk(one_hz),
+	.hz2clk(two_hz),
+	.rst_deb(rst_state),
+	.pause_deb(pause_state),
+	.sel(sel),
+	.adj(adj),
+	.min10(min10_count),
+	.min1(min1_count),
+	.sec10(sec10_count),
+	.sec1(sec1_count)
+	);
+
+seven_seg_display minute1(
+	.number(min1_count),
+	.seven_seg(seven_seg_min1)
+	);
+	
+seven_seg_display minute0 (
+	.number(min10_count),
+	.seven_seg(seven_seg_min0)
+	);
+	
+seven_seg_display second1 (
+	.number(sec1_count),
+	.seven_seg(seven_seg_sec1)
+	);
+	
+seven_seg_display second0(
+	.number(sec10_count),
+	.seven_seg(seven_seg_sec0)
+	);
+	
+reg [1:0] cnt = 2'b00;
+wire [7:0] blank_digit;
+seven_seg_display blank_val(
+	.number(4'b1111),
+	.seven_seg(blank_digit)
+	);
+
+reg minute_blink = 1'b0;
+reg second_blink = 1'b0;
+
+always @ (posedge seg_hz) begin
+
+	if (adj == 1) begin
+		if (sel == 0) begin
+			if (cnt == 0) begin
+				an <= 4'b0111;
+				if (blink_hz) begin
+					seg <= seven_seg_min1;
+				end
+				else begin
+					seg <= blank_digit;
+				end
+				cnt <= cnt + 1;
+			end
+			else if (cnt == 1) begin
+				an <= 4'b1011;
+				if (blink_hz) begin
+					seg <= seven_seg_min0;
+				end
+				else begin
+					seg <= blank_digit;
+				end
+				cnt <= cnt + 1;
+			end
+			else if (cnt == 2) begin
+				an <= 4'b1101;
+				seg <= seven_seg_sec1;
+				cnt <= cnt + 1;
+			end
+			else if (cnt == 3) begin
+				an <= 4'b1110;
+				seg <= seven_seg_sec0;
+				cnt <= cnt + 1;
+			end
+		end
+		
+		else begin
+			if (cnt == 0) begin
+				an <= 4'b0111;
+				seg <= seven_seg_min1;
+				cnt <= cnt + 1;
+			end
+			else if (cnt == 1) begin
+				an <= 4'b1011;
+				seg <= seven_seg_min0;
+				cnt <= cnt + 1;
+			end
+			else if (cnt == 2) begin
+				an <= 4'b1101;
+				if (blink_hz) begin
+					seg <= seven_seg_sec1;
+				end
+				else begin
+					seg <= blank_digit;
+				end
+				cnt <= cnt + 1;
+			end
+			else begin // if (cnt == 3) begin
+				an <= 4'b1110;
+				if (blink_hz) begin
+					seg <= seven_seg_sec0;
+				end
+				else begin
+					seg <= blank_digit;
+				end
+				cnt <= cnt + 1;
+			end
+		end
+	end	
+	
+	else begin
+		if (cnt == 0) begin
+			an <= 4'b0111;
+			seg <= seven_seg_min1;
+			cnt <= cnt + 1;
+		end
+		if (cnt == 1) begin
+			an <= 4'b1011;
+			seg <= seven_seg_min0;
+			cnt <= cnt + 1;
+		end
+		if (cnt == 2) begin
+			an <= 4'b1101;
+			seg <= seven_seg_sec1;
+			cnt <= cnt + 1;
+		end
+		if (cnt == 3) begin
+			an <= 4'b1110;
+			seg <= seven_seg_sec0;
+			cnt <= cnt + 1;
+		end
+	end
+end
 endmodule
+
 module stopwatch(
     input hz1clk,
     input hz2clk,

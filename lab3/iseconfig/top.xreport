@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-03-04T09:48:39</DateModified>
-  <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>2019-02-27T00:13:22</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/152/CS-M152-A/lab3/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/152/CS-M152-A/lab3\</ImplementationReportsDirectory>
-  <DateInitialized>2019-02-26T23:35:50</DateInitialized>
+  <DateModified>2019-02-27T19:32:46</DateModified>
+  <ModuleName>top_fsm</ModuleName>
+  <SummaryTimeStamp>2019-02-27T19:29:57</SummaryTimeStamp>
+  <SavedFilePath>/home/ise/Desktop/CS-M152-A/lab3/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/ise/Desktop/CS-M152-A/lab3/</ImplementationReportsDirectory>
+  <DateInitialized>2019-02-27T19:32:46</DateInitialized>
+
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

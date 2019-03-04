@@ -48,7 +48,11 @@ module debouncer_tb;
         
 		// Add stimulus here
 		btn = 1;
-		#200000
+		#50
+		btn = 0;
+		
+		btn = 1;
+		#5
 		btn = 0;
 	end
 	
