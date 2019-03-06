@@ -25,8 +25,7 @@ module top(
 	input sel,
 	input wire adj,
 	output reg [7:0] seg,
-	output reg [3:0] an
-    );
+	output reg [3:0] an);
 
 wire [3:0] sec10_count;
 wire [3:0] sec1_count;
@@ -45,14 +44,12 @@ wire rst_state, pause_state;
 debouncer rst_btn(
 	.clk(clk),
 	.btn(rst),
-	.is_btn_posedge(rst_state)
-	);
+	.is_btn_posedge(rst_state));
 
 debouncer pause_btn(
 	.clk(clk),
 	.btn(pause),
-	.is_btn_posedge(pause_state)
-	);
+	.is_btn_posedge(pause_state));
 
 clk_div divs(
 	.clk(clk),
@@ -60,8 +57,7 @@ clk_div divs(
 	.twoHz(two_hz),
 	.oneHz(one_hz),
 	.refreshHz(seg_hz),
-	.blinkHz(blink_hz)
-	);
+	.blinkHz(blink_hz));
 
 stopwatch stopwatch(
 	.hz1clk(one_hz),
@@ -73,126 +69,117 @@ stopwatch stopwatch(
 	.min10(min10_count),
 	.min1(min1_count),
 	.sec10(sec10_count),
-	.sec1(sec1_count)
-	);
+	.sec1(sec1_count));
 
-seven_seg_display minute1(
-	.number(min10_count),
-	.seven_seg(seven_seg_min10)
-	);
+seven_seg_display minute10(.number(min10_count),.seven_seg(seven_seg_min10));
 	
-seven_seg_display minute0 (
-	.number(min1_count),
-	.seven_seg(seven_seg_min1)
-	);
+seven_seg_display minute1 (.number(min1_count),.seven_seg(seven_seg_min1));
 	
-seven_seg_display second1 (
-	.number(sec10_count),
-	.seven_seg(seven_seg_sec10)
-	);
+seven_seg_display second10 (.number(sec10_count),.seven_seg(seven_seg_sec10));
 	
-seven_seg_display second0(
-	.number(sec1_count),
-	.seven_seg(seven_seg_sec1)
-	);
+seven_seg_display second1(.number(sec1_count),.seven_seg(seven_seg_sec1));
 	
 reg [1:0] cnt = 2'b00;
 wire [7:0] blank_digit;
 seven_seg_display blank_val(
 	.number(4'b1111),
-	.seven_seg(blank_digit)
-	);
-
-reg minute_blink = 1'b0;
-reg second_blink = 1'b0;
+	.seven_seg(blank_digit));
 
 always @ (posedge seg_hz) begin
 
-	if (adj == 1) begin
-		if (sel == 0) begin
-			if (cnt == 0) begin
+	if (adj == 1) 
+	begin
+		if (sel == 0) 
+		begin
+			if (cnt == 0) 
+			begin
 				an <= 4'b0111;
-				if (blink_hz) begin
+				if (blink_hz) 
 					seg <= seven_seg_min10;
-				end
-				else begin
+				else 
 					seg <= blank_digit;
-				end
 				cnt <= cnt + 1;
 			end
-			else if (cnt == 1) begin
+			else if (cnt == 1) 
+			begin
 				an <= 4'b1011;
-				if (blink_hz) begin
+				if (blink_hz)
 					seg <= seven_seg_min1;
-				end
-				else begin
+				else
 					seg <= blank_digit;
-				end
 				cnt <= cnt + 1;
 			end
-			else if (cnt == 2) begin
+			else if (cnt == 2) 
+			begin
 				an <= 4'b1101;
 				seg <= seven_seg_sec10;
 				cnt <= cnt + 1;
 			end
-			else if (cnt == 3) begin
+			else if (cnt == 3) 
+			begin
 				an <= 4'b1110;
 				seg <= seven_seg_sec1;
 				cnt <= cnt + 1;
 			end
 		end
 		
-		else begin
-			if (cnt == 0) begin
+		else 
+		begin
+			if (cnt == 0) 
+			begin
 				an <= 4'b0111;
 				seg <= seven_seg_min10;
 				cnt <= cnt + 1;
 			end
-			else if (cnt == 1) begin
+			else if (cnt == 1) 
+			begin
 				an <= 4'b1011;
 				seg <= seven_seg_min1;
 				cnt <= cnt + 1;
 			end
-			else if (cnt == 2) begin
+			else if (cnt == 2) 
+			begin
 				an <= 4'b1101;
-				if (blink_hz) begin
+				if (blink_hz)
 					seg <= seven_seg_sec10;
-				end
-				else begin
+				else
 					seg <= blank_digit;
-				end
 				cnt <= cnt + 1;
 			end
-			else begin // if (cnt == 3) begin
+			else 
+			begin // if (cnt == 3) begin
 				an <= 4'b1110;
-				if (blink_hz) begin
+				if (blink_hz)
 					seg <= seven_seg_sec1;
-				end
-				else begin
+				else
 					seg <= blank_digit;
-				end
 				cnt <= cnt + 1;
 			end
 		end
 	end	
 	
-	else begin
-		if (cnt == 0) begin
+	else 
+	begin
+		if (cnt == 0) 
+		begin
 			an <= 4'b0111;
 			seg <= seven_seg_min10;
 			cnt <= cnt + 1;
 		end
-		if (cnt == 1) begin
+		if (cnt == 1) 
+		begin
 			an <= 4'b1011;
 			seg <= seven_seg_min1;
 			cnt <= cnt + 1;
 		end
-		if (cnt == 2) begin
+		if (cnt == 2) 
+		begin
 			an <= 4'b1101;
 			seg <= seven_seg_sec10;
 			cnt <= cnt + 1;
 		end
-		if (cnt == 3) begin
+		if (cnt == 3) 
+		begin
 			an <= 4'b1110;
 			seg <= seven_seg_sec1;
 			cnt <= cnt + 1;
@@ -221,8 +208,6 @@ module stopwatch(
     reg is_P = 0;
 	 
 	 wire s_clk;
-	 
-	 //clk selector?
     
 	 reg clk_temp;
 	 always@*
