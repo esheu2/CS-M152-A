@@ -39,21 +39,21 @@ wire [7:0] seven_seg_sec10;
 
 wire one_hz, two_hz, seg_hz, blink_hz;
 
-wire rst_state, pause_state;
+wire rst_deb, pause_deb;
 	
 debouncer rst_btn(
 	.clk(clk),
 	.btn(rst),
-	.is_btn_posedge(rst_state));
+	.is_btn_posedge(rst_deb));
 
 debouncer pause_btn(
 	.clk(clk),
 	.btn(pause),
-	.is_btn_posedge(pause_state));
+	.is_btn_posedge(pause_deb));
 
 clk_div divs(
 	.clk(clk),
-	.rst(rst_state),
+	.rst(rst_deb),
 	.twoHz(two_hz),
 	.oneHz(one_hz),
 	.refreshHz(seg_hz),
@@ -62,8 +62,8 @@ clk_div divs(
 stopwatch stopwatch(
 	.hz1clk(one_hz),
 	.hz2clk(two_hz),
-	.rst_deb(rst_state),
-	.pause_deb(pause_state),
+	.rst_deb(rst_deb),
+	.pause_deb(pause_deb),
 	.sel(sel),
 	.adj(adj),
 	.min10(min10_count),
@@ -80,10 +80,10 @@ seven_seg_display second10 (.number(sec10_count),.seven_seg(seven_seg_sec10));
 seven_seg_display second1(.number(sec1_count),.seven_seg(seven_seg_sec1));
 	
 reg [1:0] cnt = 2'b00;
-wire [7:0] blank_digit;
-seven_seg_display blank_val(
+wire [7:0] blank;
+seven_seg_display blank_seg(
 	.number(4'b1111),
-	.seven_seg(blank_digit));
+	.seven_seg(blank));
 
 always @ (posedge seg_hz) begin
 
@@ -97,7 +97,7 @@ always @ (posedge seg_hz) begin
 				if (blink_hz) 
 					seg <= seven_seg_min10;
 				else 
-					seg <= blank_digit;
+					seg <= blank;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 1) 
@@ -106,7 +106,7 @@ always @ (posedge seg_hz) begin
 				if (blink_hz)
 					seg <= seven_seg_min1;
 				else
-					seg <= blank_digit;
+					seg <= blank;
 				cnt <= cnt + 1;
 			end
 			else if (cnt == 2) 
@@ -143,7 +143,7 @@ always @ (posedge seg_hz) begin
 				if (blink_hz)
 					seg <= seven_seg_sec10;
 				else
-					seg <= blank_digit;
+					seg <= blank;
 				cnt <= cnt + 1;
 			end
 			else 
@@ -152,7 +152,7 @@ always @ (posedge seg_hz) begin
 				if (blink_hz)
 					seg <= seven_seg_sec1;
 				else
-					seg <= blank_digit;
+					seg <= blank;
 				cnt <= cnt + 1;
 			end
 		end
