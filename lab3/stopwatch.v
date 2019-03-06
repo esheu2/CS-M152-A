@@ -386,8 +386,8 @@ module debouncer(
         end
         else
 			begin
-            mem <= mem + 1;
-				// mem[15:0] <= {btn, mem[15:1]};
+            //mem <= mem + 1;
+				 mem[15:0] <= {btn, mem[15:1]};
             if(mem == 16'hffff)
             begin
                 mem <= 0;
