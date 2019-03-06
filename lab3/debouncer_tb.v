@@ -50,7 +50,7 @@ module debouncer_tb;
 		btn = 1;
 		#50
 		btn = 0;
-		
+		#100
 		btn = 1;
 		#5
 		btn = 0;
