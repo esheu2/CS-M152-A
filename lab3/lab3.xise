@@ -12,7 +12,7 @@
     <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
   </header>
 
-  <version xil_pn:ise_version="14.6" xil_pn:schema_version="2"/>
+  <version xil_pn:ise_version="14.7" xil_pn:schema_version="2"/>
 
   <files>
     <file xil_pn:name="stopwatch.v" xil_pn:type="FILE_VERILOG">
@@ -41,13 +41,13 @@
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="114"/>
     </file>
     <file xil_pn:name="debouncer_tb.v" xil_pn:type="FILE_VERILOG">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="121"/>
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="121"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="121"/>
     </file>
     <file xil_pn:name="top_tb.v" xil_pn:type="FILE_VERILOG">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="125"/>
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="125"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="125"/>
@@ -237,7 +237,7 @@
     <property xil_pn:name="Overwrite Compiled Libraries" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Pack I/O Registers into IOBs" xil_pn:value="Auto" xil_pn:valueState="default"/>
     <property xil_pn:name="Pack I/O Registers/Latches into IOBs" xil_pn:value="Off" xil_pn:valueState="default"/>
-    <property xil_pn:name="Package" xil_pn:value="csg324" xil_pn:valueState="default"/>
+    <property xil_pn:name="Package" xil_pn:value="csg324" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Perform Advanced Analysis" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Perform Advanced Analysis Post Trace" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Perform Timing-Driven Packing and Placement" xil_pn:value="false" xil_pn:valueState="default"/>
@@ -364,7 +364,7 @@
     <!--                                                                                  -->
     <!-- The following properties are for internal use only. These should not be modified.-->
     <!--                                                                                  -->
-    <property xil_pn:name="PROP_BehavioralSimTop" xil_pn:value="Module|top_tb" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="PROP_BehavioralSimTop" xil_pn:value="Module|debouncer_tb" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_DesignName" xil_pn:value="lab3" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_DevFamilyPMName" xil_pn:value="spartan6" xil_pn:valueState="default"/>
     <property xil_pn:name="PROP_FPGAConfiguration" xil_pn:value="FPGAConfiguration" xil_pn:valueState="default"/>

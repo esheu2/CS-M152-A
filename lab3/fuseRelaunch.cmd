@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/Desktop/CS-M152-A/lab3/top_tb_isim_beh.exe" -prj "/home/ise/Desktop/CS-M152-A/lab3/top_tb_beh.prj" "work.top_tb" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/Desktop/CS-M152-A/lab3/debouncer_tb_isim_beh.exe" -prj "/home/ise/Desktop/CS-M152-A/lab3/debouncer_tb_beh.prj" "work.debouncer_tb" "work.glbl" 
