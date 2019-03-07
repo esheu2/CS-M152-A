@@ -40,9 +40,9 @@ input wire [31:0] arr2_1;
 input wire [31:0] arr2_2;
 input wire [31:0] arr2_3;
 
-output wire [63:0] ans;
+output wire [31:0] ans;
 
-reg [63:0] ans_temp;
+reg [31:0] ans_temp;
 
 //mx mult logic here TODO
 
