@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab4/top.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab4/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc nexys3.ucf -p xc6slx16-csg324-3 top.ngc top.ngd  
