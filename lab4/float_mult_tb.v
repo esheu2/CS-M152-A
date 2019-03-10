@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   08:35:31 03/08/2019
-// Design Name:   float_mult
+// Create Date:   04:19:46 03/09/2019
+// Design Name:   multiplier
 // Module Name:   /home/ise/Desktop/CS-M152-A/lab4/float_mult_tb.v
 // Project Name:  lab4
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: float_mult
+// Verilog Test Fixture created by ISE for module: multiplier
 //
 // Dependencies:
 // 
@@ -25,38 +25,54 @@
 module float_mult_tb;
 
 	// Inputs
+	reg [31:0] input_a;
+	reg [31:0] input_b;
+	reg input_a_stb;
+	reg input_b_stb;
+	reg output_z_ack;
 	reg clk;
-	reg [31:0] a;
-	reg [31:0] b;
+	reg rst;
 
 	// Outputs
-	wire [31:0] y;
+	wire [31:0] output_z;
+	wire output_z_stb;
+	wire input_a_ack;
+	wire input_b_ack;
 
 	// Instantiate the Unit Under Test (UUT)
-	float_mult uut (
+	multiplier uut (
+		.input_a(input_a), 
+		.input_b(input_b), 
+		.input_a_stb(input_a_stb), 
+		.input_b_stb(input_b_stb), 
+		.output_z_ack(output_z_ack), 
 		.clk(clk), 
-		.a(a), 
-		.b(b), 
-		.y(y)
+		.rst(rst), 
+		.output_z(output_z), 
+		.output_z_stb(output_z_stb), 
+		.input_a_ack(input_a_ack), 
+		.input_b_ack(input_b_ack)
 	);
 
 	initial begin
 		// Initialize Inputs
+		input_a = 0;
+		input_b = 0;
+		input_a_stb = 0;
+		input_b_stb = 0;
 		clk = 0;
-		a = 0;
-		b = 0;
+		rst = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
 		// Add stimulus here
-		a = 32'b01000000101000000000000000000000;
-		b = 32'b01000001001000000000000000000000;
-		#100;
+		input_a = 32'b00111111100000000000000000000000;
+		input_b = 32'b00111111100000000000000000000000;
+		input_a_stb = 1;
+		input_b_stb = 1;
 	end
-	
-	always
-	#1 clk = ~clk;
-      
+      always
+		#1 clk = ~clk;
 endmodule
 

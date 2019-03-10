@@ -51,7 +51,7 @@ wire [31:0] product_2;
 wire [31:0] product_3;
 
 //mx mult logic here TODO
-
+/*
 float_mult prod0(
 				.input_a(arr1_0),
 				.input_b(arr2_0),
@@ -101,5 +101,5 @@ float_mult prod3(
 				);				
 
 assign ans = product_0 + product_1 + product_2 + product_3;
-
+*/
 endmodule
