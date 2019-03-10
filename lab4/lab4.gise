@@ -61,6 +61,8 @@
     <transform xil_pn:end_ts="1552261405" xil_pn:in_ck="-691130453225554831" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1552261405">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <outfile xil_pn:name="CNN.v"/>
       <outfile xil_pn:name="float_mult.v"/>
       <outfile xil_pn:name="fp_mult_tb.v"/>
@@ -84,6 +86,7 @@
     <transform xil_pn:end_ts="1552261406" xil_pn:in_ck="-691130453225554831" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1552261405">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="CNN.v"/>
       <outfile xil_pn:name="float_mult.v"/>
       <outfile xil_pn:name="fp_mult_tb.v"/>
@@ -95,6 +98,7 @@
     <transform xil_pn:end_ts="1552261409" xil_pn:in_ck="-691130453225554831" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1309901485437523195" xil_pn:start_ts="1552261406">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fp_mult_tb_beh.prj"/>
@@ -107,6 +111,9 @@
     <transform xil_pn:end_ts="1552261409" xil_pn:in_ck="5081189010057992251" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7777615596256865352" xil_pn:start_ts="1552261409">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fp_mult_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
@@ -144,6 +151,7 @@
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="top.lso"/>
