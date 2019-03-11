@@ -61,7 +61,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1552264475" xil_pn:in_ck="-4088444422096327939" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1552264475">
+    <transform xil_pn:end_ts="1552264747" xil_pn:in_ck="-4088444422096327939" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1552264747">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CNN.v"/>
@@ -88,7 +88,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1552264475" xil_pn:in_ck="-4088444422096327939" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1552264475">
+    <transform xil_pn:end_ts="1552264747" xil_pn:in_ck="-4088444422096327939" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1552264747">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CNN.v"/>
@@ -103,7 +103,7 @@
       <outfile xil_pn:name="sigmoid_approx.v"/>
       <outfile xil_pn:name="top.v"/>
     </transform>
-    <transform xil_pn:end_ts="1552264478" xil_pn:in_ck="-4088444422096327939" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7599137616003475277" xil_pn:start_ts="1552264475">
+    <transform xil_pn:end_ts="1552264749" xil_pn:in_ck="-4088444422096327939" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7599137616003475277" xil_pn:start_ts="1552264747">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -112,9 +112,10 @@
       <outfile xil_pn:name="cheat_fp_mult_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1552264573" xil_pn:in_ck="-7931792878179290852" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8424715860700527024" xil_pn:start_ts="1552264573">
+    <transform xil_pn:end_ts="1552264749" xil_pn:in_ck="-7931792878179290852" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8424715860700527024" xil_pn:start_ts="1552264749">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="cheat_fp_mult_tb_isim_beh.wdb"/>

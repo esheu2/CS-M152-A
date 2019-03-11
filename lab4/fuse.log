@@ -5,16 +5,12 @@ Turning on mult-threading, number of parallel sub-compilation jobs: 8
 Determining compilation order of HDL files
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/float_mult.v" into library work
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" into library work
-WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 32: Target <a_temp> of concurrent assignment or output port connection should be a net type.
-WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 33: Target <b_temp> of concurrent assignment or output port connection should be a net type.
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 32: Target <a_temp> of concurrent assignment or output port connection should be a net type.
-WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 33: Target <b_temp> of concurrent assignment or output port connection should be a net type.
 Completed static elaboration
-Fuse Memory Usage: 94932 KB
-Fuse CPU Usage: 1650 ms
+Fuse Memory Usage: 94936 KB
+Fuse CPU Usage: 1350 ms
 Compiling module fp_mult
 Compiling module cheat_fp_mult
 Compiling module cheat_fp_mult_tb
@@ -22,6 +18,6 @@ Compiling module glbl
 Time Resolution for simulation is 1ps.
 Compiled 4 Verilog Units
 Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.exe
-Fuse Memory Usage: 653144 KB
-Fuse CPU Usage: 1740 ms
-GCC CPU Usage: 1330 ms
+Fuse Memory Usage: 653136 KB
+Fuse CPU Usage: 1420 ms
+GCC CPU Usage: 770 ms

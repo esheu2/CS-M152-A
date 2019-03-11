@@ -2,12 +2,12 @@ Command line:
    cheat_fp_mult_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  59610
+     -socket  32913
 
-Mon Mar 11 00:36:16 2019
+Mon Mar 11 00:39:13 2019
 
 
- Elaboration Time: 0.06 sec
+ Elaboration Time: 0.04 sec
 
  Current Memory Usage: 198.578 Meg
 
@@ -16,15 +16,13 @@ Mon Mar 11 00:36:16 2019
  Total Signal Drivers   : 11
  Total Blocks           : 4
  Total Primitive Blocks : 2
- Total Processes        : 19
+ Total Processes        : 17
  Total Traceable Variables  : 35
  Total Scalar Nets and Variables : 471
-In process cheat_fp_mult.vCont_32_0 
- FATAL ERROR:ISim: This application has discovered an exceptional condition from which it cannot recover. Process will terminate. To search for possible resolutions to this issue, refer to the Xilinx answer database by going to http://www.xilinx.com/support/answers/index.htm and search with keywords 'ISim' and 'FATAL ERROR'. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
 
- Total Simulation Time: 0.07 sec
+ Total Simulation Time: 0.06 sec
 
- Current Memory Usage: 276.181 Meg
+ Current Memory Usage: 276.177 Meg
 
-Mon Mar 11 00:37:05 2019
+Mon Mar 11 00:39:33 2019
 

@@ -29,11 +29,11 @@ module cheat_fp_mult(
 		wire[31:0] cb;
 		reg [31:0] a_temp;
 		reg [31:0] b_temp;
-		assign a_temp = a;
-		assign b_temp = b;
 		
 		always @ (posedge clk) 
 			begin
+				a_temp = a;
+				b_temp = b;
 				if(!a_temp[22:0])
 					a_temp[0] = 1'b1;
 				if(!b_temp[22:0])

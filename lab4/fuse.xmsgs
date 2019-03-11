@@ -5,17 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 32: Target &lt;<arg fmt="%s" index="1">a_temp</arg>&gt; of concurrent assignment or output port connection should be a net type.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 33: Target &lt;<arg fmt="%s" index="1">b_temp</arg>&gt; of concurrent assignment or output port connection should be a net type.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 32: Target &lt;<arg fmt="%s" index="1">a_temp</arg>&gt; of concurrent assignment or output port connection should be a net type.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 33: Target &lt;<arg fmt="%s" index="1">b_temp</arg>&gt; of concurrent assignment or output port connection should be a net type.
-</msg>
-
 </messages>
 
