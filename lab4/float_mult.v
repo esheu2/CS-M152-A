@@ -52,7 +52,8 @@ module fp_mult(input  wire clk,
 	parameter STEP_1 = 1'b0, STEP_2 = 1'b1;
 
 
-	always @(posedge clk) begin
+	always @(posedge clk) 
+    begin
 		state <= next_state;
 	end
 

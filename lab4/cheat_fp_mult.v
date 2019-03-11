@@ -49,4 +49,16 @@ module cheat_fp_mult(
 			.b(cb),
 			.y(y)
 			);
+        reg [31:0] asdf;
+        /*
+        always @*
+        begin
+            if(a == 0 || b == 0)
+                asdf <= 0;
+            else 
+                asdf <= y;
+        end
+        
+        assign y = asdf;*/
+        
 endmodule

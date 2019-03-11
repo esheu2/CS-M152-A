@@ -39,9 +39,11 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="matrix_mult_tb_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="numpad_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sigmoid_approx_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sigmoid_approx_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sigmoid_approx_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="sigmoid_approx_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sigmoid_approx_tb_stx_beh.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="top.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="top.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="top.lso"/>
@@ -62,13 +64,17 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1552327143" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1552327143">
+    <transform xil_pn:end_ts="1552329784" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1552329784">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1552327341" xil_pn:in_ck="-833515373642160758" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1552327341">
+    <transform xil_pn:end_ts="1552329823" xil_pn:in_ck="-833515373642160758" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1552329823">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="CNN.v"/>
       <outfile xil_pn:name="cheat_fp_mult.v"/>
       <outfile xil_pn:name="cheat_fp_mult_tb.v"/>
@@ -83,21 +89,26 @@
       <outfile xil_pn:name="sigmoid_approx_tb.v"/>
       <outfile xil_pn:name="top.v"/>
     </transform>
-    <transform xil_pn:end_ts="1552327143" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4114424033202759089" xil_pn:start_ts="1552327143">
+    <transform xil_pn:end_ts="1552329784" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4114424033202759089" xil_pn:start_ts="1552329784">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1552327143" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1471332761742950545" xil_pn:start_ts="1552327143">
+    <transform xil_pn:end_ts="1552329784" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1471332761742950545" xil_pn:start_ts="1552329784">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1552327143" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4990106746368420233" xil_pn:start_ts="1552327143">
+    <transform xil_pn:end_ts="1552329784" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4990106746368420233" xil_pn:start_ts="1552329784">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1552327341" xil_pn:in_ck="-833515373642160758" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1552327341">
+    <transform xil_pn:end_ts="1552329823" xil_pn:in_ck="-833515373642160758" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1552329823">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="CNN.v"/>
       <outfile xil_pn:name="cheat_fp_mult.v"/>
       <outfile xil_pn:name="cheat_fp_mult_tb.v"/>
@@ -112,9 +123,14 @@
       <outfile xil_pn:name="sigmoid_approx_tb.v"/>
       <outfile xil_pn:name="top.v"/>
     </transform>
-    <transform xil_pn:end_ts="1552327345" xil_pn:in_ck="-833515373642160758" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1288532589307996831" xil_pn:start_ts="1552327341">
+    <transform xil_pn:end_ts="1552329826" xil_pn:in_ck="-833515373642160758" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1288532589307996831" xil_pn:start_ts="1552329823">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -122,9 +138,12 @@
       <outfile xil_pn:name="sigmoid_approx_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1552327345" xil_pn:in_ck="-5345582350819821147" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2470617745549296772" xil_pn:start_ts="1552327345">
+    <transform xil_pn:end_ts="1552329827" xil_pn:in_ck="-1331497045671434983" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2470617745549296772" xil_pn:start_ts="1552329826">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="sigmoid_approx_tb_isim_beh.wdb"/>

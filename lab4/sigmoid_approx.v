@@ -109,15 +109,19 @@ begin
 		y_temp <= holdVar4;	// y_temp = 0.125 * x_mag + 0.625
 	end
 	
-	else if(x_mag >= 0 && x_mag < 32'h3f800000)		//x_mag >= 0 && x_mag < 1
+	else if(x_mag > 0 && x_mag < 32'h3f800000)		//x_mag > 0 && x_mag < 1
 	begin
 		y_temp <= holdVar6;	// y_temp = 0.25 * x_mag + 0.5
 	end
+    else if(x_mag == 0)
+    begin
+        y_temp = 32'h3f000000; // y_temp = 0.5
+    end
 end
 
 //TODO: if negative, |y_temp - 1|
-/*wire [31:0] neg1;
-assign neg1 = 32'hbf800000;
+wire [31:0] neg1;
+assign neg1 = 32'hbf800000; //-1
 wire [31:0] tempans;
 fp_add neg_case(
 		.a(neg1),
@@ -131,7 +135,7 @@ always @*
 begin
     if(x[31])
         y_temp <= tempans;
-end*/
+end
 
 assign y = y_temp;
 

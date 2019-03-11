@@ -67,7 +67,7 @@ static void Always_33_0(char *t0)
     unsigned int t36;
     int t37;
 
-LAB0:    t1 = (t0 + 3328U);
+LAB0:    t1 = (t0 + 3488U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
@@ -75,9 +75,9 @@ LAB0:    t1 = (t0 + 3328U);
 LAB3:    goto *t2;
 
 LAB2:    xsi_set_current_line(33, ng0);
-    t2 = (t0 + 4144);
+    t2 = (t0 + 4304);
     *((int *)t2) = 1;
-    t3 = (t0 + 3360);
+    t3 = (t0 + 3520);
     *((char **)t3) = t2;
     *((char **)t1) = &&LAB4;
 
@@ -243,7 +243,7 @@ static void Cont_43_1(char *t0)
     char *t9;
     char *t10;
 
-LAB0:    t1 = (t0 + 3576U);
+LAB0:    t1 = (t0 + 3736U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
@@ -254,14 +254,14 @@ LAB2:    xsi_set_current_line(43, ng0);
     t2 = (t0 + 2248);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
-    t5 = (t0 + 4256);
+    t5 = (t0 + 4416);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
     t8 = (t7 + 56U);
     t9 = *((char **)t8);
     memcpy(t9, t4, 8);
     xsi_driver_vfirst_trans(t5, 0, 31);
-    t10 = (t0 + 4160);
+    t10 = (t0 + 4320);
     *((int *)t10) = 1;
 
 LAB1:    return;
@@ -280,7 +280,7 @@ static void Cont_44_2(char *t0)
     char *t9;
     char *t10;
 
-LAB0:    t1 = (t0 + 3824U);
+LAB0:    t1 = (t0 + 3984U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
@@ -291,23 +291,23 @@ LAB2:    xsi_set_current_line(44, ng0);
     t2 = (t0 + 2408);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
-    t5 = (t0 + 4320);
+    t5 = (t0 + 4480);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
     t8 = (t7 + 56U);
     t9 = *((char **)t8);
     memcpy(t9, t4, 8);
     xsi_driver_vfirst_trans(t5, 0, 31);
-    t10 = (t0 + 4176);
+    t10 = (t0 + 4336);
     *((int *)t10) = 1;
 
 LAB1:    return;
 }
 
 
-extern void work_m_00000000002496815915_3103117936_init()
+extern void work_m_00000000003110884269_3103117936_init()
 {
 	static char *pe[] = {(void *)Always_33_0,(void *)Cont_43_1,(void *)Cont_44_2};
-	xsi_register_didat("work_m_00000000002496815915_3103117936", "isim/sigmoid_approx_tb_isim_beh.exe.sim/work/m_00000000002496815915_3103117936.didat");
+	xsi_register_didat("work_m_00000000003110884269_3103117936", "isim/sigmoid_approx_tb_isim_beh.exe.sim/work/m_00000000003110884269_3103117936.didat");
 	xsi_register_executes(pe);
 }

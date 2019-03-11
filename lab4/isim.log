@@ -7,9 +7,6 @@ WARNING:Security:42 - Your software subscription period has lapsed. Your current
 
 ----------------------------------------------------------------------
 This is a Full version of ISim.
-WARNING: File "C:/Users/152/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa1/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
-WARNING: File "C:/Users/152/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa2/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
-WARNING: File "C:/Users/152/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa3/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
