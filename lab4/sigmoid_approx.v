@@ -31,12 +31,10 @@ input wire [31:0] x;
 output wire [31:0] y;
 
 reg [31:0] y_temp;
-reg [31:0] x_mag;
 
-always @ (posedge clk)
-begin
-	x_mag = (x << 1) >> 1;
-end
+wire [31:0] x_mag;
+assign x_mag = (x << 1) >> 1;
+
 	
 wire [31:0] holdVar1, holdVar2, holdVar3, holdVar4, holdVar5, holdVar6;
 wire [31:0] tempVar1, tempVar2, tempVar3, tempVar4, tempVar5, tempVar6;
@@ -84,7 +82,7 @@ assign tempVar6 = 32'h3f000000; 	//0.5
 		.clk(clk),
 		.a(x_mag),
 		.b(tempVar5),
-		.y(holVar5)
+		.y(holdVar5)
 		);
 	fp_add fa3(
 		.a(holdVar5),
@@ -98,24 +96,42 @@ always @*
 begin
 	if(x_mag >= 32'h40a00000)	// x_mag >= 5
 	begin
-		y_temp = 32'h3f800000;	// y_temp = 1
+		y_temp <= 32'h3f800000;	// y_temp = 1
 	end
 	
 	else if(x_mag >= 32'h40180000 && x_mag < 32'h40a00000)		//x_mag >= 2.375 && x_mag < 5
 	begin
-		y_temp = holdVar2;	// y_temp = 0.03125 * x_mag + 0.84375
+		y_temp <= holdVar2;	// y_temp = 0.03125 * x_mag + 0.84375
 	end
 	
 	else if(x_mag >= 32'h3f800000 && x_mag < 32'h40180000)		//x_mag >= 1 && x_mag < 2.375
 	begin
-		y_temp = holdVar4;	// y_temp = 0.125 * x_mag + 0.625
+		y_temp <= holdVar4;	// y_temp = 0.125 * x_mag + 0.625
 	end
 	
 	else if(x_mag >= 0 && x_mag < 32'h3f800000)		//x_mag >= 0 && x_mag < 1
 	begin
-		y_temp = holdVar6;	// y_temp = 0.25 * x_mag + 0.5
+		y_temp <= holdVar6;	// y_temp = 0.25 * x_mag + 0.5
 	end
 end
+
+//TODO: if negative, |y_temp - 1|
+/*wire [31:0] neg1;
+assign neg1 = 32'hbf800000;
+wire [31:0] tempans;
+fp_add neg_case(
+		.a(neg1),
+		.b(y_temp),
+		.clk(clk),
+		.out(tempans)
+		);
+assign tempans = (tempans << 1) >> 1;
+
+always @*
+begin
+    if(x[31])
+        y_temp <= tempans;
+end*/
 
 assign y = y_temp;
 

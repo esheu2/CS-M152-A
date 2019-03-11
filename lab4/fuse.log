@@ -1,20 +1,17 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_beh.prj work.sigmoid_approx_tb work.glbl 
-ISim P.20160913 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/152/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.exe -prj C:/Users/152/CS-M152-A/lab4/sigmoid_approx_tb_beh.prj work.sigmoid_approx_tb work.glbl 
+ISim P.68d (signature 0x7708f090)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/float_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb.v" into library work
-Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Analyzing Verilog file "C:/Users/152/CS-M152-A/lab4/float_mult.v" into library work
+Analyzing Verilog file "C:/Users/152/CS-M152-A/lab4/fp_add.v" into library work
+Analyzing Verilog file "C:/Users/152/CS-M152-A/lab4/cheat_fp_mult.v" into library work
+Analyzing Verilog file "C:/Users/152/CS-M152-A/lab4/sigmoid_approx.v" into library work
+Analyzing Verilog file "C:/Users/152/CS-M152-A/lab4/sigmoid_approx_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" Line 42: Size mismatch in connection of port <ex2>. Formal port size is 24-bit while actual signal size is 8-bit.
-WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx.v" Line 87: Size mismatch in connection of port <y>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/152/CS-M152-A/lab4/fp_add.v" Line 42: Size mismatch in connection of port <ex2>. Formal port size is 24-bit while actual signal size is 8-bit.
 Completed static elaboration
-Fuse Memory Usage: 94932 KB
-Fuse CPU Usage: 2620 ms
 Compiling module fp_mult
 Compiling module cheat_fp_mult
 Compiling module cmpshift
@@ -27,9 +24,8 @@ Compiling module sigmoid_approx
 Compiling module sigmoid_approx_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 4 sub-compilation(s) to finish...
+Waiting for 5 sub-compilation(s) to finish...
 Compiled 11 Verilog Units
-Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.exe
-Fuse Memory Usage: 653236 KB
-Fuse CPU Usage: 2810 ms
-GCC CPU Usage: 2090 ms
+Built simulation executable C:/Users/152/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.exe
+Fuse Memory Usage: 27488 KB
+Fuse CPU Usage: 608 ms

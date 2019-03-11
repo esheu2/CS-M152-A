@@ -1,20 +1,18 @@
 ISim log file
-Running: /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.wdb 
-ISim P.20160913 (signature 0xfbc00daa)
+Running: C:\Users\152\CS-M152-A\lab4\sigmoid_approx_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/152/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.wdb 
+ISim P.68d (signature 0x7708f090)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
 
 
 ----------------------------------------------------------------------
 This is a Full version of ISim.
-WARNING: File "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa1/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
-WARNING: File "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa2/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
-WARNING: File "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx.v" Line 87.  For instance uut/c3/, width 32 of formal port y is not equal to width 1 of actual signal holVar5.
-WARNING: File "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa3/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
+WARNING: File "C:/Users/152/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa1/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
+WARNING: File "C:/Users/152/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa2/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
+WARNING: File "C:/Users/152/CS-M152-A/lab4/fp_add.v" Line 26.  For instance fa3/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# exit 0

@@ -53,7 +53,7 @@ input [7:0]ex;
 output reg[24:0]mxy2;
 output reg[7:0]ex3;
 output reg s4,sn5,sn6,sr2;
-always@(posedge clk)
+always@*//(posedge clk)
 begin
 sr2=sr1;
 sn5=sn3;
@@ -70,7 +70,7 @@ input s,clk,sx1,sy1;
 output reg [7:0]ex1,ey1;
 output reg [23:0]mx1,my1;
 output reg sn,sn1,sn2;
-always@(posedge clk)
+always@*//(posedge clk)
 begin
 sn1=sx1;
 sn2=sy1;
@@ -90,7 +90,7 @@ output reg sr;
 output reg[7:0]exy;
 output reg[23:0]mxy;
 reg [24:0]mxy2;
-always@(posedge clk)
+always@*//(posedge clk)
 begin
 sr=s?s1^(mxy1[24]&s3):s2^(mxy1[24]&s3);
 mxy2=(mxy1[24]&s3)?~mxy1+25'b1:mxy1;
@@ -114,7 +114,7 @@ input s1,s2,clk,sn;
 output reg [23:0]ex2;
 output reg[24:0]out;
 output reg s,sn3,sn4,sr1;
-always@(posedge clk)
+always@*//(posedge clk)
 begin
 ex2=ex1;
 sr1=sn;
@@ -139,7 +139,7 @@ output reg[7:0]ex,ey;
 output reg[23:0]mx,my;
 output reg s,sx1,sy1;
 reg [7:0]diff;
-always@(posedge clk)
+always@*//(posedge clk)
 begin
 sx1=s1;
 sy1=s2;
