@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Only accepts floating point numbers to multiply
 module matrix_mult(
+	 clk,
     arr1_0,
     arr1_1,
     arr1_2,
@@ -41,6 +42,16 @@ input wire [31:0] arr2_1;
 input wire [31:0] arr2_2;
 input wire [31:0] arr2_3;
 
+wire [31:0] arr1_0;
+wire [31:0] arr1_1;
+wire [31:0] arr1_2;
+wire [31:0] arr1_3;
+
+wire [31:0] arr2_0;
+wire [31:0] arr2_1;
+wire [31:0] arr2_2;
+wire [31:0] arr2_3;
+
 output wire [31:0] ans;
 
 reg [31:0] ans_temp;
@@ -51,55 +62,35 @@ wire [31:0] product_2;
 wire [31:0] product_3;
 
 //mx mult logic here TODO
-/*
-float_mult prod0(
-				.input_a(arr1_0),
-				.input_b(arr2_0),
-				.input_a_stb(1),
-				.input_b_stb(1),
-				.output_z_ack(1),
-				.output_z(product_0),
-				.output_z_stb(1),
-				.input_a_ack(1),
-				.input_b_ack(1)
-				);
 
-float_mult prod1(
-				.input_a(arr1_1),
-				.input_b(arr2_1),
-				.input_a_stb(1),
-				.input_b_stb(1),
-				.output_z_ack(1),
-				.output_z(product_1),
-				.output_z_stb(1),
-				.input_a_ack(1),
-				.input_b_ack(1)
+cheat_fp_mult prod0(
+				.clk(clk),
+				.a(arr1_0),
+				.b(arr2_0),
+				.y(product_0)
 				);
 				
-float_mult prod2(
-				.input_a(arr1_2),
-				.input_b(arr2_2),
-				.input_a_stb(1),
-				.input_b_stb(1),
-				.output_z_ack(1),
-				.output_z(product_2),
-				.output_z_stb(1),
-				.input_a_ack(1),
-				.input_b_ack(1)
+cheat_fp_mult prod1(
+				.clk(clk),
+				.a(arr1_1),
+				.b(arr2_1),
+				.y(product_1)
+				);
+				
+cheat_fp_mult prod2(
+				.clk(clk),
+				.a(arr1_2),
+				.b(arr2_2),
+				.y(product_2)
+				);
+			
+cheat_fp_mult prod3(
+				.clk(clk),
+				.a(arr1_3),
+				.b(arr2_3),
+				.y(product_3)
 				);
 
-float_mult prod3(
-				.input_a(arr1_3),
-				.input_b(arr2_3),
-				.input_a_stb(1),
-				.input_b_stb(1),
-				.output_z_ack(1),
-				.output_z(product_3),
-				.output_z_stb(1),
-				.input_a_ack(1),
-				.input_b_ack(1)
-				);				
-
 assign ans = product_0 + product_1 + product_2 + product_3;
-*/
+
 endmodule

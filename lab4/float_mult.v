@@ -31,7 +31,7 @@
 `define BIAS   	127
 
 
-module fp_mul(input  wire clk,
+module fp_mult(input  wire clk,
 			  input  wire[31:0] a,
               input  wire[31:0] b,
               output wire[31:0] y);

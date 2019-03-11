@@ -19,13 +19,15 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module cheat_fp_mult(
-		input  wire       clk,
+		input  wire     clk,
 		input  wire[31:0] a,
 		input  wire[31:0] b,
-		output wire[31:0] ca,
-		output wire[31:0] cb
+		output wire[31:0] y
     );
 	 
+		output wire[31:0] y;
+		wire[31:0] ca;
+		wire[31:0] cb;
 		reg [31:0] a_temp = a;
 		reg [31:0] b_temp = b;
 		
@@ -39,4 +41,11 @@ module cheat_fp_mult(
 			
 		assign ca = a_temp;
 		assign cb = b_temp;
+		
+		fp_mult(
+			.clk(clk),
+			.a(ca),
+			.b(cb),
+			.y(y)
+			);
 endmodule
