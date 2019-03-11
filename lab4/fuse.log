@@ -1,28 +1,27 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/fp_add_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/fp_add_tb_beh.prj work.fp_add_tb work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_beh.prj work.cheat_fp_mult_tb work.glbl 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/fp_add_tb.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/float_mult.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" into library work
+WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 32: Target <a_temp> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 33: Target <b_temp> of concurrent assignment or output port connection should be a net type.
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" Line 41: Size mismatch in connection of port <ex2>. Formal port size is 24-bit while actual signal size is 8-bit.
+WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 32: Target <a_temp> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:329 - "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" Line 33: Target <b_temp> of concurrent assignment or output port connection should be a net type.
 Completed static elaboration
-Fuse Memory Usage: 94992 KB
-Fuse CPU Usage: 1390 ms
-Compiling module cmpshift
-Compiling module buffer1
-Compiling module faddsub
-Compiling module buffer2
-Compiling module normalized
-Compiling module fp_add
-Compiling module fp_add_tb
+Fuse Memory Usage: 94932 KB
+Fuse CPU Usage: 1650 ms
+Compiling module fp_mult
+Compiling module cheat_fp_mult
+Compiling module cheat_fp_mult_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 8 Verilog Units
-Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/fp_add_tb_isim_beh.exe
-Fuse Memory Usage: 653120 KB
-Fuse CPU Usage: 1480 ms
-GCC CPU Usage: 880 ms
+Compiled 4 Verilog Units
+Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.exe
+Fuse Memory Usage: 653144 KB
+Fuse CPU Usage: 1740 ms
+GCC CPU Usage: 1330 ms

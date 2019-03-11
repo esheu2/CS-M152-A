@@ -25,11 +25,12 @@ module cheat_fp_mult(
 		output wire[31:0] y
     );
 	 
-		output wire[31:0] y;
 		wire[31:0] ca;
 		wire[31:0] cb;
-		reg [31:0] a_temp = a;
-		reg [31:0] b_temp = b;
+		reg [31:0] a_temp;
+		reg [31:0] b_temp;
+		assign a_temp = a;
+		assign b_temp = b;
 		
 		always @ (posedge clk) 
 			begin
@@ -42,7 +43,7 @@ module cheat_fp_mult(
 		assign ca = a_temp;
 		assign cb = b_temp;
 		
-		fp_mult(
+		fp_mult fpm(
 			.clk(clk),
 			.a(ca),
 			.b(cb),

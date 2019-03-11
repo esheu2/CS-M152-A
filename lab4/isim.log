@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/ise/Desktop/CS-M152-A/lab4/fp_add_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/Desktop/CS-M152-A/lab4/fp_add_tb_isim_beh.wdb 
+Running: /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.wdb 
 ISim P.20160913 (signature 0xfbc00daa)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
@@ -7,11 +7,12 @@ WARNING:Security:42 - Your software subscription period has lapsed. Your current
 
 ----------------------------------------------------------------------
 This is a Full version of ISim.
-WARNING: File "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" Line 25.  For instance uut/as1/, width 24 of formal port ex2 is not equal to width 8 of actual signal ex2.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-Finished circuit initialization process.
+ERROR: In process cheat_fp_mult.vCont_32_0 
+ FATAL ERROR:ISim: This application has discovered an exceptional condition from which it cannot recover. Process will terminate. To search for possible resolutions to this issue, refer to the Xilinx answer database by going to http://www.xilinx.com/support/answers/index.htm and search with keywords 'ISim' and 'FATAL ERROR'. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
+INFO: Simulator is stopped.
 # exit 0
