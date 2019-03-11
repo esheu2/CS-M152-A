@@ -1,4 +1,4 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/matrix_mult_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/matrix_mult_tb_beh.prj work.matrix_mult_tb work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_beh.prj work.sigmoid_approx_tb work.glbl 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -6,14 +6,15 @@ Determining compilation order of HDL files
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/float_mult.v" into library work
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" into library work
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/matrix_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/matrix_mult_tb.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" Line 42: Size mismatch in connection of port <ex2>. Formal port size is 24-bit while actual signal size is 8-bit.
+WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx.v" Line 87: Size mismatch in connection of port <y>. Formal port size is 32-bit while actual signal size is 1-bit.
 Completed static elaboration
 Fuse Memory Usage: 94932 KB
-Fuse CPU Usage: 1510 ms
+Fuse CPU Usage: 2620 ms
 Compiling module fp_mult
 Compiling module cheat_fp_mult
 Compiling module cmpshift
@@ -22,13 +23,13 @@ Compiling module faddsub
 Compiling module buffer2
 Compiling module normalized
 Compiling module fp_add
-Compiling module matrix_mult
-Compiling module matrix_mult_tb
+Compiling module sigmoid_approx
+Compiling module sigmoid_approx_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 4 sub-compilation(s) to finish...
 Compiled 11 Verilog Units
-Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/matrix_mult_tb_isim_beh.exe
-Fuse Memory Usage: 653240 KB
-Fuse CPU Usage: 1700 ms
-GCC CPU Usage: 1140 ms
+Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb_isim_beh.exe
+Fuse Memory Usage: 653236 KB
+Fuse CPU Usage: 2810 ms
+GCC CPU Usage: 2090 ms

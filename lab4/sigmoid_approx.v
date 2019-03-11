@@ -33,7 +33,10 @@ output wire [31:0] y;
 reg [31:0] y_temp;
 reg [31:0] x_mag;
 
-x_mag = (x << 1) >> 1;
+always @ (posedge clk)
+begin
+	x_mag = (x << 1) >> 1;
+end
 	
 wire [31:0] holdVar1, holdVar2, holdVar3, holdVar4, holdVar5, holdVar6;
 wire [31:0] tempVar1, tempVar2, tempVar3, tempVar4, tempVar5, tempVar6;
@@ -48,46 +51,46 @@ assign tempVar5 = 32'h3e800000; 	//0.25
 assign tempVar6 = 32'h3f000000; 	//0.5
 	
 // case 2
-	cheat_fp_mult(
+	cheat_fp_mult c1(
 		.clk(clk),
 		.a(x_mag),
 		.b(tempVar1),
 		.y(holdVar1)
 		);
-	float_add(
+	fp_add fa1(
 		.a(holdVar1),
 		.b(tempVar2),
 		.clk(clk),
-		.y(holdVar2)
+		.out(holdVar2)
 		);
 	
 // case 3
-	cheat_fp_mult(
+	cheat_fp_mult c2(
 		.clk(clk),
 		.a(x_mag),
 		.b(tempVar3),
 		.y(holdVar3)
 		);
-	float_add(
+	fp_add fa2(
 		.a(holdVar3),
 		.b(tempVar4),
 		.clk(clk),
-		.y(holdVar4)
+		.out(holdVar4)
 		);
 	
 	
 // case 4
-	cheat_fp_mult(
+	cheat_fp_mult c3(
 		.clk(clk),
 		.a(x_mag),
 		.b(tempVar5),
 		.y(holVar5)
 		);
-	float_add(
+	fp_add fa3(
 		.a(holdVar5),
 		.b(tempVar6),
 		.clk(clk),
-		.y(holdVar6)
+		.out(holdVar6)
 		);
 	
 
@@ -95,7 +98,7 @@ always @*
 begin
 	if(x_mag >= 32'h40a00000)	// x_mag >= 5
 	begin
-		y_temp = 32'h3f800000	// y_temp = 1
+		y_temp = 32'h3f800000;	// y_temp = 1
 	end
 	
 	else if(x_mag >= 32'h40180000 && x_mag < 32'h40a00000)		//x_mag >= 2.375 && x_mag < 5
@@ -113,5 +116,7 @@ begin
 		y_temp = holdVar6;	// y_temp = 0.25 * x_mag + 0.5
 	end
 end
+
+assign y = y_temp;
 
 endmodule
