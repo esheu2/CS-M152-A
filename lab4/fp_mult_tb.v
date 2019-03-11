@@ -33,7 +33,7 @@ module fp_mult_tb;
 	wire [31:0] y;
 
 	// Instantiate the Unit Under Test (UUT)
-	fp_mul uut (
+	fp_mult uut (
 		.clk(clk), 
 		.a(a), 
 		.b(b), 

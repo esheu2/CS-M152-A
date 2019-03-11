@@ -32,6 +32,7 @@ module matrix_mult(
     ans
     );
 
+input clk;
 input wire [31:0] arr1_0;
 input wire [31:0] arr1_1;
 input wire [31:0] arr1_2;
@@ -41,16 +42,6 @@ input wire [31:0] arr2_0;
 input wire [31:0] arr2_1;
 input wire [31:0] arr2_2;
 input wire [31:0] arr2_3;
-
-wire [31:0] arr1_0;
-wire [31:0] arr1_1;
-wire [31:0] arr1_2;
-wire [31:0] arr1_3;
-
-wire [31:0] arr2_0;
-wire [31:0] arr2_1;
-wire [31:0] arr2_2;
-wire [31:0] arr2_3;
 
 output wire [31:0] ans;
 

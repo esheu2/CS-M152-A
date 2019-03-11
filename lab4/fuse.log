@@ -1,23 +1,22 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_beh.prj work.cheat_fp_mult_tb work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/fp_mult_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/fp_mult_tb_beh.prj work.fp_mult_tb work.glbl 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/float_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/fp_mult_tb.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 94936 KB
-Fuse CPU Usage: 1350 ms
+Fuse Memory Usage: 94932 KB
+Fuse CPU Usage: 1700 ms
 Compiling module fp_mult
-Compiling module cheat_fp_mult
-Compiling module cheat_fp_mult_tb
+Compiling module fp_mult_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 4 Verilog Units
-Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.exe
-Fuse Memory Usage: 653136 KB
-Fuse CPU Usage: 1420 ms
-GCC CPU Usage: 770 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 3 Verilog Units
+Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/fp_mult_tb_isim_beh.exe
+Fuse Memory Usage: 653104 KB
+Fuse CPU Usage: 1960 ms
+GCC CPU Usage: 800 ms

@@ -2,27 +2,9 @@ Command line:
    fp_mult_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  47249
+     -socket  59714
 
-Sun Mar 10 23:43:32 2019
+Mon Mar 11 00:52:14 2019
 
 
  Elaboration Time: 0.05 sec
-
- Current Memory Usage: 198.578 Meg
-
- Total Signals          : 18
- Total Nets             : 110
- Total Signal Drivers   : 9
- Total Blocks           : 3
- Total Primitive Blocks : 2
- Total Processes        : 14
- Total Traceable Variables  : 33
- Total Scalar Nets and Variables : 343
-
- Total Simulation Time: 0.12 sec
-
- Current Memory Usage: 276.177 Meg
-
-Sun Mar 10 23:46:36 2019
-
