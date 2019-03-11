@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"/home/ise/Desktop/CS-M152-A/lab4/top.v" Line 21: Empty module &lt;<arg fmt="%s" index="1">top</arg>&gt; remains a black box.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"/home/ise/Desktop/CS-M152-A/lab4/top.v" Line 21: Empty module &lt;<arg fmt="%s" index="1">top</arg>&gt; remains a black box.
 </msg>
 
 </messages>
