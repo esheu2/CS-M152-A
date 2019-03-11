@@ -56,6 +56,7 @@ module fp_mult_tb;
 			a[0] <= 1'b1;
 		if(!b[22:0])
 			b[0] <= 1'b1;
+		#100;
 	end
       always
 		#1 clk = ~clk;

@@ -191,7 +191,11 @@ LAB18:    t22 = (t4 + 4);
         goto LAB19;
 
 LAB20:
-LAB21:    goto LAB1;
+LAB21:    xsi_set_current_line(59, ng0);
+    t2 = (t0 + 2488);
+    xsi_process_wait(t2, 100000LL);
+    *((char **)t1) = &&LAB24;
+    goto LAB1;
 
 LAB6:    *((unsigned int *)t4) = 1;
     goto LAB9;
@@ -237,9 +241,11 @@ LAB23:    goto LAB21;
 LAB22:    xsi_vlogvar_wait_assign_value(t29, t28, 0, *((unsigned int *)t30), 1, 0LL);
     goto LAB23;
 
+LAB24:    goto LAB1;
+
 }
 
-static void Always_60_1(char *t0)
+static void Always_61_1(char *t0)
 {
     char t3[8];
     char *t1;
@@ -273,13 +279,13 @@ LAB0:    t1 = (t0 + 2928U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(61, ng0);
+LAB2:    xsi_set_current_line(62, ng0);
     t2 = (t0 + 2736);
     xsi_process_wait(t2, 1000LL);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(61, ng0);
+LAB4:    xsi_set_current_line(62, ng0);
     t4 = (t0 + 1448);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -333,7 +339,7 @@ LAB10:    t18 = *((unsigned int *)t3);
 
 extern void work_m_00565747275049389214_0828379034_init()
 {
-	static char *pe[] = {(void *)Initial_43_0,(void *)Always_60_1};
+	static char *pe[] = {(void *)Initial_43_0,(void *)Always_61_1};
 	xsi_register_didat("work_m_00565747275049389214_0828379034", "isim/fp_mult_tb_isim_beh.exe.sim/work/m_00565747275049389214_0828379034.didat");
 	xsi_register_executes(pe);
 }
