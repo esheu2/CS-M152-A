@@ -92,7 +92,7 @@ assign tempVar6 = 32'h3f000000; 	//0.5
 		);
 	
 
-always @*
+always @(x_mag)
 begin
 	if(x_mag >= 32'h40a00000)	// x_mag >= 5
 	begin
