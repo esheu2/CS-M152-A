@@ -5,3 +5,4 @@ xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab4/top.xst" -ofn "/home/is
 xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab4/top.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab4/top.syr" 
 xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab4/top.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab4/top.syr" 
 xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab4/top.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab4/top.syr" 
+xst -intstyle ise -ifn "/home/ise/Desktop/CS-M152-A/lab4/top.xst" -ofn "/home/ise/Desktop/CS-M152-A/lab4/top.syr" 
