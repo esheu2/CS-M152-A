@@ -1,231 +1,496 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    11:15:07 03/06/2019 
-// Design Name: 
-// Module Name:    numpad 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
-module numpad(
-    clk,
-    JA,
-    Decode
-    );
-// ==============================================================================================
-// 											Port Declarations
-// ==============================================================================================
-	input clk;					// 100Mhz onboard clock
-	inout [7:0] JA;			// Port JA on Nexys3, JA[3:0] is Columns, JA[10:7] is rows
-	output [3:0] Decode;
-
-// ==============================================================================================
-// 							  		Parameters, Regsiters, and Wires
-// ==============================================================================================
-	
-	wire [3:0] Decode;
-
-// ==============================================================================================
-// 												Implementation
-// ==============================================================================================
-
-	//-----------------------------------------------
-	//  						Decoder
-	//-----------------------------------------------
-	Decoder C0(
-			.clk(clk),
-			.Row(JA[7:4]),
-			.Col(JA[3:0]),
-			.DecodeOut(Decode)
-	);
-
-endmodule
-
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Company: Digilent Inc 2011
 // Engineer: Michelle Yu  
-//				 Josh Sackos
-// Create Date:    07/23/2012 
+//               Josh Sackos
+// Create Date:    17:05:39 08/23/2011
 //
-// Module Name:    Decoder
+// Module Name:    PmodKYPD
 // Project Name:   PmodKYPD_Demo
 // Target Devices: Nexys3
-// Tool versions:  Xilinx ISE 14.1 
-// Description: This file defines a component Decoder for the demo project PmodKYPD. The Decoder scans
-//					 each column by asserting a low to the pin corresponding to the column at 1KHz. After a
-//					 column is asserted low, each row pin is checked. When a row pin is detected to be low,
-//					 the key that was pressed could be determined.
+// Tool versions:  Xilinx ISE 14.1
+// Description: This file defines a project that outputs the key pressed on the PmodKYPD to the
+//                   seven segment display.
 //
-// Revision History: 
-// 						Revision 0.01 - File Created (Michelle Yu)
-//							Revision 0.02 - Converted from VHDL to Verilog (Josh Sackos)
+// Revision History:
+//                      Revision 0.01 - File Created (Michelle Yu)
+//                          Revision 0.01 - Converted from VHDL to Verilog (Josh Sackos)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+ 
 // ==============================================================================================
-// 												Define Module
+//                                              Define Module
 // ==============================================================================================
+module numpad(
+          o_tx_data1,
+          o_tx_data2,
+          o_tx_data3,
+          o_tx_data4,
+          o_tx_valid,
+          // Inputs
+          clk,
+          i_tx_busy,
+        i_inst,
+        i_inst_valid    );
+     
+     
+// ==============================================================================================
+//                                          Port Declarations
+// ==============================================================================================
+    input clk;
+    input i_tx_busy;                    // 100Mhz onboard clock
+    input [7:0] i_inst;         // Port JA on Nexys3, JA[3:0] is Columns, JA[10:7] is rows
+    input i_inst_valid;
+    output [3:0] o_tx_data1;
+    output [3:0] o_tx_data2;
+    output [3:0] o_tx_data3;
+    output [3:0] o_tx_data4;
+    output reg o_tx_valid;
+ 
+// ==============================================================================================
+//                                  Parameters, Regsiters, and Wires
+// ==============================================================================================
+   
+    // Output wires
+    wire [3:0] Decode1;
+    wire [3:0] Decode2;
+    wire [3:0] Decode3;
+    wire [3:0] Decode4;
+   
+// ==============================================================================================
+//                                              Implementation
+// ==============================================================================================
+ 
+    //-----------------------------------------------
+    //                          Decoder
+    //-----------------------------------------------
+    Decoder C0(
+            .clk(clk),
+            .Row(i_inst[7:4]),
+            .Col(i_inst[3:0]),
+            .DecodeOut1(Decode1),
+            .DecodeOut2(Decode2),
+            .DecodeOut3(Decode3),
+            .DecodeOut4(Decode4)
+    );
+ 
+    assign o_tx_data1 = Decode1;
+    assign o_tx_data2 = Decode2;
+    assign o_tx_data3 = Decode3;
+    assign o_tx_data4 = Decode4;
+    always @ (posedge clk) begin
+        o_tx_valid <=i_inst_valid;
+    end
+       
+endmodule
+ 
 module Decoder(
     clk,
     Row,
     Col,
-    DecodeOut
+    DecodeOut1,
+     DecodeOut2,
+     DecodeOut3,
+     DecodeOut4
     );
-
+ 
 // ==============================================================================================
-// 											Port Declarations
+//                                          Port Declarations
 // ==============================================================================================
-    input clk;						// 100MHz onboard clock
-    input [3:0] Row;				// Rows on KYPD
-    output [3:0] Col;			// Columns on KYPD
-    output [3:0] DecodeOut;	// Output data
-
+    input clk;                      // 100MHz onboard clock
+    input [3:0] Row;                // Rows on KYPD
+    output [3:0] Col;           // Columns on KYPD
+    output [3:0] DecodeOut1;    // Output data
+     output [3:0] DecodeOut2;
+     output [3:0] DecodeOut3;
+     output [3:0] DecodeOut4;
 // ==============================================================================================
-// 							  		Parameters, Regsiters, and Wires
+//                                  Parameters, Regsiters, and Wires
 // ==============================================================================================
-	
-	// Output wires and registers
-	reg [3:0] Col;
-	reg [3:0] DecodeOut;
-	
-	// Count register
-	reg [19:0] sclk;
-
+   
+    // Output wires and registers
+    reg [3:0] Col;
+    reg [3:0] DecodeOut1;
+    reg [3:0] DecodeOut2;
+    reg [3:0] DecodeOut3;
+    reg [3:0] DecodeOut4;
+   
+    // Count register
+    reg [19:0] sclk = 20'b0000_0000_0000_0000_0000;
+    reg [1:0] count = 2'b00;
+   
 // ==============================================================================================
-// 												Implementation
+//                                              Implementation
 // ==============================================================================================
-
-	always @(posedge clk) begin
-
-			// 1ms
-			if (sclk == 20'b00011000011010100000) begin
-				//C1
-				Col <= 4'b0111;
-				sclk <= sclk + 1'b1;
-			end
-			
-			// check row pins
-			else if(sclk == 20'b00011000011010101000) begin
-				//R1
-				if (Row == 4'b0111) begin
-					DecodeOut <= 4'b0001;		//1
-				end
-				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b0100; 		//4
-				end
-				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b0111; 		//7
-				end
-				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b0000; 		//0
-				end
-				sclk <= sclk + 1'b1;
-			end
-
-			// 2ms
-			else if(sclk == 20'b00110000110101000000) begin
-				//C2
-				Col<= 4'b1011;
-				sclk <= sclk + 1'b1;
-			end
-			
-			// check row pins
-			else if(sclk == 20'b00110000110101001000) begin
-				//R1
-				if (Row == 4'b0111) begin
-					DecodeOut <= 4'b0010; 		//2
-				end
-				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b0101; 		//5
-				end
-				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b1000; 		//8
-				end
-				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b1111; 		//F
-				end
-				sclk <= sclk + 1'b1;
-			end
-
-			//3ms
-			else if(sclk == 20'b01001001001111100000) begin
-				//C3
-				Col<= 4'b1101;
-				sclk <= sclk + 1'b1;
-			end
-			
-			// check row pins
-			else if(sclk == 20'b01001001001111101000) begin
-				//R1
-				if(Row == 4'b0111) begin
-					DecodeOut <= 4'b0011; 		//3	
-				end
-				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b0110; 		//6
-				end
-				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b1001; 		//9
-				end
-				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b1110; 		//E
-				end
-
-				sclk <= sclk + 1'b1;
-			end
-
-			//4ms
-			else if(sclk == 20'b01100001101010000000) begin
-				//C4
-				Col<= 4'b1110;
-				sclk <= sclk + 1'b1;
-			end
-
-			// Check row pins
-			else if(sclk == 20'b01100001101010001000) begin
-				//R1
-				if(Row == 4'b0111) begin
-					DecodeOut <= 4'b1010; //A
-				end
-				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b1011; //B
-				end
-				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b1100; //C
-				end
-				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b1101; //D
-				end
-				sclk <= 20'b00000000000000000000;
-			end
-
-			// Otherwise increment
-			else begin
-				sclk <= sclk + 1'b1;
-			end
-			
-	end
-
+ 
+    always @(posedge clk) begin
+ 
+            // 1ms
+            if (sclk < 20'b00011000011010100000) begin
+                sclk <= sclk + 1'b1;
+            end
+           
+            else if (sclk == 20'b00011000011010100000) begin
+                sclk <= sclk + 1'b1;
+                Col <= 4'b0111;
+            end
+           
+            // check row pins
+            else if(sclk == 20'b00011000011010101000) begin
+                //R1
+                //if (Col == 4'b0111)begin
+                if (Row == 4'b0111) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0001; //1
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0001; //1
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0001; //1
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0001; //1
+                        count <= count + 1'b1;
+                    end
+                end
+                //R2
+                else if(Row == 4'b1011) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0100; //4
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0100; //4
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0100; //4
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0100; //4
+                        count <= count + 1'b1;
+                    end
+                end
+                //R3
+                else if(Row == 4'b1101) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0111; //7
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0111; //7
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0111; //7
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0111; //7
+                        count <= count + 1'b1;
+                    end
+                end
+                //R4
+                else if(Row == 4'b1110) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0000; //0
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0000; //0
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0000; //0
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0000; //0
+                        count <= count + 1'b1;
+                    end
+                end
+                //end
+                sclk <= sclk + 1'b1;
+            end
+ 
+            // 2ms
+            else if(sclk == 20'b00110000110101000000) begin
+                sclk <= sclk + 1'b1;
+                Col <= 4'b1011;
+            end
+           
+            // check row pins
+            else if(sclk == 20'b00110000110101001000) begin
+                //if(Col == 4'b1011)begin
+                //R1
+                if (Row == 4'b0111) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0010; //2
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0010; //2
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0010; //2
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0010; //2
+                        count <= count + 1'b1;
+                    end
+                end
+                //R2
+                else if(Row == 4'b1011) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0101; //5
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0101; //5
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0101; //5
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0101; //5
+                        count <= count + 1'b1;
+                    end
+                end
+                //R3
+                else if(Row == 4'b1101) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1000; //8
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1000; //8
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1000; //8
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1000; //8
+                        count <= count + 1'b1;
+                    end
+                end
+                //R4
+                else if(Row == 4'b1110) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1111; //F
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1111; //F
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1111; //F
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1111; //F
+                        count <= count + 1'b1;
+                    end
+                end
+                //end
+                sclk <= sclk + 1'b1;
+            end
+ 
+            //3ms
+            else if(sclk == 20'b01001001001111100000) begin
+                //C3
+                sclk <= sclk + 1'b1;
+                Col <= 4'b1101;
+            end
+           
+            // check row pins
+            else if(sclk == 20'b01001001001111101000) begin
+                //R1
+                //if( Col == 4'b1101) begin
+                if(Row == 4'b0111) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0011; //3
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0011; //3
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0011; //3
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0011; //3
+                        count <= count + 1'b1;
+                    end
+                end
+                //R2
+                else if(Row == 4'b1011) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b0110; //6
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b0110; //6
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b0110; //6
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b0110; //6
+                        count <= count + 1'b1;
+                    end
+                end
+                //R3
+                else if(Row == 4'b1101) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1001; //9
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1001; //9
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1001; //9
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1001; //9
+                        count <= count + 1'b1;
+                    end
+                end
+                //R4
+                else if(Row == 4'b1110) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1110; //E
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1110; //E
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1110; //E
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1110; //E
+                        count <= count + 1'b1;
+                    end
+                end
+                //end
+                sclk <= sclk + 1'b1;
+            end
+ 
+            //4ms
+            else if(sclk == 20'b01100001101010000000) begin
+                //C4
+                Col <= 4'b1110;
+                sclk <= sclk + 1'b1;
+            end
+ 
+            // Check row pins
+            else if(sclk == 20'b01100001101010001000) begin
+                //R1
+                //if(Col == 4'b1110) begin
+                if(Row == 4'b0111) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1010; //A
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1010; //A
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1010; //A
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1010; //A
+                        count <= count + 1'b1;
+                    end
+                end
+                //R2
+                else if(Row == 4'b1011) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1011; //b
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1011; //b
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1011; //b
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1011; //B
+                        count <= count + 1'b1;
+                    end
+                end
+                //R3
+                else if(Row == 4'b1101) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1100; //C
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1100; //C
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1100; //C
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1100; //C
+                        count <= count + 1'b1;
+                    end
+                end
+                //R4
+                else if(Row == 4'b1110) begin
+                    if(count == 4'b00) begin
+                        DecodeOut1 <= 4'b1101; //D
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b01) begin
+                        DecodeOut2 <= 4'b1101; //D
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b10) begin
+                        DecodeOut3 <= 4'b1101; //D
+                        count <= count + 1'b1;
+                    end
+                    else if(count == 4'b11) begin
+                        DecodeOut4 <= 4'b1101; //D
+                        count <= count + 1'b1;
+                    end
+                end
+                //end
+                sclk <= 20'b00000000000000000000;
+            end
+ 
+            // Otherwise increment
+            else begin
+                sclk <= sclk + 1'b1;
+            end
+           
+    end
+ 
 endmodule

@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Mar 13 10:53:13 2019
+Mapped Date    : Wed Mar 13 11:47:53 2019
 
 Design Summary
 --------------
@@ -26,8 +26,8 @@ Slice Logic Distribution:
   Number of LUT Flip Flop pairs used:            0
 
 IO Utilization:
-  Number of bonded IOBs:                        13 out of     232    5%
-    Number of LOCed IOBs:                       13 out of      13  100%
+  Number of bonded IOBs:                        21 out of     232    9%
+    Number of LOCed IOBs:                       21 out of      21  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -54,8 +54,8 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                0.00
 
-Peak Memory Usage:  352 MB
-Total REAL time to MAP completion:  10 secs 
+Peak Memory Usage:  353 MB
+Total REAL time to MAP completion:  6 secs 
 Total CPU time to MAP completion:   6 secs 
 
 Table of Contents
@@ -86,7 +86,15 @@ Xilinx software updates or new releases.
 Section 3 - Informational
 -------------------------
 INFO:Security:54 - 'xc6slx16' is a WebPack part.
-INFO:LIT:243 - Logical network clk_IBUF has no load.
+INFO:LIT:243 - Logical network JA<7>_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 8 more times for the following
+   (max. 5 shown):
+   JA<6>_IBUF,
+   JA<5>_IBUF,
+   JA<4>_IBUF,
+   JA<3>_IBUF,
+   JA<2>_IBUF
+   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -118,6 +126,14 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JA<0>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JA<1>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JA<2>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JA<3>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JA<4>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JA<5>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JA<6>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| JA<7>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | an<0>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | an<1>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | an<2>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
