@@ -13,18 +13,23 @@
          <ClosedNode>/matrix_mult C:|Users|152|CS-M152-A|lab4|matrix_mult.v/prod3 - cheat_fp_mult</ClosedNode>
          <ClosedNode>/matrix_mult C:|Users|152|CS-M152-A|lab4|matrix_mult.v/sum2 - fp_add</ClosedNode>
          <ClosedNode>/matrix_mult C:|Users|152|CS-M152-A|lab4|matrix_mult.v/sum3 - fp_add</ClosedNode>
-         <ClosedNode>/matrix_mult |home|ise|Desktop|CS-M152-A|lab4|matrix_mult.v</ClosedNode>
+         <ClosedNode>/matrix_mult |home|ise|Desktop|CS-M152-A|lab4|matrix_mult.v/prod1 - cheat_fp_mult</ClosedNode>
+         <ClosedNode>/matrix_mult |home|ise|Desktop|CS-M152-A|lab4|matrix_mult.v/prod2 - cheat_fp_mult</ClosedNode>
+         <ClosedNode>/matrix_mult |home|ise|Desktop|CS-M152-A|lab4|matrix_mult.v/prod3 - cheat_fp_mult</ClosedNode>
+         <ClosedNode>/matrix_mult |home|ise|Desktop|CS-M152-A|lab4|matrix_mult.v/sum1 - fp_add</ClosedNode>
+         <ClosedNode>/matrix_mult |home|ise|Desktop|CS-M152-A|lab4|matrix_mult.v/sum2 - fp_add</ClosedNode>
+         <ClosedNode>/matrix_mult |home|ise|Desktop|CS-M152-A|lab4|matrix_mult.v/sum3 - fp_add</ClosedNode>
          <ClosedNode>/sigmoid_approx C:|Users|152|CS-M152-A|lab4|sigmoid_approx.v</ClosedNode>
          <ClosedNode>/top C:|Users|152|CS-M152-A|lab4|top.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>sum1 - fp_add (C:/Users/152/CS-M152-A/lab4/fp_add.v)</SelectedItem>
+         <SelectedItem>fpm - fp_mult (/home/ise/Desktop/CS-M152-A/lab4/float_mult.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001d1000000020000000000000000000000000200000064ffffffff000000810000000300000002000001d10000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000015e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000015e0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>sum1 - fp_add (C:/Users/152/CS-M152-A/lab4/fp_add.v)</CurrentItem>
+      <CurrentItem>fpm - fp_mult (/home/ise/Desktop/CS-M152-A/lab4/float_mult.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
@@ -40,7 +45,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -51,9 +56,9 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000263000000040101000100000000000000000000000064ffffffff000000810000000000000004000000780000000100000000000000d60000000100000000000000840000000100000000000000910000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000039f000000040101000100000000000000000000000064ffffffff000000810000000000000004000000780000000100000000000000d60000000100000000000000840000000100000000000001cd0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>C:\Users\152\CS-M152-A\lab4\cheat_fp_mult.v</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -63,7 +68,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000128000000010001000100000000000000000000000064ffffffff000000810000000000000001000001280000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>work</CurrentItem>
    </ItemView>
@@ -86,13 +91,13 @@
          <ClosedNode>/sigmoid_approx_tb C:|Users|152|CS-M152-A|lab4|sigmoid_approx_tb.v/uut - sigmoid_approx</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>sigmoid_approx_tb (C:/Users/152/CS-M152-A/lab4/sigmoid_approx_tb.v)</SelectedItem>
+         <SelectedItem>sigmoid_approx_tb (/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >31</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001d6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001d60000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000172000000020000000000000000000000000200000064ffffffff000000810000000300000002000001720000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>sigmoid_approx_tb (C:/Users/152/CS-M152-A/lab4/sigmoid_approx_tb.v)</CurrentItem>
+      <CurrentItem>sigmoid_approx_tb (/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx_tb.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -104,7 +109,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -113,12 +118,12 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
 </Project>

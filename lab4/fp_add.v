@@ -53,14 +53,14 @@ input [7:0]ex;
 output reg[24:0]mxy2;
 output reg[7:0]ex3;
 output reg s4,sn5,sn6,sr2;
-always@*//(posedge clk)
+always@(posedge clk)
 begin
-sr2=sr1;
-sn5=sn3;
-sn6=sn4;
-ex3=ex;
-mxy2=mxy1;
-s4=s3;
+sr2<=sr1;
+sn5<=sn3;
+sn6<=sn4;
+ex3<=ex;
+mxy2<=mxy1;
+s4<=s3;
 end
 endmodule
 module buffer1(ex,ey,sx1,sy1,mx,my,s,clk,ex1,ey1,mx1,my1,sn,sn1,sn2);
@@ -70,15 +70,15 @@ input s,clk,sx1,sy1;
 output reg [7:0]ex1,ey1;
 output reg [23:0]mx1,my1;
 output reg sn,sn1,sn2;
-always@*//(posedge clk)
+always@(posedge clk)
 begin
-sn1=sx1;
-sn2=sy1;
-ex1=ex;
-ey1=ey;
-mx1=mx;
-my1=my;
-sn=s;
+sn1<=sx1;
+sn2<=sy1;
+ex1<=ex;
+ey1<=ey;
+mx1<=mx;
+my1<=my;
+sn<=s;
 end
 endmodule
 
@@ -90,12 +90,12 @@ output reg sr;
 output reg[7:0]exy;
 output reg[23:0]mxy;
 reg [24:0]mxy2;
-always@*//(posedge clk)
+always@(posedge clk)
 begin
-sr=s?s1^(mxy1[24]&s3):s2^(mxy1[24]&s3);
-mxy2=(mxy1[24]&s3)?~mxy1+25'b1:mxy1;
-mxy=mxy2[24:1];
-exy=ex;
+sr<=s?s1^(mxy1[24]&s3):s2^(mxy1[24]&s3);
+mxy2<=(mxy1[24]&s3)?~mxy1+25'b1:mxy1;
+mxy<=mxy2[24:1];
+exy<=ex;
 repeat(24)
 begin
 if(mxy[23]==1'b0)
@@ -114,20 +114,20 @@ input s1,s2,clk,sn;
 output reg [7:0]ex2;
 output reg[24:0]out;
 output reg s,sn3,sn4,sr1;
-always@*//(posedge clk)
+always@(posedge clk)
 begin
-ex2=ex1;
-sr1=sn;
-sn3=s1;
-sn4=s2;
-s=s1^s2;
+ex2<=ex1;
+sr1<=sn;
+sn3<=s1;
+sn4<=s2;
+s<=s1^s2;
 if(s)
 begin
-out=a-b;
+out<=a-b;
 end
 else
 begin
-out=a+b;
+out<=a+b;
 end
 end
 endmodule
@@ -139,26 +139,26 @@ output reg[7:0]ex,ey;
 output reg[23:0]mx,my;
 output reg s,sx1,sy1;
 reg [7:0]diff;
-always@*//(posedge clk)
+always@(posedge clk)
 begin
-sx1=s1;
-sy1=s2;
+sx1<=s1;
+sy1<=s2;
 if(e1==e2)
 begin
-ex=e1+8'b1;
-ey=e2+8'b1;
-mx=m1;
-my=m2;
-s=1'b1;
+ex<=e1+8'b1;
+ey<=e2+8'b1;
+mx<=m1;
+my<=m2;
+s<=1'b1;
 end
 else if(e1>e2)
 begin
-diff=e1-e2;
-ex=e1+8'b1;
-ey=e1+8'b1;
-mx=m1;
-my=m2>>diff;
-s=1'b1;
+diff<=e1-e2;
+ex<=e1+8'b1;
+ey<=e1+8'b1;
+mx<=m1;
+my<=m2>>diff;
+s<=1'b1;
 end
 else
 begin

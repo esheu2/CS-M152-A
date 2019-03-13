@@ -32,12 +32,12 @@ module cheat_fp_mult(
 		
 		always @ (posedge clk) 
 			begin
-				a_temp = a;
-				b_temp = b;
+				a_temp <= a;
+				b_temp <= b;
 				if(!a_temp[22:0])
-					a_temp[0] = 1'b1;
+					a_temp[0] <= 1'b1;
 				if(!b_temp[22:0])
-					b_temp[0] = 1'b1;
+					b_temp[0] <= 1'b1;
 			end
 			
 		assign ca = a_temp;
