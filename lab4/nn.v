@@ -33,7 +33,7 @@ input wire [3:0] sl;
 input wire [3:0] sw;
 input wire [3:0] pl;
 input wire [3:0] pw;
-output wire [1:0] species;
+output wire [3:0] species;
 output wire [31:0] final;
 
 //convert all inputs to 32 bit floats
@@ -282,9 +282,9 @@ wire [31:0] prelim;
 assign prelim = (o2 > o3) ? o2 : o3;
 assign final = (o1 > prelim) ? o1 : prelim;
 
-wire[1:0] spec1, spec2;
-assign spec1 = (prelim == o2) ? 2'b01 : 2'b10;
-assign spec2 = (final == o1) ? 2'b00 : spec1;
+wire[3:0] spec1, spec2;
+assign spec1 = (prelim == o2) ? 4'd1 : 4'd2;
+assign spec2 = (final == o1) ? 4'd0 : spec1;
 
 assign species = spec2;
 

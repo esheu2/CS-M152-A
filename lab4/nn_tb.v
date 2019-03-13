@@ -32,7 +32,7 @@ module nn_tb;
 	reg [3:0] pw;
 
 	// Outputs
-	wire [1:0] species;
+	wire [3:0] species;
 	wire [31:0] final;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -79,9 +79,9 @@ module nn_tb;
 		*/
 		//2
 		sl = 9;
-		sw = 7;
-		pl = 7;
-		pw = 7;
+		sw = 9;
+		pl = 9;
+		pw = 9;
 		#100;
 	end
       always

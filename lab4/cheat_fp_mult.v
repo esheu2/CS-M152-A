@@ -30,7 +30,7 @@ module cheat_fp_mult(
 		reg [31:0] a_temp;
 		reg [31:0] b_temp;
 		
-		always @ (posedge clk) 
+		always @ (a,b) 
 			begin
 				a_temp <= a;
 				b_temp <= b;
@@ -50,15 +50,5 @@ module cheat_fp_mult(
 			.y(y)
 			);
         reg [31:0] asdf;
-        /*
-        always @*
-        begin
-            if(a == 0 || b == 0)
-                asdf <= 0;
-            else 
-                asdf <= y;
-        end
-        
-        assign y = asdf;*/
-        
+
 endmodule

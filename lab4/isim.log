@@ -1,6 +1,6 @@
 ISim log file
-Running: /home/ise/Desktop/CS-M152-A/lab4/nn_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/Desktop/CS-M152-A/lab4/nn_tb_isim_beh.wdb 
-ISim P.20160913 (signature 0xfbc00daa)
+Running: C:\Users\152\CS-M152-A\lab4\cheat_fp_mult_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/152/CS-M152-A/lab4/cheat_fp_mult_tb_isim_beh.wdb 
+ISim P.68d (signature 0x7708f090)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
 
@@ -13,4 +13,3 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# exit 0
