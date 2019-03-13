@@ -52,7 +52,8 @@ module fp_mult(input  wire clk,
 	parameter STEP_1 = 1'b0, STEP_2 = 1'b1;
 
 
-	always @(posedge clk) begin
+	always @(posedge clk) 
+    begin
 		state <= next_state;
 	end
 
@@ -63,36 +64,36 @@ module fp_mult(input  wire clk,
 			STEP_1: begin
 				// mantissa is product of a and b's mantissas, 
 				// with a 1 added as the MSB to each
-				product = {1'b1, a[`M]} * {1'b1, b[`M]};
+				product <= {1'b1, a[`M]} * {1'b1, b[`M]};
 
 				// get sticky bits by ORing together all bits right of R
-				S = |product[`S]; 
+				S <= |product[`S]; 
 
 				// if the MSB of the resulting product is 0
 				// normalize by shifting right    
-				normalized = product[47];
-				if(!normalized) product = product << 1; 
+				normalized <= product[47];
+				if(!normalized) product <= product << 1; 
 
-				next_state = STEP_2;			
+				next_state <= STEP_2;			
 				end	
 
 			STEP_2: begin
 				// if either mantissa is 0, result is 0 
 				if(!a[`M] | !b[`M]) begin 
-					s = 0; e = 0; m = 0;
+					s <= 0; e <= 0; m <= 0;
 				end else begin
 					// sign is xor of signs
-					s = a[`SIGN] ^ b[`SIGN];
+					s <= a[`SIGN] ^ b[`SIGN];
 
 					// mantissa is upper 22-bits of product w/ nearest-even rounding
-					m = product[46:24] + (product[`G] & (product[`R] | S));
+					m <= product[46:24] + (product[`G] & (product[`R] | S));
 
 					// exponent is sum of a and b's exponents, minus the bias 
 					// if the mantissa was shifted, increment the exponent to balance it
-					e = a[`EXP] + b[`EXP] - `BIAS + normalized;
+					e <= a[`EXP] + b[`EXP] - `BIAS + normalized;
 				end 
 
-				next_state = STEP_1;
+				next_state <= STEP_1;
 				end
 		endcase
 	end

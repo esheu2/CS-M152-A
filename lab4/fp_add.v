@@ -111,7 +111,7 @@ module faddsub(a,b,s1,s2,sn,ex1,clk,out,ex2,sn3,sn4,s,sr1); //submodule for addi
 input [23:0]a,b;
 input[7:0]ex1;
 input s1,s2,clk,sn;
-output reg [23:0]ex2;
+output reg [7:0]ex2;
 output reg[24:0]out;
 output reg s,sn3,sn4,sr1;
 always@(posedge clk)

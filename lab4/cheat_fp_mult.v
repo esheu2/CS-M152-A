@@ -30,14 +30,14 @@ module cheat_fp_mult(
 		reg [31:0] a_temp;
 		reg [31:0] b_temp;
 		
-		always @ (posedge clk) 
+		always @ (a,b) 
 			begin
-				a_temp = a;
-				b_temp = b;
+				a_temp <= a;
+				b_temp <= b;
 				if(!a_temp[22:0])
-					a_temp[0] = 1'b1;
+					a_temp[0] <= 1'b1;
 				if(!b_temp[22:0])
-					b_temp[0] = 1'b1;
+					b_temp[0] <= 1'b1;
 			end
 			
 		assign ca = a_temp;
@@ -49,4 +49,6 @@ module cheat_fp_mult(
 			.b(cb),
 			.y(y)
 			);
+        reg [31:0] asdf;
+
 endmodule

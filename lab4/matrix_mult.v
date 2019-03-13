@@ -32,6 +32,7 @@ module matrix_mult(
     ans
     );
 
+input clk;
 input wire [31:0] arr1_0;
 input wire [31:0] arr1_1;
 input wire [31:0] arr1_2;
@@ -41,16 +42,6 @@ input wire [31:0] arr2_0;
 input wire [31:0] arr2_1;
 input wire [31:0] arr2_2;
 input wire [31:0] arr2_3;
-
-wire [31:0] arr1_0;
-wire [31:0] arr1_1;
-wire [31:0] arr1_2;
-wire [31:0] arr1_3;
-
-wire [31:0] arr2_0;
-wire [31:0] arr2_1;
-wire [31:0] arr2_2;
-wire [31:0] arr2_3;
 
 output wire [31:0] ans;
 
@@ -91,6 +82,28 @@ cheat_fp_mult prod3(
 				.y(product_3)
 				);
 
-assign ans = product_0 + product_1 + product_2 + product_3;
+wire [31:0] sum_0;
+wire [31:0] sum_1;
+
+fp_add sum1(
+			.a(product_0),
+			.b(product_1),
+			.clk(clk),
+			.out(sum_0)
+			);
+			
+fp_add sum2(
+			.a(product_2),
+			.b(product_3),
+			.clk(clk),
+			.out(sum_1)
+			);
+			
+fp_add sum3(
+			.a(sum_0),
+			.b(sum_1),
+			.clk(clk),
+			.out(ans)
+			);
 
 endmodule
