@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   22:27:05 03/10/2019
-// Design Name:   fp_mul
+// Create Date:   09:53:16 03/14/2019
+// Design Name:   fp_mult
 // Module Name:   /home/ise/Desktop/CS-M152-A/lab4/fp_mult_tb.v
 // Project Name:  lab4
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: fp_mul
+// Verilog Test Fixture created by ISE for module: fp_mult
 //
 // Dependencies:
 // 
@@ -52,10 +52,6 @@ module fp_mult_tb;
 		// Add stimulus here
 		a = 32'b00111111100000000000000000000000;
 		b = 32'b00111111100000000000000000000000;
-		if(!a[22:0])
-			a[0] <= 1'b1;
-		if(!b[22:0])
-			b[0] <= 1'b1;
 		#100;
 	end
       always

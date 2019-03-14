@@ -24,7 +24,7 @@ module cheat_fp_mult(
 		input  wire[31:0] b,
 		output wire[31:0] y
     );
-	 
+		/*
 		wire[31:0] ca;
 		wire[31:0] cb;
 		reg [31:0] a_temp;
@@ -32,21 +32,19 @@ module cheat_fp_mult(
 		
 		always @ (a,b) 
 			begin
-				a_temp <= a;
-				b_temp <= b;
-				if(!a_temp[22:0])
-					a_temp[0] <= 1'b1;
-				if(!b_temp[22:0])
-					b_temp[0] <= 1'b1;
+				if(!a[22:0])
+					a_temp <= {a[31:1], 1'b1};
+				if(!b[22:0])
+					b_temp <= {a[31:1], 1'b1};
 			end
 			
 		assign ca = a_temp;
 		assign cb = b_temp;
-		
+		*/
 		fp_mult fpm(
 			.clk(clk),
-			.a(ca),
-			.b(cb),
+			.a(a),
+			.b(b),
 			.y(y)
 			);
         reg [31:0] asdf;
