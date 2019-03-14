@@ -58,25 +58,20 @@ module nn_tb;
 		#100;
         
 		// Add stimulus here
-		/*sl = 5;
-		sw = 3;
-		pl = 1;
-		pw = 0;
-		#100;
 		sl = 5;
 		sw = 3;
 		pl = 1;
-		pw = 1;
+		pw = 6;
 		#100;
-		*/
+		
 		//1
-		/*
+		
 		sl = 5;
 		sw = 3;
 		pl = 1;
 		pw = 1;
 		#100;
-		*/
+		
 		//2
 		sl = 9;
 		sw = 9;
