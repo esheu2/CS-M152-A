@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   08:41:10 03/15/2019
+// Create Date:   15:15:40 03/15/2019
 // Design Name:   top
 // Module Name:   /home/ise/Desktop/CS-M152-A/lab4/top_tb.v
 // Project Name:  lab4
@@ -26,12 +26,15 @@ module top_tb;
 
 	// Inputs
 	reg clk;
-	reg [7:0] JA;
 
 	// Outputs
 	wire [3:0] an;
 	wire [7:0] seg;
 
+	// Bidirs
+	wire [7:0] JA;
+	reg output_value_valid;
+	reg [7:0] output_value;
 	// Instantiate the Unit Under Test (UUT)
 	top uut (
 		.clk(clk), 
@@ -39,18 +42,19 @@ module top_tb;
 		.an(an), 
 		.seg(seg)
 	);
-
+	assign JA = (output_value_valid==1'b1)? output_value : 8'hZZ;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		JA = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
 		// Add stimulus here
-
+		output_value = 8'b0111_0000;
+		output_value_valid = 1;
 	end
-      
+   always
+	#0.002 clk = ~clk;
 endmodule
 

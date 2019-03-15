@@ -30,7 +30,7 @@ module numpad(
           clk,
           i_tx_busy,
         i_inst,
-        i_inst_valid    );
+        i_inst_valid);
      
      
 // ==============================================================================================
@@ -78,7 +78,7 @@ module numpad(
     assign o_tx_data3 = Decode3;
     assign o_tx_data4 = Decode4;
     always @ (posedge clk) begin
-        o_tx_valid <=i_inst_valid;
+        o_tx_valid <= i_inst_valid;
     end
        
 endmodule
@@ -125,11 +125,7 @@ module Decoder(
     always @(posedge clk) begin
  
             // 1ms
-            if (sclk < 20'b00011000011010100000) begin
-                sclk <= sclk + 1'b1;
-            end
-           
-            else if (sclk == 20'b00011000011010100000) begin
+            if (sclk == 20'b00011000011010100000) begin
                 sclk <= sclk + 1'b1;
                 Col <= 4'b0111;
             end
@@ -137,7 +133,6 @@ module Decoder(
             // check row pins
             else if(sclk == 20'b00011000011010101000) begin
                 //R1
-                //if (Col == 4'b0111)begin
                 if (Row == 4'b0111) begin
                     if(count == 4'b00) begin
                         DecodeOut1 <= 4'b0001; //1
@@ -225,7 +220,6 @@ module Decoder(
            
             // check row pins
             else if(sclk == 20'b00110000110101001000) begin
-                //if(Col == 4'b1011)begin
                 //R1
                 if (Row == 4'b0111) begin
                     if(count == 4'b00) begin
@@ -316,7 +310,6 @@ module Decoder(
             // check row pins
             else if(sclk == 20'b01001001001111101000) begin
                 //R1
-                //if( Col == 4'b1101) begin
                 if(Row == 4'b0111) begin
                     if(count == 4'b00) begin
                         DecodeOut1 <= 4'b0011; //3
@@ -406,7 +399,6 @@ module Decoder(
             // Check row pins
             else if(sclk == 20'b01100001101010001000) begin
                 //R1
-                //if(Col == 4'b1110) begin
                 if(Row == 4'b0111) begin
                     if(count == 4'b00) begin
                         DecodeOut1 <= 4'b1010; //A
