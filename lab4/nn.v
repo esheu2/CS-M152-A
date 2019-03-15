@@ -82,7 +82,6 @@ matrix_mult h1mm(
 fp_add h1ab(
 				.a(h1_m_out),
 				.b(32'b11000001000111000010111010011010),
-				.clk(clk),
 				.out(h1_a_out)
 				);
 				
@@ -105,7 +104,6 @@ matrix_mult h2mm(
 fp_add h2ab(
 				.a(h2_m_out),
 				.b(32'b00111111101010111001001100010100),
-				.clk(clk),
 				.out(h2_a_out)
 				);
 				
@@ -128,7 +126,6 @@ matrix_mult h3mm(
 fp_add h3ab(
 				.a(h3_m_out),
 				.b(32'b11000001000100001111110010100101),
-				.clk(clk),
 				.out(h3_a_out)
 				);
 
@@ -151,7 +148,6 @@ matrix_mult h4mm(
 fp_add h4ab(
 				.a(h4_m_out),
 				.b(32'b11000000110001111100001000100010),
-				.clk(clk),
 				.out(h4_a_out)
 				);
 				
@@ -204,7 +200,6 @@ matrix_mult o1mm(
 fp_add o1ab(
 				.a(o1_m_out),
 				.b(32'b11000000010110111001001111100001),
-				.clk(clk),
 				.out(o1_a_out)
 				);
 				
@@ -227,7 +222,6 @@ matrix_mult o2mm(
 fp_add o2ab(
 				.a(o2_m_out),
 				.b(32'b01000000111101001000011110111100),
-				.clk(clk),
 				.out(o2_a_out)
 				);
 				
@@ -250,7 +244,6 @@ matrix_mult o3mm(
 fp_add o3ab(
 				.a(o3_m_out),
 				.b(32'b11000001000000101010010011001100),
-				.clk(clk),
 				.out(o3_a_out)
 				);
 				

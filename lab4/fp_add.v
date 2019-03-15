@@ -19,155 +19,183 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 //http://lalitha-verilogcoding.blogspot.com/2012/12/32-bit-pipelined-floating-point-adder.html
-module fp_add(a,b,clk,out);
-input[31:0]a,b;
-input clk;
-output [31:0]out;
-wire [7:0]e1,e2,ex,ey,exy,ex1,ey1,ex2,ex3;
-wire s1,s2,s,s3,sr,sn,s4,sx1,sy1,sn1,sn2,sn3,sn4,sr1,sr2,sn5,sn6;
-wire [23:0]m1,m2,mx,my,mxy,mx1,my1;
-wire [24:0]mxy1,mxy2;
-assign s1=a[31];
-assign s2=b[31];
-assign e1=a[30:23];
-assign e2=b[30:23];
-assign m1[23]=1'b1;
-assign m2[23]=1'b1;
-assign m1[22:0]=a[22:0];
-assign m2[22:0]=b[22:0];
-//submodule for compare and shfit
-cmpshift as(e1[7:0],e2[7:0],s1,s2,m1[23:0],m2[23:0],clk,ex,ey,mx,my,s,sx1,sy1);
-buffer1 buff1(ex,ey,sx1,sy1,mx,my,s,clk,ex1,ey1,mx1,my1,sn,sn1,sn2);
-//sub module for mantissa addition snd subtraction
-faddsub as1(mx1,my1,sn1,sn2,sn,ex1,clk,mxy1,ex2,sn3,sn4,s3,sr1);
-buffer2 buff2(mxy1,s3,sr1,ex2,sn3,sn4,clk,mxy2,ex3,sn5,sn6,s4,sr2);
-//sub module for normalization
-normalized as2(mxy2,sr2,sn5,sn6,s4,clk,ex3,sr,exy,mxy);
-assign out={sr,exy,mxy[22:0]};
+module fp_add(a,b,out);
+  input  [31:0] a, b;
+  output [31:0] out;
+
+  wire [31:0] out;
+	reg a_sign;
+	reg [7:0] a_exponent;
+	reg [23:0] a_mantissa;
+	reg b_sign;
+	reg [7:0] b_exponent;
+	reg [23:0] b_mantissa;
+
+  reg o_sign;
+  reg [7:0] o_exponent;
+  reg [24:0] o_mantissa;
+
+  reg [7:0] diff;
+  reg [23:0] tmp_mantissa;
+  reg [7:0] tmp_exponent;
+
+
+  reg  [7:0] i_e;
+  reg  [24:0] i_m;
+  wire [7:0] o_e;
+  wire [24:0] o_m;
+
+  addition_normaliser norm1
+  (
+    .in_e(i_e),
+    .in_m(i_m),
+    .out_e(o_e),
+    .out_m(o_m)
+  );
+
+  assign out[31] = o_sign;
+  assign out[30:23] = o_exponent;
+  assign out[22:0] = o_mantissa[22:0];
+
+  always @ ( * ) begin
+		a_sign = a[31];
+		if(a[30:23] == 0) begin
+			a_exponent = 8'b00000001;
+			a_mantissa = {1'b0, a[22:0]};
+		end else begin
+			a_exponent = a[30:23];
+			a_mantissa = {1'b1, a[22:0]};
+		end
+		b_sign = b[31];
+		if(b[30:23] == 0) begin
+			b_exponent = 8'b00000001;
+			b_mantissa = {1'b0, b[22:0]};
+		end else begin
+			b_exponent = b[30:23];
+			b_mantissa = {1'b1, b[22:0]};
+		end
+    if (a_exponent == b_exponent) begin // Equal exponents
+      o_exponent = a_exponent;
+      if (a_sign == b_sign) begin // Equal signs = add
+        o_mantissa = a_mantissa + b_mantissa;
+        //Signify to shift
+        o_mantissa[24] = 1;
+        o_sign = a_sign;
+      end else begin // Opposite signs = subtract
+        if(a_mantissa > b_mantissa) begin
+          o_mantissa = a_mantissa - b_mantissa;
+          o_sign = a_sign;
+        end else begin
+          o_mantissa = b_mantissa - a_mantissa;
+          o_sign = b_sign;
+        end
+      end
+    end else begin //Unequal exponents
+      if (a_exponent > b_exponent) begin // A is bigger
+        o_exponent = a_exponent;
+        o_sign = a_sign;
+				diff = a_exponent - b_exponent;
+        tmp_mantissa = b_mantissa >> diff;
+        if (a_sign == b_sign)
+          o_mantissa = a_mantissa + tmp_mantissa;
+        else
+          	o_mantissa = a_mantissa - tmp_mantissa;
+      end else if (a_exponent < b_exponent) begin // B is bigger
+        o_exponent = b_exponent;
+        o_sign = b_sign;
+        diff = b_exponent - a_exponent;
+        tmp_mantissa = a_mantissa >> diff;
+        if (a_sign == b_sign) begin
+          o_mantissa = b_mantissa + tmp_mantissa;
+        end else begin
+					o_mantissa = b_mantissa - tmp_mantissa;
+        end
+      end
+    end
+    if(o_mantissa[24] == 1) begin
+      o_exponent = o_exponent + 1;
+      o_mantissa = o_mantissa >> 1;
+    end else if((o_mantissa[23] != 1) && (o_exponent != 0)) begin
+      i_e = o_exponent;
+      i_m = o_mantissa;
+      o_exponent = o_e;
+      o_mantissa = o_m;
+    end
+end
 endmodule
 
-module buffer2(mxy1,s3,sr1,ex,sn3,sn4,clk,mxy2,ex3,sn5,sn6,s4,sr2);
-input [24:0]mxy1;
-input s3,clk,sr1,sn3,sn4;
-input [7:0]ex;
-output reg[24:0]mxy2;
-output reg[7:0]ex3;
-output reg s4,sn5,sn6,sr2;
-always@(posedge clk)
-begin
-sr2=sr1;
-sn5=sn3;
-sn6=sn4;
-ex3=ex;
-mxy2=mxy1;
-s4=s3;
-end
-endmodule
-module buffer1(ex,ey,sx1,sy1,mx,my,s,clk,ex1,ey1,mx1,my1,sn,sn1,sn2);
-input [7:0]ex,ey;
-input [23:0]mx,my;
-input s,clk,sx1,sy1;
-output reg [7:0]ex1,ey1;
-output reg [23:0]mx1,my1;
-output reg sn,sn1,sn2;
-always@(posedge clk)
-begin
-sn1=sx1;
-sn2=sy1;
-ex1=ex;
-ey1=ey;
-mx1=mx;
-my1=my;
-sn=s;
-end
-endmodule
+module addition_normaliser(in_e, in_m, out_e, out_m);
+  input [7:0] in_e;
+  input [24:0] in_m;
+  output [7:0] out_e;
+  output [24:0] out_m;
 
-module normalized(mxy1,s,s1,s2,s3,clk,ex,sr,exy,mxy);
-input[24:0]mxy1;
-input s,s1,s2,s3,clk;
-input[7:0]ex;
-output reg sr;
-output reg[7:0]exy;
-output reg[23:0]mxy;
-reg [24:0]mxy2;
-always@(posedge clk)
-begin
-sr=s?s1^(mxy1[24]&s3):s2^(mxy1[24]&s3);
-mxy2=(mxy1[24]&s3)?~mxy1+25'b1:mxy1;
-mxy=mxy2[24:1];
-exy=ex;
-repeat(24)
-begin
-if(mxy[23]==1'b0)
-begin
-mxy=mxy<<1'b1;
-exy=exy-8'b1;
-end
-end
-end
-endmodule
+  wire [7:0] in_e;
+  wire [24:0] in_m;
+  reg [7:0] out_e;
+  reg [24:0] out_m;
 
-module faddsub(a,b,s1,s2,sn,ex1,clk,out,ex2,sn3,sn4,s,sr1); //submodule for addition or subtraction
-input [23:0]a,b;
-input[7:0]ex1;
-input s1,s2,clk,sn;
-output reg [7:0]ex2;
-output reg[24:0]out;
-output reg s,sn3,sn4,sr1;
-always@(posedge clk)
-begin
-ex2=ex1;
-sr1=sn;
-sn3=s1;
-sn4=s2;
-s=s1^s2;
-if(s)
-begin
-out=a-b;
-end
-else
-begin
-out=a+b;
-end
-end
-endmodule
-module cmpshift(e1,e2,s1,s2,m1,m2,clk,ex,ey,mx,my,s,sx1,sy1); //module for copare &shift
-input [7:0]e1,e2;
-input [23:0]m1,m2;
-input clk,s1,s2;
-output reg[7:0]ex,ey;
-output reg[23:0]mx,my;
-output reg s,sx1,sy1;
-reg [7:0]diff;
-always@(posedge clk)
-begin
-sx1=s1;
-sy1=s2;
-if(e1==e2)
-begin
-ex=e1+8'b1;
-ey=e2+8'b1;
-mx=m1;
-my=m2;
-s=1'b1;
-end
-else if(e1>e2)
-begin
-diff=e1-e2;
-ex=e1+8'b1;
-ey=e1+8'b1;
-mx=m1;
-my=m2>>diff;
-s=1'b1;
-end
-else
-begin
-diff=e2-e1;
-ex=e2+8'b1;
-ey=e2+8'b1;
-mx=m2;
-my=m1>>diff;
-s=1'b0;
-end
-end
+  always @ ( * ) begin
+		if (in_m[23:3] == 21'b000000000000000000001) begin
+			out_e = in_e - 20;
+			out_m = in_m << 20;
+		end else if (in_m[23:4] == 20'b00000000000000000001) begin
+			out_e = in_e - 19;
+			out_m = in_m << 19;
+		end else if (in_m[23:5] == 19'b0000000000000000001) begin
+			out_e = in_e - 18;
+			out_m = in_m << 18;
+		end else if (in_m[23:6] == 18'b000000000000000001) begin
+			out_e = in_e - 17;
+			out_m = in_m << 17;
+		end else if (in_m[23:7] == 17'b00000000000000001) begin
+			out_e = in_e - 16;
+			out_m = in_m << 16;
+		end else if (in_m[23:8] == 16'b0000000000000001) begin
+			out_e = in_e - 15;
+			out_m = in_m << 15;
+		end else if (in_m[23:9] == 15'b000000000000001) begin
+			out_e = in_e - 14;
+			out_m = in_m << 14;
+		end else if (in_m[23:10] == 14'b00000000000001) begin
+			out_e = in_e - 13;
+			out_m = in_m << 13;
+		end else if (in_m[23:11] == 13'b0000000000001) begin
+			out_e = in_e - 12;
+			out_m = in_m << 12;
+		end else if (in_m[23:12] == 12'b000000000001) begin
+			out_e = in_e - 11;
+			out_m = in_m << 11;
+		end else if (in_m[23:13] == 11'b00000000001) begin
+			out_e = in_e - 10;
+			out_m = in_m << 10;
+		end else if (in_m[23:14] == 10'b0000000001) begin
+			out_e = in_e - 9;
+			out_m = in_m << 9;
+		end else if (in_m[23:15] == 9'b000000001) begin
+			out_e = in_e - 8;
+			out_m = in_m << 8;
+		end else if (in_m[23:16] == 8'b00000001) begin
+			out_e = in_e - 7;
+			out_m = in_m << 7;
+		end else if (in_m[23:17] == 7'b0000001) begin
+			out_e = in_e - 6;
+			out_m = in_m << 6;
+		end else if (in_m[23:18] == 6'b000001) begin
+			out_e = in_e - 5;
+			out_m = in_m << 5;
+		end else if (in_m[23:19] == 5'b00001) begin
+			out_e = in_e - 4;
+			out_m = in_m << 4;
+		end else if (in_m[23:20] == 4'b0001) begin
+			out_e = in_e - 3;
+			out_m = in_m << 3;
+		end else if (in_m[23:21] == 3'b001) begin
+			out_e = in_e - 2;
+			out_m = in_m << 2;
+		end else if (in_m[23:22] == 2'b01) begin
+			out_e = in_e - 1;
+			out_m = in_m << 1;
+		end
+  end
 endmodule

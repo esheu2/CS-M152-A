@@ -88,21 +88,18 @@ wire [31:0] sum_1;
 fp_add sum1(
 			.a(product_0),
 			.b(product_1),
-			.clk(clk),
 			.out(sum_0)
 			);
 			
 fp_add sum2(
 			.a(product_2),
 			.b(product_3),
-			.clk(clk),
 			.out(sum_1)
 			);
 			
 fp_add sum3(
 			.a(sum_0),
 			.b(sum_1),
-			.clk(clk),
 			.out(ans)
 			);
 

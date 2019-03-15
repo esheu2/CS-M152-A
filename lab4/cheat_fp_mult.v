@@ -47,6 +47,5 @@ module cheat_fp_mult(
 			.b(b),
 			.y(y)
 			);
-        reg [31:0] asdf;
 
 endmodule
