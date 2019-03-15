@@ -1,28 +1,28 @@
 Command line:
    fp_add_tb_isim_beh.exe
      -simmode  gui
-     -simrunnum  1
-     -socket  34317
+     -simrunnum  0
+     -socket  36286
 
-Mon Mar 11 18:22:59 2019
+Fri Mar 15 04:35:00 2019
 
 
  Elaboration Time: 0.05 sec
 
- Current Memory Usage: 199.127 Meg
+ Current Memory Usage: 198.586 Meg
 
- Total Signals          : 89
- Total Nets             : 433
- Total Signal Drivers   : 46
- Total Blocks           : 8
- Total Primitive Blocks : 6
- Total Processes        : 54
- Total Traceable Variables  : 52
- Total Scalar Nets and Variables : 868
+ Total Signals          : 21
+ Total Nets             : 175
+ Total Signal Drivers   : 14
+ Total Blocks           : 4
+ Total Primitive Blocks : 2
+ Total Processes        : 18
+ Total Traceable Variables  : 36
+ Total Scalar Nets and Variables : 525
 
- Total Simulation Time: 0.28 sec
+ Total Simulation Time: 0.06 sec
 
- Current Memory Usage: 276.726 Meg
+ Current Memory Usage: 276.185 Meg
 
-Mon Mar 11 18:23:25 2019
+Fri Mar 15 04:35:07 2019
 

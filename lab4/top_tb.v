@@ -49,8 +49,17 @@ module top_tb;
 		#100;
         
 		// Add stimulus here
+		JA = 8'd1;
+		#100;
+		JA = 8'd2;
+		#100;
+		JA = 8'd3;
+		#100;
+		JA = 8'd4;
+		#100;
 
 	end
-      
+   always
+	#1 clk = ~clk;
 endmodule
 

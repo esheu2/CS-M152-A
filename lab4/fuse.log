@@ -1,35 +1,27 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/nn_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/nn_tb_beh.prj work.nn_tb work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/uart_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/uart_tb_beh.prj uart_tb work.glbl 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/float_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/fp_add.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/matrix_mult.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/int_to_float.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/nn.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/nn_tb.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/uart_fifo.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/uart.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/uart_COVER.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/uart_tb.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:1007 - "/home/ise/Desktop/CS-M152-A/lab4/uart_COVER.v" Line 124: Element index 15 into tx_data is out of bounds
 Completed static elaboration
-Fuse Memory Usage: 96404 KB
-Fuse CPU Usage: 790 ms
-Compiling module int_to_float
-Compiling module fp_mult
-Compiling module cheat_fp_mult
-Compiling module addition_normaliser
-Compiling module fp_add
-Compiling module matrix_mult
-Compiling module sigmoid_approx
-Compiling module nn
-Compiling module nn_tb
+Fuse Memory Usage: 95248 KB
+Fuse CPU Usage: 1250 ms
+Compiling module uart_fifo
+Compiling module uart
+Compiling module uart_top_default
+Compiling module uart_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 10 Verilog Units
-Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/nn_tb_isim_beh.exe
-Fuse Memory Usage: 686304 KB
-Fuse CPU Usage: 1180 ms
-GCC CPU Usage: 11320 ms
+Compiled 5 Verilog Units
+Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/uart_tb_isim_beh.exe
+Fuse Memory Usage: 653356 KB
+Fuse CPU Usage: 1290 ms
+GCC CPU Usage: 490 ms

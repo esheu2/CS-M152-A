@@ -100,9 +100,9 @@ module Decoder(
     input [3:0] Row;                // Rows on KYPD
     output [3:0] Col;           // Columns on KYPD
     output [3:0] DecodeOut1;    // Output data
-     output [3:0] DecodeOut2;
-     output [3:0] DecodeOut3;
-     output [3:0] DecodeOut4;
+    output [3:0] DecodeOut2;
+    output [3:0] DecodeOut3;
+    output [3:0] DecodeOut4;
 // ==============================================================================================
 //                                  Parameters, Regsiters, and Wires
 // ==============================================================================================

@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-//http://lalitha-verilogcoding.blogspot.com/2012/12/32-bit-pipelined-floating-point-adder.html
+//https://github.com/danshanley/FPU/blob/master/fpu.v
 module fp_add(a,b,out);
   input  [31:0] a, b;
   output [31:0] out;

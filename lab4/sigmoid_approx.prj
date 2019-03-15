@@ -1,0 +1,3 @@
+verilog work "float_mult.v"
+verilog work "cheat_fp_mult.v"
+verilog work "sigmoid_approx.v"

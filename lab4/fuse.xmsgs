@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"/home/ise/Desktop/CS-M152-A/lab4/uart_COVER.v" Line 124: Element index <arg fmt="%d" index="1">15</arg> into <arg fmt="%s" index="2">tx_data</arg> is out of bounds
+</msg>
+
 </messages>
 

@@ -1,0 +1,7 @@
+verilog work "float_mult.v"
+verilog work "fp_add.v"
+verilog work "cheat_fp_mult.v"
+verilog work "sigmoid_approx.v"
+verilog work "matrix_mult.v"
+verilog work "int_to_float.v"
+verilog work "nn.v"
