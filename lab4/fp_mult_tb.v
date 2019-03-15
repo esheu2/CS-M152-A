@@ -25,7 +25,6 @@
 module fp_mult_tb;
 
 	// Inputs
-	reg clk;
 	reg [31:0] a;
 	reg [31:0] b;
 
@@ -34,7 +33,6 @@ module fp_mult_tb;
 
 	// Instantiate the Unit Under Test (UUT)
 	fp_mult uut (
-		.clk(clk), 
 		.a(a), 
 		.b(b), 
 		.y(y)
@@ -42,7 +40,6 @@ module fp_mult_tb;
 
 	initial begin
 		// Initialize Inputs
-		clk = 0;
 		a = 0;
 		b = 0;
 
@@ -54,7 +51,6 @@ module fp_mult_tb;
 		b = 32'b00111111100000000000000000000000;
 		#100;
 	end
-      always
-		#1 clk = ~clk;
+
 endmodule
 

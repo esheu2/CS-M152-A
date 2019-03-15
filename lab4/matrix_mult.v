@@ -54,7 +54,7 @@ reg [31:0] product_3;
 wire [31:0] product;
 wire [31:0] sum1;
 wire [31:0] sum2;
-wire [31:0] sum;
+reg [31:0] sum;
 
 reg [31:0] curr1;
 reg [31:0] curr2;
@@ -63,10 +63,6 @@ reg [31:0] curr3;
 reg [31:0] curr4;
 
 reg [2:0] count = 0;
-//mx mult logic here TODO
-
-//assign arri1 = curr1;
-//assign arri2 = curr2;
 
 fp_mult prod0(
 				.a(curr1),
@@ -77,65 +73,62 @@ fp_mult prod0(
 reg [31:0] sum_0;
 reg [31:0] sum_1;
 
-//assign p1 = curr3;
-//assign p2 = curr4;
-
 fp_add s1(
 			.a(curr3),
 			.b(curr4),
 			.out(sum)
 			);
 
-always@(count)
+always@*
 begin
 	if(count == 0)
 	begin
 		curr1 <= arr1_0;
 		curr2 <= arr2_0;
 		product_0 <= product;
-		count <= count + 1'b1;
+		count = count + 1'b1;
 	end
-	 if(count == 3'b001)
+	else if(count == 3'b001)
 	begin
 		curr1 <= arr1_1;
 		curr2 <= arr2_1;
 		product_1 <= product;
-		count <= count + 1'b1;
+		count = count + 1'b1;
 	end
-	 if(count == 3'b010)
+	else if(count == 3'b010)
 	begin
 		curr1 <= arr1_2;
 		curr2 <= arr2_2;
 		product_2 <= product;
-		count <= count + 1'b1;
+		count = count + 1'b1;
 	end
-	 if(count == 3'b011)
+	 else if(count == 3'b011)
 	begin
 		curr1 <= arr1_3;
 		curr2 <= arr2_3;
 		product_3 <= product;
-		count <= count + 1'b1;
+		count = count + 1'b1;
 	end
-	 if(count == 3'b100)
+	 else if(count == 3'b100)
 	begin
 		curr3 <= product_0;
 		curr4 <= product_1;
 		sum_0 <= sum;
-		count <= count + 1'b1;
+		count = count + 1'b1;
 	end
-	 if(count == 3'b101)
+	else  if(count == 3'b101)
 	begin
 		curr3 <= product_2;
 		curr4 <= product_3;
 		sum_1 <= sum;
-		count <= count + 1'b1;
+		count = count + 1'b1;
 	end
-	 if(count == 3'b111)
+	else if(count == 3'b111)
 	begin
 		curr3 <= sum_0;
 		curr4 <= sum_1;
 		ans_temp <= sum;
-		count <= count + 1'b1;
+		count = count + 1'b1;
 	end
 end
 
