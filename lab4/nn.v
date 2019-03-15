@@ -19,7 +19,6 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module nn(
-		clk,
 		sl,
 		sw,
 		pl,
@@ -28,7 +27,6 @@ module nn(
 		final
     );
 
-input clk;
 input wire [3:0] sl; 
 input wire [3:0] sw;
 input wire [3:0] pl;
@@ -67,7 +65,6 @@ wire [31:0] h1_m_out;
 wire [31:0] h1_a_out;
 
 matrix_mult h1mm(
-				.clk(clk),
 				.arr1_0(slfp),
 				.arr1_1(swfp),
 				.arr1_2(plfp),
@@ -89,7 +86,6 @@ wire [31:0] h2_m_out;
 wire [31:0] h2_a_out;
 
 matrix_mult h2mm(
-				.clk(clk),
 				.arr1_0(slfp),
 				.arr1_1(swfp),
 				.arr1_2(plfp),
@@ -111,7 +107,6 @@ wire [31:0] h3_m_out;
 wire [31:0] h3_a_out;
 
 matrix_mult h3mm(
-				.clk(clk),
 				.arr1_0(slfp),
 				.arr1_1(swfp),
 				.arr1_2(plfp),
@@ -133,7 +128,6 @@ wire [31:0] h4_m_out;
 wire [31:0] h4_a_out;
 
 matrix_mult h4mm(
-				.clk(clk),
 				.arr1_0(slfp),
 				.arr1_1(swfp),
 				.arr1_2(plfp),
@@ -154,28 +148,24 @@ fp_add h4ab(
 //calculate sigmoid of each node in hidden layer
 wire [31:0] h1;
 sigmoid_approx s1(
-				.clk(clk),
 				.x(h1_a_out),
 				.y(h1)
 				);
 				
 wire [31:0] h2;
 sigmoid_approx s2(
-				.clk(clk),
 				.x(h2_a_out),
 				.y(h2)
 				);
 				
 wire [31:0] h3;
 sigmoid_approx s3(
-				.clk(clk),
 				.x(h3_a_out),
 				.y(h3)
 				);
 				
 wire [31:0] h4;
 sigmoid_approx s4(
-				.clk(clk),
 				.x(h4_a_out),
 				.y(h4)
 				);
@@ -185,7 +175,6 @@ wire [31:0] o1_m_out;
 wire [31:0] o1_a_out;
 
 matrix_mult o1mm(
-				.clk(clk),
 				.arr1_0(h1),
 				.arr1_1(h2),
 				.arr1_2(h3),
@@ -207,7 +196,6 @@ wire [31:0] o2_m_out;
 wire [31:0] o2_a_out;
 
 matrix_mult o2mm(
-				.clk(clk),
 				.arr1_0(h1),
 				.arr1_1(h2),
 				.arr1_2(h3),
@@ -229,7 +217,6 @@ wire [31:0] o3_m_out;
 wire [31:0] o3_a_out;
 
 matrix_mult o3mm(
-				.clk(clk),
 				.arr1_0(h1),
 				.arr1_1(h2),
 				.arr1_2(h3),
@@ -250,21 +237,18 @@ fp_add o3ab(
 //calculate sigmoid of each node in output layer
 wire [31:0] o1;
 sigmoid_approx s5(
-				.clk(clk),
 				.x(o1_a_out),
 				.y(o1)
 				);
 				
 wire [31:0] o2;
 sigmoid_approx s6(
-				.clk(clk),
 				.x(o2_a_out),
 				.y(o2)
 				);
 				
 wire [31:0] o3;
 sigmoid_approx s7(
-				.clk(clk),
 				.x(o3_a_out),
 				.y(o3)
 				);

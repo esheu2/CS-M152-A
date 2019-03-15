@@ -121,6 +121,12 @@ module fp_add(a,b,out);
       o_exponent = o_e;
       o_mantissa = o_m;
     end
+	 if(a == 0 && b == 0)
+		begin
+			o_sign = 0;
+			o_exponent = 0;
+			o_mantissa[22:0] = 0;
+		end 
 end
 endmodule
 

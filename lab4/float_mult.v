@@ -18,8 +18,8 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module fp_mult(input  wire clk,
-			  input  wire[31:0] a,
+module fp_mult(
+			     input  wire[31:0] a,
               input  wire[31:0] b,
               output wire[31:0] y);
 

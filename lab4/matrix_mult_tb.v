@@ -40,7 +40,7 @@ module matrix_mult_tb;
 
 	// Instantiate the Unit Under Test (UUT)
 	matrix_mult uut (
-		.clk(clk), 
+		.clk(clk),
 		.arr1_0(arr1_0), 
 		.arr1_1(arr1_1), 
 		.arr1_2(arr1_2), 
@@ -77,7 +77,7 @@ module matrix_mult_tb;
 		arr2_2 = 32'b00111111100000000000000000000000;
 		arr2_3 = 32'b00111111100000000000000000000000;
 	end
-      always
-		#1 clk = ~clk;
+	always 
+	#1 clk = ~clk;
 endmodule
 
