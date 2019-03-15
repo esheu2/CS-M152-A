@@ -20,8 +20,8 @@ WARNING:HDLCompiler:1016 - "/home/ise/Desktop/CS-M152-A/lab4/top.v" Line 48: Por
 WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab4/top.v" Line 43: Size mismatch in connection of port <i_tx_busy>. Formal port size is 1-bit while actual signal size is 32-bit.
 WARNING:HDLCompiler:189 - "/home/ise/Desktop/CS-M152-A/lab4/top.v" Line 45: Size mismatch in connection of port <i_inst_valid>. Formal port size is 1-bit while actual signal size is 32-bit.
 Completed static elaboration
-Fuse Memory Usage: 96556 KB
-Fuse CPU Usage: 790 ms
+Fuse Memory Usage: 95192 KB
+Fuse CPU Usage: 770 ms
 Compiling module Decoder
 Compiling module numpad
 Compiling module int_to_float
@@ -38,9 +38,9 @@ Compiling module top
 Compiling module top_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
+Waiting for 7 sub-compilation(s) to finish...
 Compiled 15 Verilog Units
 Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/top_tb_isim_beh.exe
-Fuse Memory Usage: 686480 KB
-Fuse CPU Usage: 1220 ms
-GCC CPU Usage: 12170 ms
+Fuse Memory Usage: 653788 KB
+Fuse CPU Usage: 830 ms
+GCC CPU Usage: 760 ms

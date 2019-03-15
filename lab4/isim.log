@@ -19,10 +19,5 @@ Finished circuit initialization process.
 # run 1.00us
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run all
-Stopped at time : 5181 ns : File "/home/ise/Desktop/CS-M152-A/lab4/top_tb.v" Line 58
-# restart
 # run 1.00us
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# run 1.00us
+# exit 0
