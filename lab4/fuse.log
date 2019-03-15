@@ -1,4 +1,4 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/nn_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/nn_tb_beh.prj work.nn_tb work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/Desktop/CS-M152-A/lab4/top_tb_isim_beh.exe -prj /home/ise/Desktop/CS-M152-A/lab4/top_tb_beh.prj work.top_tb work.glbl 
 ISim P.20160913 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -9,12 +9,15 @@ Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/cheat_fp_mult.v" into l
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/sigmoid_approx.v" into library work
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/matrix_mult.v" into library work
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/int_to_float.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/stopwatch.v" into library work
 Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/nn.v" into library work
-Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/nn_tb.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/top.v" into library work
+Analyzing Verilog file "/home/ise/Desktop/CS-M152-A/lab4/top_tb.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/ise/Desktop/CS-M152-A/lab4/top.v" Line 38: Port clk is not connected to this instance
 Completed static elaboration
-Fuse Memory Usage: 96404 KB
+Fuse Memory Usage: 96492 KB
 Fuse CPU Usage: 790 ms
 Compiling module int_to_float
 Compiling module fp_mult
@@ -24,12 +27,14 @@ Compiling module fp_add
 Compiling module matrix_mult
 Compiling module sigmoid_approx
 Compiling module nn
-Compiling module nn_tb
+Compiling module seven_seg_display
+Compiling module display_stuff
+Compiling module top
+Compiling module top_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 10 Verilog Units
-Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/nn_tb_isim_beh.exe
-Fuse Memory Usage: 686304 KB
+Compiled 13 Verilog Units
+Built simulation executable /home/ise/Desktop/CS-M152-A/lab4/top_tb_isim_beh.exe
+Fuse Memory Usage: 686388 KB
 Fuse CPU Usage: 1180 ms
-GCC CPU Usage: 11320 ms
+GCC CPU Usage: 11450 ms

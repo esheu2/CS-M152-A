@@ -26,7 +26,6 @@ module top_tb;
 
 	// Inputs
 	reg clk;
-	reg [7:0] JA;
 
 	// Outputs
 	wire [3:0] an;
@@ -35,7 +34,6 @@ module top_tb;
 	// Instantiate the Unit Under Test (UUT)
 	top uut (
 		.clk(clk), 
-		.JA(JA), 
 		.an(an), 
 		.seg(seg)
 	);
@@ -43,7 +41,6 @@ module top_tb;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		JA = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;

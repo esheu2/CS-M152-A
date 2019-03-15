@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/Desktop/CS-M152-A/lab4/top.v" Line 38: Port <arg fmt="%s" index="1">clk</arg> is not connected to this instance
+</msg>
+
 </messages>
 

@@ -20,7 +20,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 module top(
     input clk,
-    input [7:0] JA,
     output [3:0] an,
     output [7:0] seg
     );
@@ -30,20 +29,11 @@ wire [3:0] sl, sw, pl, pw;
 
 wire [3:0] species;
 wire [31:0] final;
-wire asdf;
 
-
-numpad pad(
-        .o_tx_data1(sl),
-        .o_tx_data2(sw),
-        .o_tx_data3(pl),
-        .o_tx_data4(pw),
-        .o_tx_valid(asdf),
-        .clk(clk),
-        .i_tx_busy(0),
-        .i_inst(JA),
-        .i_inst_valid(1)
-        );
+assign sl = 4'd5;
+assign sw = 4'd3;
+assign pl = 4'd1;
+assign pw = 4'd6;
 
 nn net(
     .sl(sl),
