@@ -1,4 +1,0 @@
-verilog work "float_mult.v"
-verilog work "cheat_fp_mult.v"
-verilog work "cheat_fp_mult_tb.v"
-verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

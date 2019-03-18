@@ -1,0 +1,28 @@
+Command line:
+   matrix_mult_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  52812
+
+Wed Mar 13 11:06:04 2019
+
+
+ Elaboration Time: 0.078 sec
+
+ Current Memory Usage: 829.305 Meg
+
+ Total Signals          : 295
+ Total Nets             : 1671
+ Total Signal Drivers   : 140
+ Total Blocks           : 29
+ Total Primitive Blocks : 20
+ Total Processes        : 170
+ Total Traceable Variables  : 181
+ Total Scalar Nets and Variables : 3598
+
+ Total Simulation Time: 0.1092 sec
+
+ Current Memory Usage: 829.305 Meg
+
+Wed Mar 13 11:10:25 2019
+

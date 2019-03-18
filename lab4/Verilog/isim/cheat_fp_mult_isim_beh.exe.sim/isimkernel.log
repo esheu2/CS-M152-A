@@ -1,0 +1,28 @@
+Command line:
+   cheat_fp_mult_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53074
+
+Wed Mar 13 11:10:36 2019
+
+
+ Elaboration Time: 0.0624 sec
+
+ Current Memory Usage: 825.102 Meg
+
+ Total Signals          : 23
+ Total Nets             : 174
+ Total Signal Drivers   : 8
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 12
+ Total Traceable Variables  : 33
+ Total Scalar Nets and Variables : 438
+
+ Total Simulation Time: 0.1092 sec
+
+ Current Memory Usage: 825.102 Meg
+
+Wed Mar 13 11:10:39 2019
+

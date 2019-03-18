@@ -1,3 +1,0 @@
-verilog isim_temp "float_mult.v"
-verilog isim_temp "cheat_fp_mult.v"
-verilog isim_temp "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"
